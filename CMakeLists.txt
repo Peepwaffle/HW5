@@ -15,6 +15,7 @@ endif()
 
 qt_add_executable(appHW5
     main.cpp
+   
 )
 
 qt_add_qml_module(appHW5
