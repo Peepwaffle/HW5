@@ -10,7 +10,7 @@ ApplicationWindow {
     minimumWidth: 200
     minimumHeight: 250
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("MainMenu")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
@@ -39,7 +39,7 @@ ApplicationWindow {
                     color: window.lightMode ? window.dark : window.light
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
-                    text: qsTr("Hello World")
+                    text: qsTr("Select a function to perform")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -82,6 +82,8 @@ ApplicationWindow {
                     }
 
                     onClicked: window.lightMode = !window.lightMode
+                    
+                    
                 }
             }
         }

@@ -15,6 +15,7 @@ endif()
 
 qt_add_executable(appHW5
     main.cpp
+    
    
 )
 
@@ -22,6 +23,12 @@ qt_add_qml_module(appHW5
     URI HW5
     QML_FILES
         Main.qml
+        File.qml
+        Terminal.qml
+        Operations.qml
+        TerminalResults.qml
+        FileResults.qml
+        OperationsResults.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
