@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
 ApplicationWindow {
-    id: window
+    id: filewindow
     width: 640
     height: 480
     minimumWidth: 200
@@ -24,7 +24,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: window.lightMode ? window.reallyLight : window.reallyDark
+            color: filewindow.lightMode ? filewindow.reallyLight : filewindow.reallyDark
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -34,10 +34,10 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: window.lightMode ? window.dark : window.light
+                    color: filewindow.lightMode ? filewindow.dark : filewindow.light
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
-                    text: qsTr("Select a function to perform")
+                    text: qsTr("Enter in the path name of your file")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -49,7 +49,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: window.lightMode ? window.light : window.dark
+            color: filewindow.lightMode ? filewindow.light : filewindow.dark
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -59,14 +59,14 @@ ApplicationWindow {
 
                 Button {
                     id: button1
-                    text: window.lightMode ? qsTr("\u263D  Dark mode")
+                    text: filewindow.lightMode ? qsTr("\u263D  Dark mode")
                                            : qsTr("\u263C  Light mode")
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                     contentItem: Text {
                         text: button1.text
-                        color: window.lightMode ? window.light : window.dark
+                        color: filewindow.lightMode ? filewindow.light : filewindow.dark
                         font: button1.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -76,10 +76,10 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: window.lightMode ? window.dark : window.light
+                        color: filewindow.lightMode ? filewindow.dark : filewindow.light
                     }
 
-                    onClicked: window.lightMode = !window.lightMode
+                    onClicked: filewindow.lightMode = !filewindow.lightMode
                 }
             }
         }

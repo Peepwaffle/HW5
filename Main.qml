@@ -4,7 +4,7 @@ import QtQuick.Controls.Basic
 
 
 ApplicationWindow {
-    id: window
+    id: windowMain
     width: 640
     height: 480
     minimumWidth: 200
@@ -26,7 +26,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: window.lightMode ? window.reallyLight : window.reallyDark
+            color: windowMain.lightMode ? windowMain.reallyLight : windowMain.reallyDark
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -36,7 +36,7 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: window.lightMode ? window.dark : window.light
+                    color: windowMain.lightMode ? windowMain.dark : windowMain.light
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
                     text: qsTr("Select a function to perform")
@@ -51,25 +51,25 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: window.lightMode ? window.light : window.dark
+            color: windowMain.lightMode ? windowMain.light : windowMain.dark
             Layout.fillHeight: true
             Layout.fillWidth: true
 
             ColumnLayout {
                 anchors.fill: parent
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                 Button {
-                    id: button1
-                    text: window.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
+                    id: buttonFile
+                    text:  (" Read a file")
+                                      
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                     contentItem: Text {
-                        text: button1.text
-                        color: window.lightMode ? window.light : window.dark
-                        font: button1.font
+                        text: buttonFile.text
+                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        font: buttonFile.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
@@ -78,10 +78,76 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: window.lightMode ? window.dark : window.light
+                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
                     }
 
-                    onClicked: window.lightMode = !window.lightMode
+                      onClicked: {
+                      var component = Qt.createComponent("File.qml")
+                var window2    = component.createObject()
+                window2.show()
+                windowMain.hide()
+                      }
+                    
+                    
+                }
+                 Button {
+                    id: buttonElement
+                    text: ("  Calculate using 2 numbers")
+                       
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+
+                    contentItem: Text {
+                        text: buttonElement.text
+                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        font: buttonElement.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                    }
+
+                      onClicked: {
+                      var component = Qt.createComponent("Operations.qml")
+                var window2    = component.createObject()
+                window2.show()
+                windowMain.hide()
+                      }
+                    
+                }
+                Button {
+                    id: buttonTerminal
+                    text: (" Calculate using more than 2 numbers")
+                       
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+
+                    contentItem: Text {
+                        text: buttonTerminal.text
+                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        font: buttonTerminal.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                    }
+
+                      onClicked: {
+                      var component = Qt.createComponent("Terminal.qml")
+                var window2    = component.createObject()
+                window2.show()
+                windowMain.hide()
+                      }
                     
                     
                 }
