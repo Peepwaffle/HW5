@@ -48,6 +48,18 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                 Label {
+                    id: textNote
+                    color: terminalwindow.dark
+                    font.pixelSize: 100
+                    fontSizeMode: Text.Fit
+                    text: qsTr("For negative numbers, delete the space after \"-\"")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
                 
 
                 Label {
