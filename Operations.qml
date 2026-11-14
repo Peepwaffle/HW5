@@ -12,6 +12,8 @@ ApplicationWindow {
     visible: true
     title: qsTr("Operations")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+     property string input : ""
+     property bool isEnabled: false
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -36,7 +38,7 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: operationwindow.lightMode ? operationwindow.dark : operationwindow.light
+                    color: operationwindow.dark
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
                     text: qsTr("Select a function to perform")
@@ -46,29 +48,95 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                 Label {
+                    id: textInput
+                    color: operationwindow.dark
+                    font.pixelSize: 25
+                    fontSizeMode: Text.Fit
+                    text: qsTr("Current input: "+ operationwindow.input)
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
             }
         }
 
-        Rectangle {
+       GridLayout {
             id: rectangle2
-            color: operationwindow.lightMode ? operationwindow.light : operationwindow.dark
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-
-            ColumnLayout {
-                anchors.fill: parent
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-
+          columns: 3
+          columnSpacing: 0
+          rowSpacing: 20
+           Button {
+            id: buttonEnter
+            text: ("Confirm Input")
+            Layout.bottomMargin: 16
+            contentItem: Text {
+                text: buttonEnter.text
+                color:  operationwindow.light 
+                font: buttonEnter.font
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                }
+                background: Rectangle {
+                    implicitWidth: 120
+                    implicitHeight: 36
+                    radius: 8
+                    color: operationwindow.dark 
+                }                    
+                }
+          Button {
+                    id: buttonDelete
+                    text: ("Delete")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: buttonDelete.text
+                        color: operationwindow.light 
+                        font: buttonDelete.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark 
+                    }
+                    onClicked:
+                    operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
+                }
+                 Button {
+                    id: buttonSwitch
+                 text: ("Switch")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: buttonSwitch.text
+                        color: operationwindow.light 
+                        font: buttonSwitch.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: operationwindow.dark 
+                    }
+                    onClicked:
+                    operationwindow.isEnabled = !operationwindow.isEnabled
+                }
                 Button {
                     id: button1
-                    text: operationwindow.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
+                    text: if(operationwindow.isEnabled == true){
+                        ("+")
+                        }
+                    else{
+                        ("1")}
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-
                     contentItem: Text {
                         text: button1.text
-                        color: operationwindow.lightMode ? operationwindow.light : operationwindow.dark
+                        color: operationwindow.light 
                         font: button1.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -78,12 +146,175 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: operationwindow.lightMode ? operationwindow.dark : operationwindow.light
+                        color: operationwindow.dark 
                     }
 
-                    onClicked: operationwindow.lightMode = !operationwindow.lightMode
+                    onClicked: operationwindow.input+=("1")
                 }
-            }
+
+                Button {
+                    id: button2
+                    text: ("2")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button2.text
+                        color: operationwindow.light 
+                        font: button2.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: operationwindow.dark 
+                    }
+
+                    onClicked: operationwindow.input+=("2")
+                }
+                 Button {
+                    id: button3
+                    text: ("3")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button3.text
+                        color:  operationwindow.light
+                        font: button3.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark
+                    }
+
+                    onClicked: operationwindow.input+=("3")
+                }
+                 Button {
+                    id: button4
+                    text: ("4")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button4.text
+                        color:  operationwindow.light 
+                        font: button4.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark 
+                    }
+                    onClicked: 
+                    operationwindow.input+=("4")
+                }
+            Button {
+                    id: button5
+                    text: ("5")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button5.text
+                        color: operationwindow.light
+                        font: button5.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: operationwindow.dark 
+                    }
+                    onClicked: operationwindow.input+=("5")
+                }
+              Button {
+                    id: button6
+                    text: ("6")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button6.text
+                        color: operationwindow.light
+                        font: button6.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark 
+                    }
+                    onClicked: operationwindow.input+=("6")
+                }    
+                  Button {
+                    id: button7
+                    text: ("7")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button7.text
+                        color: operationwindow.light 
+                        font: button7.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark 
+                    }
+                    onClicked: operationwindow.input+=("7")
+                }
+                 Button {
+                    id: button8
+                    text: ("8")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button8.text
+                        color: operationwindow.light 
+                        font: button8.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: operationwindow.dark 
+                    }
+                    onClicked: operationwindow.input+=("8")
+                }      
+                Button {
+                    id: button9
+                    text: ("9")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button9.text
+                        color:  operationwindow.light 
+                        font: button9.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  operationwindow.dark 
+                    }
+                    onClicked: operationwindow.input+=("9")
+                }          
         }
     }
 
