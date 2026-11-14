@@ -4,6 +4,8 @@ import QtQuick.Controls.Basic
 
 
 
+
+
 ApplicationWindow {
     id: terminalwindow
     width: 640
@@ -13,12 +15,8 @@ ApplicationWindow {
     visible: true
     title: qsTr("Terminal")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
-    property int counter : 0
-  
-
-
-    
-    property string input : ""
+   property bool isEnabled: false
+   property string input : ""
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -30,17 +28,14 @@ ApplicationWindow {
         rowSpacing: 0
         columnSpacing: 0
         anchors.fill: parent
-
         Rectangle {
             id: rectangle1
             color: terminalwindow.lightMode ? terminalwindow.reallyLight : terminalwindow.reallyDark
             Layout.fillHeight: true
             Layout.fillWidth: true
-
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-
                 Label {
                     id: text1
                     color: terminalwindow.dark
@@ -67,47 +62,33 @@ ApplicationWindow {
                 }
             }
         }
-
-        Rectangle {
+        GridLayout {
             id: rectangle2
-            color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-
-            ColumnLayout {
-                anchors.fill: parent
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                Button {
-                    id: buttonshift
-                    text: terminalwindow.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
-                    Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-
-                    contentItem: Text {
-                        text: buttonshift.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
-                        font: buttonshift.font
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
-
-                    background: Rectangle {
-                        implicitWidth: 100
-                        implicitHeight: 36
-                        radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
-                    }
-
-                    onClicked: terminalwindow.lightMode = !terminalwindow.lightMode
+          columns: 3
+          columnSpacing: 0
+          rowSpacing: 20
+           Button {
+            id: buttonEnter
+            text: ("Confirm Input")
+            Layout.bottomMargin: 16
+            contentItem: Text {
+                text: buttonEnter.text
+                color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                font: buttonEnter.font
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
                 }
-                 Button {
+                background: Rectangle {
+                    implicitWidth: 120
+                    implicitHeight: 36
+                    radius: 8
+                    color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                }                    
+                }
+                Button {
                     id: buttonDelete
-                    text:  qsTr("Delete")
-                                           
+                    text: ("Delete")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignTop | Qt.AlignRight
-
                     contentItem: Text {
                         text: buttonDelete.text
                         color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
@@ -115,185 +96,221 @@ ApplicationWindow {
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
-
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
                         color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
-
-                  // onClicked: terminalwindow.input = terminalwindow.input.substring(0, terminalwindow.input.length()-2)
+                    onClicked:
+                    terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
+                }
+                 Button {
+                    id: buttonSwitch
+                 text: ("Switch")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: buttonSwitch.text
+                        color: terminalwindow.light 
+                        font: buttonSwitch.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: terminalwindow.dark 
+                    }
+                    onClicked:
+                    terminalwindow.isEnabled = !terminalwindow.isEnabled
                 }
                 Button {
                     id: button1
-                    text: qsTr("1")
-                                        
+                    text: if(terminalwindow.isEnabled == true){("+")}
+                    else{
+                        ("1")}
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-
                     contentItem: Text {
                         text: button1.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button1.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
 
-                    onClicked: terminalwindow.input += "1"
-                }  
+                    onClicked: terminalwindow.input+=("1")
+                }
+
                 Button {
                     id: button2
-                    text: qsTr("2")
-                                        
+                    text: ("2")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-
                     contentItem: Text {
                         text: button2.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button2.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
 
-                    onClicked: terminalwindow.input += "2"
+                    onClicked: terminalwindow.input+=("2")
                 }
                  Button {
                     id: button3
-                    text: qsTr("3")
-                                        
+                    text: ("3")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-
                     contentItem: Text {
                         text: button3.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button3.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
 
-                    onClicked: terminalwindow.input += "3"
+                    onClicked: terminalwindow.input+=("3")
                 }
-                Button {
+                 Button {
                     id: button4
-                    text: qsTr("4")
-                                        
+                    text: ("4")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-
                     contentItem: Text {
                         text: button4.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button4.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
-
-                    onClicked: terminalwindow.input += "4"
-                } 
-                Button {
+                    onClicked: terminalwindow.input+=("4")
+                }
+            Button {
                     id: button5
-                    text: qsTr("5")
-                                        
+                    text: ("5")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignTop | Qt.AlignCenter
-
                     contentItem: Text {
                         text: button5.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button5.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
-
-                    onClicked: terminalwindow.input += "5"
+                    onClicked: terminalwindow.input+=("5")
                 }
-                 Button {
+              Button {
                     id: button6
-                    text: qsTr("6")
-                                        
+                    text: ("6")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignCenter | Qt.AlignTop
-
                     contentItem: Text {
                         text: button6.text
-                        color:  terminalwindow.light
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
                         font: button6.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
                     }
-
-                    onClicked: terminalwindow.input += "6"
-                }
-                 Button {
-                    id: buttonEnter
-                    text: qsTr("Confirm input")
-                                           
+                    onClicked: terminalwindow.input+=("6")
+                }    
+                  Button {
+                    id: button7
+                    text: ("7")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignRight | Qt.AlignBottom
-
                     contentItem: Text {
-                        text: buttonEnter.text
-                        color:  terminalwindow.light
-                        font: buttonEnter.font
+                        text: button7.text
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        font: button7.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
 
                     background: Rectangle {
-                        implicitWidth: 100
+                        implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.dark
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    }
+                    onClicked: terminalwindow.input+=("7")
+                }
+                 Button {
+                    id: button8
+                    text: ("8")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button8.text
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        font: button8.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
                     }
 
-                    onClicked: terminalwindow.lightMode = !terminalwindow.lightMode
-                }
-            }
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    }
+                    onClicked: terminalwindow.input+=("8")
+                }      
+                Button {
+                    id: button9
+                    text: ("9")
+                    Layout.bottomMargin: 16
+                    contentItem: Text {
+                        text: button9.text
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        font: button9.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    }
+                    onClicked: terminalwindow.input+=("9")
+                }          
         }
     }
 
