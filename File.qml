@@ -62,7 +62,7 @@ ApplicationWindow {
                     text: filewindow.lightMode ? qsTr("\u263D  Dark mode")
                                            : qsTr("\u263C  Light mode")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
 
                     contentItem: Text {
                         text: button1.text

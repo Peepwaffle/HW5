@@ -92,7 +92,7 @@ ApplicationWindow {
                 }
                  Button {
                     id: buttonElement
-                    text: ("  Calculate using 2 numbers")
+                    text: ("Calculate using 2 numbers")
                        
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
@@ -113,7 +113,7 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-                      var component = Qt.createComponent("Operations.qml")
+                      var component = Qt.createComponent("Terminal.qml")
                 var window2    = component.createObject()
                 window2.show()
                 windowMain.hide()
@@ -122,7 +122,7 @@ ApplicationWindow {
                 }
                 Button {
                     id: buttonTerminal
-                    text: (" Calculate using more than 2 numbers")
+                    text: ("Calculate using more than 2 numbers")
                        
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -143,8 +143,8 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-                      var component = Qt.createComponent("Terminal.qml")
-                var window2    = component.createObject()
+                      var component = Qt.createComponent("Operations.qml")
+                      var window2 = component.createObject()
                 window2.show()
                 windowMain.hide()
                       }

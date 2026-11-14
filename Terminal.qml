@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls.Basic
 
 
+
 ApplicationWindow {
     id: terminalwindow
     width: 640
@@ -12,6 +13,9 @@ ApplicationWindow {
     visible: true
     title: qsTr("Terminal")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    property int counter : 0
+    
+    property string input : ""
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -36,10 +40,10 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
-                    font.pixelSize: 120
+                    color: terminalwindow.dark
+                    font.pixelSize: 100
                     fontSizeMode: Text.Fit
-                    text: qsTr("Select a function to perform")
+                    text: qsTr("Enter the equation you would like to calculate")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -58,13 +62,36 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                Button {
+                    id: buttonshift
+                    text: terminalwindow.lightMode ? qsTr("\u263D  Dark mode")
+                                           : qsTr("\u263C  Light mode")
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 
+                    contentItem: Text {
+                        text: buttonshift.text
+                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        font: buttonshift.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    }
+
+                    onClicked: terminalwindow.lightMode = !terminalwindow.lightMode
+                }
                 Button {
                     id: button1
                     text: terminalwindow.lightMode ? qsTr("\u263D  Dark mode")
                                            : qsTr("\u263C  Light mode")
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
 
                     contentItem: Text {
                         text: button1.text
@@ -79,6 +106,30 @@ ApplicationWindow {
                         implicitHeight: 36
                         radius: 8
                         color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    }
+
+                    onClicked: terminalwindow.lightMode = !terminalwindow.lightMode
+                }
+                 Button {
+                    id: buttonEnter
+                    text: qsTr("Confirm input")
+                                           
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignRight | Qt.AlignBottom
+
+                    contentItem: Text {
+                        text: buttonEnter.text
+                        color:  terminalwindow.dark
+                        font: buttonEnter.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: terminalwindow.light
                     }
 
                     onClicked: terminalwindow.lightMode = !terminalwindow.lightMode
