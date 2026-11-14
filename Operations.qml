@@ -28,7 +28,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: operationwindow.lightMode ? operationwindow.reallyLight : operationwindow.reallyDark
+            color:  operationwindow.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -104,7 +104,7 @@ ApplicationWindow {
                         color:  operationwindow.dark 
                     }
                     onClicked:
-                    operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
+                    operationwindow.input = operationwindow.input.substring(0, operationwindow.input.length - 1);
                 }
                  Button {
                     id: buttonSwitch
@@ -149,12 +149,22 @@ ApplicationWindow {
                         color: operationwindow.dark 
                     }
 
-                    onClicked: operationwindow.input+=("1")
+                    onClicked:  
+                    if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" + ")}
+                        else{
+                            operationwindow.input+=("1")
+                        }
                 }
 
                 Button {
                     id: button2
-                    text: ("2")
+                    text: if(operationwindow.isEnabled == true){
+                        ("-")
+                        }
+                    else{
+                        ("2")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button2.text
@@ -171,11 +181,20 @@ ApplicationWindow {
                         color: operationwindow.dark 
                     }
 
-                    onClicked: operationwindow.input+=("2")
+                    onClicked:  if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" - ")}
+                        else{
+                            operationwindow.input+=("2")
+                        }
                 }
                  Button {
                     id: button3
-                    text: ("3")
+                    text: if(operationwindow.isEnabled == true){
+                        ("*")
+                        }
+                    else{
+                        ("3")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button3.text
@@ -189,14 +208,24 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color:  operationwindow.dark
+                        color: operationwindow.dark
                     }
 
-                    onClicked: operationwindow.input+=("3")
+                    onClicked: 
+                    if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" * ")}
+                        else{
+                            operationwindow.input+=("3")
+                        }
                 }
                  Button {
                     id: button4
-                    text: ("4")
+                    text: if(operationwindow.isEnabled == true){
+                        ("/")
+                        }
+                    else{
+                        ("4")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button4.text
@@ -213,11 +242,20 @@ ApplicationWindow {
                         color:  operationwindow.dark 
                     }
                     onClicked: 
-                    operationwindow.input+=("4")
+                    if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" / ")}
+                        else{
+                            operationwindow.input+=("4")
+                        }
                 }
             Button {
                     id: button5
-                    text: ("5")
+                    text: if(operationwindow.isEnabled == true){
+                        ("%")
+                        }
+                    else{
+                        ("5")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button5.text
@@ -233,11 +271,20 @@ ApplicationWindow {
                         radius: 8
                         color: operationwindow.dark 
                     }
-                    onClicked: operationwindow.input+=("5")
+                    onClicked:  if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" % ")}
+                        else{
+                            operationwindow.input+=("5")
+                        }
                 }
               Button {
                     id: button6
-                    text: ("6")
+                    text: if(operationwindow.isEnabled == true){
+                        ("0")
+                        }
+                    else{
+                        ("6")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button6.text
@@ -253,11 +300,20 @@ ApplicationWindow {
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked: operationwindow.input+=("6")
+                    onClicked:  if(operationwindow.isEnabled== true){
+                        operationwindow.input+=("0")}
+                        else{
+                            operationwindow.input+=("6")
+                        }
                 }    
                   Button {
                     id: button7
-                    text: ("7")
+                    text: if(operationwindow.isEnabled == true){
+                        ("(")
+                        }
+                    else{
+                        ("7")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button7.text
@@ -273,11 +329,20 @@ ApplicationWindow {
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked: operationwindow.input+=("7")
+                    onClicked:  if(operationwindow.isEnabled== true){
+                        operationwindow.input+=("(")}
+                        else{
+                            operationwindow.input+=("7")
+                        }
                 }
                  Button {
                     id: button8
-                    text: ("8")
+                    text: if(operationwindow.isEnabled == true){
+                        (")")
+                        }
+                    else{
+                        ("8")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button8.text
@@ -293,7 +358,11 @@ ApplicationWindow {
                         radius: 8
                         color: operationwindow.dark 
                     }
-                    onClicked: operationwindow.input+=("8")
+                    onClicked:  if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(")")}
+                        else{
+                            operationwindow.input+=("8")
+                        }
                 }      
                 Button {
                     id: button9
