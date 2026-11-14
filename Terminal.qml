@@ -48,6 +48,8 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                
+
                 Label {
                     id: textInput
                     color: terminalwindow.dark
@@ -73,7 +75,7 @@ ApplicationWindow {
             Layout.bottomMargin: 16
             contentItem: Text {
                 text: buttonEnter.text
-                color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                color:  terminalwindow.light 
                 font: buttonEnter.font
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -82,7 +84,7 @@ ApplicationWindow {
                     implicitWidth: 120
                     implicitHeight: 36
                     radius: 8
-                    color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                    color: terminalwindow.dark 
                 }                    
                 }
                 Button {
@@ -91,7 +93,7 @@ ApplicationWindow {
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: buttonDelete.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: buttonDelete.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -100,7 +102,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
                     onClicked:
                     terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
@@ -127,13 +129,17 @@ ApplicationWindow {
                 }
                 Button {
                     id: button1
-                    text: if(terminalwindow.isEnabled == true){("+")}
+                    text: 
+                    if(terminalwindow.isEnabled == true){
+                        ("+")
+                        }
                     else{
-                        ("1")}
+                        ("1")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button1.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color: terminalwindow.light
                         font: button1.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -143,19 +149,30 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
 
-                    onClicked: terminalwindow.input+=("1")
+                    onClicked: 
+                    if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(" + ")}
+                        else{
+                            terminalwindow.input+=("1")
+                        }
                 }
 
                 Button {
                     id: button2
-                    text: ("2")
+                    text:  
+                    if(terminalwindow.isEnabled == true){
+                        ("-")
+                        }
+                    else{
+                        ("2")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button2.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: button2.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -165,18 +182,28 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
 
-                    onClicked: terminalwindow.input+=("2")
+                    onClicked:  if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(" - ")}
+                        else{
+                            terminalwindow.input+=("2")
+                        }
                 }
                  Button {
                     id: button3
-                    text: ("3")
+                    text: 
+                     if(terminalwindow.isEnabled == true){
+                        ("*")
+                        }
+                    else{
+                        ("3")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button3.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: button3.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -186,18 +213,29 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
 
-                    onClicked: terminalwindow.input+=("3")
+                    onClicked:  
+                    if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(" * ")}
+                        else{
+                            terminalwindow.input+=("3")
+                        }
                 }
                  Button {
                     id: button4
-                    text: ("4")
+                    text: 
+                     if(terminalwindow.isEnabled == true){
+                        ("/")
+                        }
+                    else{
+                        ("4")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button4.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: button4.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -207,17 +245,27 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("4")
+                    onClicked:  
+                    if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(" / ")}
+                        else{
+                            terminalwindow.input+=("4")
+                        }
                 }
             Button {
                     id: button5
-                    text: ("5")
+                    text:  if(terminalwindow.isEnabled == true){
+                        ("%")
+                        }
+                    else{
+                        ("5")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button5.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color: terminalwindow.light 
                         font: button5.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -227,17 +275,28 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("5")
+                    onClicked: 
+                     if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(" % ")}
+                        else{
+                            terminalwindow.input+=("5")
+                        }
                 }
               Button {
                     id: button6
-                    text: ("6")
+                    text:  
+                    if(terminalwindow.isEnabled == true){
+                        ("0")
+                        }
+                    else{
+                        ("6")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button6.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color: terminalwindow.light 
                         font: button6.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -247,9 +306,15 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("6")
+                    onClicked: 
+                     if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=("0")}
+                        else{
+                            terminalwindow.input+=("6")
+                        }
+                   
                 }    
                   Button {
                     id: button7
@@ -257,7 +322,7 @@ ApplicationWindow {
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button7.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: button7.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -267,7 +332,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color:  terminalwindow.dark 
                     }
                     onClicked: terminalwindow.input+=("7")
                 }
@@ -277,7 +342,7 @@ ApplicationWindow {
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button8.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color: terminalwindow.light 
                         font: button8.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -287,7 +352,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color:  terminalwindow.dark 
                     }
                     onClicked: terminalwindow.input+=("8")
                 }      
@@ -297,7 +362,7 @@ ApplicationWindow {
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button9.text
-                        color: terminalwindow.lightMode ? terminalwindow.light : terminalwindow.dark
+                        color:  terminalwindow.light 
                         font: button9.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -307,7 +372,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: terminalwindow.lightMode ? terminalwindow.dark : terminalwindow.light
+                        color: terminalwindow.dark 
                     }
                     onClicked: terminalwindow.input+=("9")
                 }          
