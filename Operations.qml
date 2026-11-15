@@ -11,10 +11,10 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("Operations")
-    property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    
      property string input : ""
      property bool isEnabled: false
-    property color reallyDark: "#1f1f1f"
+    
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"

@@ -14,10 +14,10 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("Terminal")
-    property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    
    property bool isEnabled: false
    property string input : ""
-    property color reallyDark: "#1f1f1f"
+
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -115,6 +115,7 @@ ApplicationWindow {
                   var windowResult = component.createObject()
                   windowResult.input= terminalwindow.input;
                      windowResult.show()
+                  
                      
                 terminalwindow.hide()
                

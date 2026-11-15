@@ -11,8 +11,8 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("MainMenu")
-    property bool lightMode: Application.styleHints.colorScheme === Qt.Light
-    property color reallyDark: "#1f1f1f"
+    
+   
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -26,7 +26,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: windowMain.lightMode ? windowMain.reallyLight : windowMain.reallyDark
+            color:  windowMain.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -36,7 +36,7 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                    color:  windowMain.dark 
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
                     text: qsTr("Select a function to perform")
@@ -51,7 +51,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: windowMain.lightMode ? windowMain.light : windowMain.dark
+            color: windowMain.light
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -68,7 +68,7 @@ ApplicationWindow {
 
                     contentItem: Text {
                         text: buttonFile.text
-                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        color:  windowMain.light
                         font: buttonFile.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -78,13 +78,14 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                        color:  windowMain.dark 
                     }
 
                       onClicked: {
                       var component = Qt.createComponent("File.qml")
                 var window2    = component.createObject()
                 window2.show()
+              
                 windowMain.hide()
                       }
                     
@@ -99,7 +100,7 @@ ApplicationWindow {
 
                     contentItem: Text {
                         text: buttonElement.text
-                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        color: windowMain.light 
                         font: buttonElement.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -109,7 +110,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                        color: windowMain.dark 
                     }
 
                       onClicked: {
@@ -129,7 +130,7 @@ ApplicationWindow {
 
                     contentItem: Text {
                         text: buttonTerminal.text
-                        color: windowMain.lightMode ? windowMain.light : windowMain.dark
+                        color:  windowMain.light 
                         font: buttonTerminal.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -139,7 +140,7 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: windowMain.lightMode ? windowMain.dark : windowMain.light
+                        color: windowMain.dark 
                     }
 
                       onClicked: {

@@ -15,6 +15,8 @@ if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/importedcontent/CMakeLists.txt")
 endif()
 
 qt_add_executable(appHW5
+WIN32 MACOSX_BUNDLE
+
     main.cpp
     
    

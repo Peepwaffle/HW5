@@ -10,7 +10,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("File reader")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
-    property color reallyDark: "#1f1f1f"
+   
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -24,7 +24,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: filewindow.lightMode ? filewindow.reallyLight : filewindow.reallyDark
+            color:  filewindow.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -34,7 +34,7 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: filewindow.lightMode ? filewindow.dark : filewindow.light
+                    color: filewindow.dark 
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
                     text: qsTr("Enter in the path name of your file")
@@ -49,7 +49,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: filewindow.lightMode ? filewindow.light : filewindow.dark
+            color: filewindow.light 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -59,14 +59,14 @@ ApplicationWindow {
 
                 Button {
                     id: button1
-                    text: filewindow.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
+                    text:  qsTr("\u263D  Dark mode")
+                                          
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
 
                     contentItem: Text {
                         text: button1.text
-                        color: filewindow.lightMode ? filewindow.light : filewindow.dark
+                        color: filewindow.light
                         font: button1.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
@@ -76,10 +76,10 @@ ApplicationWindow {
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color: filewindow.lightMode ? filewindow.dark : filewindow.light
+                        color:  filewindow.dark 
                     }
 
-                    onClicked: filewindow.lightMode = !filewindow.lightMode
+                   
                 }
             }
         }
