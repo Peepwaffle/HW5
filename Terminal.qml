@@ -109,7 +109,16 @@ ApplicationWindow {
                     implicitHeight: 36
                     radius: 8
                     color: terminalwindow.dark 
-                }                    
+                }    
+                onClicked:{
+                  var component = Qt.createComponent("TerminalResults.qml")
+                  var windowResult = component.createObject()
+                  windowResult.input= terminalwindow.input;
+                     windowResult.show()
+                     
+                terminalwindow.hide()
+               
+                }           
                 }
                 Button {
                     id: buttonDelete

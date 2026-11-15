@@ -12,6 +12,8 @@ ApplicationWindow {
     visible: true
     title: qsTr("Terminal Result")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    property string input : ""
+    property string result : ""
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -26,7 +28,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: terminalResultwindow.lightMode ? terminalResultwindow.reallyLight : terminalResultwindow.reallyDark
+            color: terminalResultwindow.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -36,10 +38,22 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: terminalResultwindow.lightMode ? terminalResultwindow.dark : terminalResultwindow.light
+                    color: terminalResultwindow.dark 
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
-                    text: qsTr("Here are the results from your terminal input:")
+                    text: qsTr("Here is the result of the input:")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
+                  Label {
+                    id: textinput
+                    color: terminalResultwindow.dark 
+                    font.pixelSize: 120
+                    fontSizeMode: Text.Fit
+                    text: qsTr(terminalResultwindow.input)
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -51,39 +65,27 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: terminalResultwindow.lightMode ? terminalResultwindow.light : terminalResultwindow.dark
+            color: terminalResultwindow.light 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-
-                Button {
-                    id: button1
-                    text: terminalResultwindow.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
-                    Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-
-                    contentItem: Text {
-                        text: button1.text
-                        color: terminalResultwindow.lightMode ? terminalResultwindow.light : terminalResultwindow.dark
-                        font: button1.font
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
-
-                    background: Rectangle {
-                        implicitWidth: 120
-                        implicitHeight: 36
-                        radius: 8
-                        color: terminalResultwindow.lightMode ? terminalResultwindow.dark : terminalResultwindow.light
-                    }
-
-                    onClicked: terminalResultwindow.lightMode = !terminalResultwindow.lightMode
+                Label {
+                    id: textResult
+                    color: terminalResultwindow.dark 
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: qsTr(terminalResultwindow.input +" = " + terminalResultwindow.result)
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
                 }
             }
+             
         }
     }
 
