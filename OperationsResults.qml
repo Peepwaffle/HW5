@@ -16,6 +16,7 @@ ApplicationWindow {
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
+    property string input : ""
 
     GridLayout {
         id: grid

@@ -108,7 +108,14 @@ ApplicationWindow {
                     implicitHeight: 36
                     radius: 8
                     color: operationwindow.dark 
-                }                    
+                }    
+                onClicked:{
+                    var component = Qt.createComponent("OperationsResults.qml")
+                  var windowResult = component.createObject()
+                  windowResult.input= operationwindow.input;
+                     windowResult.show()   
+                operationwindow.hide()    
+                }            
                 }
           Button {
                     id: buttonDelete
