@@ -30,7 +30,7 @@ ApplicationWindow {
         anchors.fill: parent
         Rectangle {
             id: rectangle1
-            color: terminalwindow.lightMode ? terminalwindow.reallyLight : terminalwindow.reallyDark
+            color: terminalwindow.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
             ColumnLayout {
@@ -54,6 +54,18 @@ ApplicationWindow {
                     font.pixelSize: 100
                     fontSizeMode: Text.Fit
                     text: qsTr("For negative numbers, delete the space after \"-\"")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
+                 Label {
+                    id: textSwitch
+                    color: terminalwindow.dark
+                    font.pixelSize: 100
+                    fontSizeMode: Text.Fit
+                    text: qsTr("Switch allows you to switch to 0 and operators")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
