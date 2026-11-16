@@ -16,6 +16,7 @@ ApplicationWindow {
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
     property string input : ""
+    property string result : ""
 
     GridLayout {
         id: grid
@@ -46,6 +47,18 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                 Label {
+                    id: textinput
+                    color: operationResultwindow.dark 
+                    font.pixelSize: 120
+                    fontSizeMode: Text.Fit
+                    text: qsTr(operationResultwindow.input)
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
             }
         }
 
@@ -58,6 +71,18 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                 Label {
+                    id: textResult
+                    color: operationResultwindow.dark 
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: qsTr(operationResultwindow.input +" = " +operationResultwindow.result)
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                }
 
                 
             }
