@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trace version="1.02" traceStart="263673167" traceEnd="108428969209">
+  <eventData totalTime="108165296042">
+    <event index="0">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>0</memoryEventType>
+    </event>
+    <event index="1">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>2</memoryEventType>
+    </event>
+    <event index="2">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>1</memoryEventType>
+    </event>
+    <event index="3">
+      <displayname>SceneGraph3</displayname>
+      <type>SceneGraphFrame</type>
+      <details>3</details>
+    </event>
+    <event index="4">
+      <displayname>SceneGraph1</displayname>
+      <type>SceneGraphFrame</type>
+      <details>1</details>
+    </event>
+    <event index="5">
+      <displayname>SceneGraph0</displayname>
+      <type>SceneGraphFrame</type>
+      <details>0</details>
+    </event>
+    <event index="6">
+      <displayname>SceneGraph6</displayname>
+      <type>SceneGraphFrame</type>
+      <details>6</details>
+    </event>
+  </eventData>
+  <profilerDataModel>
+    <range startTime="402540542" eventIndex="0" amount="647680"/>
+    <range startTime="402540542" eventIndex="1" amount="605632"/>
+    <range startTime="402540542" eventIndex="2" amount="0"/>
+    <range startTime="446478584" duration="916" eventIndex="3"/>
+    <range startTime="461763667" duration="22" eventIndex="4"/>
+    <range startTime="465934917" duration="482542" eventIndex="5"/>
+    <range startTime="466029084" duration="14771750" eventIndex="3"/>
+    <range startTime="466030709" duration="6765208" eventIndex="6"/>
+  </profilerDataModel>
+</trace>

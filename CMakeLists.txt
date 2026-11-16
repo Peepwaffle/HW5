@@ -19,6 +19,7 @@ qt_add_executable(appHW5
 WIN32 MACOSX_BUNDLE
 
     main.cpp
+    person.cpp
     
    
 )

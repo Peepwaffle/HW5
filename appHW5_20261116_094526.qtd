@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trace version="1.02" traceStart="279941333" traceEnd="1784281375">
+  <eventData totalTime="1504340042">
+    <event index="0">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>0</memoryEventType>
+    </event>
+    <event index="1">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>2</memoryEventType>
+    </event>
+    <event index="2">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>1</memoryEventType>
+    </event>
+    <event index="3">
+      <displayname>SceneGraph3</displayname>
+      <type>SceneGraphFrame</type>
+      <details>3</details>
+    </event>
+    <event index="4">
+      <displayname>SceneGraph1</displayname>
+      <type>SceneGraphFrame</type>
+      <details>1</details>
+    </event>
+    <event index="5">
+      <displayname>SceneGraph0</displayname>
+      <type>SceneGraphFrame</type>
+      <details>0</details>
+    </event>
+    <event index="6">
+      <displayname>SceneGraph6</displayname>
+      <type>SceneGraphFrame</type>
+      <details>6</details>
+    </event>
+    <event index="7">
+      <displayname>Label.qml:13</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/Label.qml</filename>
+      <line>13</line>
+      <column>5</column>
+      <details>expression for linkColor</details>
+    </event>
+    <event index="8">
+      <displayname>Label.qml:13</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/Label.qml</filename>
+      <line>13</line>
+      <column>5</column>
+    </event>
+    <event index="9">
+      <displayname>Javascript:0</displayname>
+      <type>Javascript</type>
+    </event>
+    <event index="10">
+      <displayname>Binding:0</displayname>
+      <type>Binding</type>
+    </event>
+  </eventData>
+  <profilerDataModel>
+    <range startTime="415771416" eventIndex="0" amount="647680"/>
+    <range startTime="415771416" eventIndex="1" amount="605632"/>
+    <range startTime="415771416" eventIndex="2" amount="0"/>
+    <range startTime="437327708" duration="1417" eventIndex="3"/>
+    <range startTime="451076083" duration="22" eventIndex="4"/>
+    <range startTime="455464416" duration="466209" eventIndex="5"/>
+    <range startTime="455507000" duration="9633292" eventIndex="3"/>
+    <range startTime="455515041" duration="5524709" eventIndex="6"/>
+    <range startTime="468654458" duration="9792" eventIndex="7"/>
+    <range startTime="468649375" duration="17625" eventIndex="8"/>
+    <range startTime="488972875" duration="1708" eventIndex="5"/>
+    <range startTime="488987625" duration="17167" eventIndex="3"/>
+    <range startTime="488992250" duration="1667" eventIndex="6"/>
+    <range startTime="1736935958" duration="13375" eventIndex="9"/>
+    <range startTime="1736928791" duration="26000" eventIndex="10"/>
+  </profilerDataModel>
+</trace>

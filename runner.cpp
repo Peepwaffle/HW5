@@ -10,10 +10,11 @@
 #include <vector>
 #include <unistd.h>
 #include "parser.h"
+#include "runner.h"
 
 using namespace std;
 
-string CorrectlySpace(string toStart){
+string Runner::CorrectlySpace(string toStart){
   string CorrectString = "";
   string part;
    stringstream AsStream(toStart);
@@ -35,7 +36,7 @@ catch(InvalidElement &e){
 }
   return true;
 }
-string ConvertToString(char* array[], int size, string flag){
+string Runner::ConvertToString(char* array[], int size, string flag){
   string Converted;
   if(flag == "No flag"){
   for(int i = 1; i <  size; i++){
@@ -59,7 +60,7 @@ string ConvertToString(char* array[], int size, string flag){
   return Converted;
 }
 
-string CheckFlags(int argc,char* argv[]){
+string Runner::CheckFlags(int argc,char* argv[]){
   int opt;
   while((opt =getopt(argc, argv, "c:f"))!= -1){
     switch (opt){
