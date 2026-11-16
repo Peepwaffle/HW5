@@ -61,7 +61,7 @@ ApplicationWindow {
 
                 Button {
                     id: buttonFile
-                    text:  (" Read a file")
+                    text:  ("Read a file")
                                       
                     Layout.bottomMargin: 16
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom

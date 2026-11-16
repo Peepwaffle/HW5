@@ -60,6 +60,20 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                Label{
+                    id :textEmpty
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("No equation or number submitted, try again")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+                    
+                }
                      Label {
                     id: textSwitch
                     color: operationwindow.dark
@@ -110,11 +124,16 @@ ApplicationWindow {
                     color: operationwindow.dark 
                 }    
                 onClicked:{
+                    if(operationwindow.input.length < 1){
+                        textEmpty.visible = true
+                    }
+                    else{
                     var component = Qt.createComponent("OperationsResults.qml")
                   var windowResult = component.createObject()
                   windowResult.input= operationwindow.input;
                      windowResult.show()   
-                operationwindow.hide()    
+                operationwindow.hide() 
+                }
                 }            
                 }
           Button {

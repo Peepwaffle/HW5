@@ -60,6 +60,20 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                 Label{
+                    id :textEmpty
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("No equation or number submitted, try again")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+                    
+                }
                  Label {
                     id: textSwitch
                     color: terminalwindow.dark
@@ -111,7 +125,10 @@ ApplicationWindow {
                     color: terminalwindow.dark 
                 }    
                 onClicked:{
-                
+                if(terminalwindow.input.length < 1){
+                    textEmpty.visible = true
+                }
+                else{
                  
                   var component = Qt.createComponent("TerminalResults.qml")
                   var windowResult = component.createObject()
@@ -120,7 +137,7 @@ ApplicationWindow {
                   
                      
                 terminalwindow.hide()
-                    
+                }
                 }           
                 }
                 Button {
