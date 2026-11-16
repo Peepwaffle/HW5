@@ -11,8 +11,8 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("File Result")
-    property bool lightMode: Application.styleHints.colorScheme === Qt.Light
-    property color reallyDark: "#1f1f1f"
+   
+    
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -26,7 +26,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle1
-            color: fileResultwindow.lightMode ? fileResultwindow.reallyLight : fileResultwindow.reallyDark
+            color:  fileResultwindow.reallyLight 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -36,7 +36,7 @@ ApplicationWindow {
 
                 Label {
                     id: text1
-                    color: fileResultwindow.lightMode ? fileResultwindow.dark : fileResultwindow.light
+                    color:  fileResultwindow.dark 
                     font.pixelSize: 120
                     fontSizeMode: Text.Fit
                     text: qsTr("Here are the results from your selected file:")
@@ -51,7 +51,7 @@ ApplicationWindow {
 
         Rectangle {
             id: rectangle2
-            color: fileResultwindow.lightMode ? fileResultwindow.light : fileResultwindow.dark
+            color: fileResultwindow.light 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -59,30 +59,7 @@ ApplicationWindow {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
-                Button {
-                    id: button1
-                    text: fileResultwindow.lightMode ? qsTr("\u263D  Dark mode")
-                                           : qsTr("\u263C  Light mode")
-                    Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-
-                    contentItem: Text {
-                        text: button1.text
-                        color: fileResultwindow.lightMode ? fileResultwindow.light : fileResultwindow.dark
-                        font: button1.font
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
-
-                    background: Rectangle {
-                        implicitWidth: 120
-                        implicitHeight: 36
-                        radius: 8
-                        color: fileResultwindow.lightMode ? fileResultwindow.dark : fileResultwindow.light
-                    }
-
-                    onClicked: fileResultwindow.lightMode = !fileResultwindow.lightMode
-                }
+              
             }
         }
     }
