@@ -112,7 +112,11 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-               
+                           var component = Qt.createComponent("FileResults.qml")
+                  var windowResult = component.createObject()
+                  windowResult.fileName= filewindow.fileName;
+                     windowResult.show()   
+                filewindow.hide()
                       }
                     
                     
@@ -139,6 +143,7 @@ ApplicationWindow {
                         font: buttonNo.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
+                    
                     }
 
                     background: Rectangle {
