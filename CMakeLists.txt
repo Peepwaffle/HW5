@@ -19,7 +19,8 @@ qt_add_executable(appHW5
 WIN32 MACOSX_BUNDLE
 
     main.cpp
-    person.cpp
+    calc.h
+
     
    
 )
@@ -41,6 +42,7 @@ qt_add_qml_module(appHW5
 # explicit, fixed bundle identifier manually though.
 set_target_properties(appHW5 PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appHW5
+
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
