@@ -19,7 +19,7 @@ qt_add_executable(appHW5
 WIN32 MACOSX_BUNDLE
 
     main.cpp
-    calc.h
+   
 
     
    
@@ -27,6 +27,9 @@ WIN32 MACOSX_BUNDLE
 
 qt_add_qml_module(appHW5
     URI HW5
+    VERSION 1.0
+    SOURCES
+     calc.cpp calc.h
     QML_FILES
         Main.qml
         File.qml

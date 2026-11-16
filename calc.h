@@ -5,8 +5,14 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
+#include "calc.moc"
+#include <QOBJECT>
+#include <QtQmlIntegration/qqmlintegration.h>
+
 using namespace std;
-class calc{
+class calc: public QObject{
+      Q_OBJECT
+  QML_ELEMENT
 public:
 void Reset();
 int FirstCheckInt(string firstNumber);
