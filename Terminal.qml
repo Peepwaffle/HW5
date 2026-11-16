@@ -111,6 +111,8 @@ ApplicationWindow {
                     color: terminalwindow.dark 
                 }    
                 onClicked:{
+                
+                 
                   var component = Qt.createComponent("TerminalResults.qml")
                   var windowResult = component.createObject()
                   windowResult.input= terminalwindow.input;
@@ -118,7 +120,7 @@ ApplicationWindow {
                   
                      
                 terminalwindow.hide()
-               
+                    
                 }           
                 }
                 Button {

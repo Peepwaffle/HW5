@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
+import QML
 ApplicationWindow {
     id: filewindow
     width: 640
@@ -10,6 +11,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("File reader")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    property string fileName : ""
    
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -56,18 +58,48 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-
-                Button {
-                    id: button1
-                    text:  qsTr("\u263D  Dark mode")
-                                          
+                Text{
+                    id : textFirstLine
+                    text : ""
+                     Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
+                }
+                 Text{
+                    id : textSecondLine
+                    text : ""
+                     Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
+                }
+             TextField {
+                placeholderText: qsTr("File path")
+                   Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
+                onAccepted:{
+                    if(text.length< 1){
+                        textFirstLine.text = "You didn't enter in a file, please try again."
+                    }
+                    else{
+                    filewindow.fileName = text
+                  textFirstLine.text = "You selected " + text + "."
+                  textSecondLine.text= "Is that correct?"
+                  }
+                }
+                }
+              Button {
+                    id: buttonYes
+                    text: ("Yes")
+                    visible: { 
+                        if(filewindow.fileName.length!= 0){
+                            true
+                        }
+                        else{
+                            false
+                        }
+                    }                                      
                     Layout.bottomMargin: 16
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                     contentItem: Text {
-                        text: button1.text
-                        color: filewindow.light
-                        font: button1.font
+                        text: buttonYes.text
+                        color:  filewindow.light
+                        font: buttonYes.font
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
@@ -79,8 +111,51 @@ ApplicationWindow {
                         color:  filewindow.dark 
                     }
 
-                   
+                      onClicked: {
+               
+                      }
+                    
+                    
                 }
+                 Button {
+                    id: buttonNo
+                    text: ("No")
+                  
+                    visible: { 
+                        if(filewindow.fileName.length!= 0){
+                            true
+                        }
+                        else{
+                            false
+                        }
+
+                    }                                      
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+
+                    contentItem: Text {
+                        text: buttonNo.text
+                        color:  filewindow.light
+                        font: buttonNo.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color:  filewindow.dark 
+                    }
+
+                      onClicked: {
+                        filewindow.fileName = ""
+               
+                      }
+                    
+                    
+                }
+               
             }
         }
     }

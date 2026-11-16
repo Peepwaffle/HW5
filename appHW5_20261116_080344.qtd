@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trace version="1.02" traceStart="300298917" traceEnd="5942555333">
+  <eventData totalTime="5642256416">
+    <event index="0">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>0</memoryEventType>
+    </event>
+    <event index="1">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>2</memoryEventType>
+    </event>
+    <event index="2">
+      <displayname>&lt;bytecode&gt;</displayname>
+      <type>MemoryAllocation</type>
+      <memoryEventType>1</memoryEventType>
+    </event>
+    <event index="3">
+      <displayname>SceneGraph3</displayname>
+      <type>SceneGraphFrame</type>
+      <details>3</details>
+    </event>
+    <event index="4">
+      <displayname>SceneGraph1</displayname>
+      <type>SceneGraphFrame</type>
+      <details>1</details>
+    </event>
+    <event index="5">
+      <displayname>SceneGraph0</displayname>
+      <type>SceneGraphFrame</type>
+      <details>0</details>
+    </event>
+    <event index="6">
+      <displayname>SceneGraph6</displayname>
+      <type>SceneGraphFrame</type>
+      <details>6</details>
+    </event>
+    <event index="7">
+      <displayname>Label.qml:13</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/Label.qml</filename>
+      <line>13</line>
+      <column>5</column>
+      <details>expression for linkColor</details>
+    </event>
+    <event index="8">
+      <displayname>Label.qml:13</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/Label.qml</filename>
+      <line>13</line>
+      <column>5</column>
+    </event>
+    <event index="9">
+      <displayname>File.qml:0</displayname>
+      <type>Compiling</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>0</line>
+      <column>0</column>
+      <details>qrc:/qt/qml/HW5/File.qml</details>
+    </event>
+    <event index="10">
+      <displayname>ApplicationWindow.qml:9</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/ApplicationWindow.qml</filename>
+      <line>9</line>
+      <column>1</column>
+      <details>QtQuick.Templates/ApplicationWindow</details>
+    </event>
+    <event index="11">
+      <displayname>Label.qml:9</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/Label.qml</filename>
+      <line>9</line>
+      <column>1</column>
+      <details>QtQuick.Templates/Label</details>
+    </event>
+    <event index="12">
+      <displayname>File.qml:42</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>42</line>
+      <column>21</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="13">
+      <displayname>File.qml:36</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>36</line>
+      <column>17</column>
+      <details>Label</details>
+    </event>
+    <event index="14">
+      <displayname>File.qml:34</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>34</line>
+      <column>17</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="15">
+      <displayname>File.qml:32</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>32</line>
+      <column>13</column>
+      <details>QtQuick.Layouts/ColumnLayout</details>
+    </event>
+    <event index="16">
+      <displayname>File.qml:29</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>29</line>
+      <column>13</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="17">
+      <displayname>File.qml:26</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>26</line>
+      <column>9</column>
+      <details>QtQuick/Rectangle</details>
+    </event>
+    <event index="18">
+      <displayname>File.qml:62</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>62</line>
+      <column>21</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="19">
+      <displayname>File.qml:60</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>60</line>
+      <column>17</column>
+      <details>QtQuick/Text</details>
+    </event>
+    <event index="20">
+      <displayname>File.qml:64</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>64</line>
+      <column>15</column>
+      <details>QtQuick/TextInput</details>
+    </event>
+    <event index="21">
+      <displayname>File.qml:59</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>59</line>
+      <column>17</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="22">
+      <displayname>File.qml:57</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>57</line>
+      <column>13</column>
+      <details>QtQuick.Layouts/ColumnLayout</details>
+    </event>
+    <event index="23">
+      <displayname>File.qml:54</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>54</line>
+      <column>13</column>
+      <details>QtQuick.Layouts/Layout</details>
+    </event>
+    <event index="24">
+      <displayname>File.qml:51</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>51</line>
+      <column>9</column>
+      <details>QtQuick/Rectangle</details>
+    </event>
+    <event index="25">
+      <displayname>File.qml:19</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>19</line>
+      <column>5</column>
+      <details>QtQuick.Layouts/GridLayout</details>
+    </event>
+    <event index="26">
+      <displayname>File.qml:5</displayname>
+      <type>Creating</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>5</line>
+      <column>1</column>
+      <details>ApplicationWindow</details>
+    </event>
+    <event index="27">
+      <displayname>File.qml:24</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>24</line>
+      <column>9</column>
+      <details>expression for fill</details>
+    </event>
+    <event index="28">
+      <displayname>File.qml:24</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>24</line>
+      <column>9</column>
+    </event>
+    <event index="29">
+      <displayname>File.qml:58</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>58</line>
+      <column>17</column>
+      <details>expression for fill</details>
+    </event>
+    <event index="30">
+      <displayname>File.qml:58</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>58</line>
+      <column>17</column>
+    </event>
+    <event index="31">
+      <displayname>File.qml:59</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>59</line>
+      <column>17</column>
+      <details>expression for alignment</details>
+    </event>
+    <event index="32">
+      <displayname>File.qml:59</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>59</line>
+      <column>17</column>
+    </event>
+    <event index="33">
+      <displayname>File.qml:62</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>62</line>
+      <column>21</column>
+      <details>expression for alignment</details>
+    </event>
+    <event index="34">
+      <displayname>File.qml:62</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>62</line>
+      <column>21</column>
+    </event>
+    <event index="35">
+      <displayname>File.qml:53</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>53</line>
+      <column>13</column>
+      <details>expression for color</details>
+    </event>
+    <event index="36">
+      <displayname>File.qml:53</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>53</line>
+      <column>13</column>
+    </event>
+    <event index="37">
+      <displayname>File.qml:33</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>33</line>
+      <column>17</column>
+      <details>expression for fill</details>
+    </event>
+    <event index="38">
+      <displayname>File.qml:33</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>33</line>
+      <column>17</column>
+    </event>
+    <event index="39">
+      <displayname>File.qml:34</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>34</line>
+      <column>17</column>
+      <details>expression for alignment</details>
+    </event>
+    <event index="40">
+      <displayname>File.qml:34</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>34</line>
+      <column>17</column>
+    </event>
+    <event index="41">
+      <displayname>File.qml:38</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>38</line>
+      <column>21</column>
+      <details>expression for color</details>
+    </event>
+    <event index="42">
+      <displayname>File.qml:38</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>38</line>
+      <column>21</column>
+    </event>
+    <event index="43">
+      <displayname>File.qml:40</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>40</line>
+      <column>21</column>
+      <details>expression for fontSizeMode</details>
+    </event>
+    <event index="44">
+      <displayname>File.qml:40</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>40</line>
+      <column>21</column>
+    </event>
+    <event index="45">
+      <displayname>:0</displayname>
+      <type>Binding</type>
+    </event>
+    <event index="46">
+      <displayname>File.qml:45</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>45</line>
+      <column>21</column>
+      <details>expression for horizontalAlignment</details>
+    </event>
+    <event index="47">
+      <displayname>File.qml:45</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>45</line>
+      <column>21</column>
+    </event>
+    <event index="48">
+      <displayname>File.qml:46</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>46</line>
+      <column>21</column>
+      <details>expression for verticalAlignment</details>
+    </event>
+    <event index="49">
+      <displayname>File.qml:46</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>46</line>
+      <column>21</column>
+    </event>
+    <event index="50">
+      <displayname>Javascript:0</displayname>
+      <type>Javascript</type>
+    </event>
+    <event index="51">
+      <displayname>File.qml:28</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>28</line>
+      <column>13</column>
+      <details>expression for color</details>
+    </event>
+    <event index="52">
+      <displayname>File.qml:28</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>28</line>
+      <column>13</column>
+    </event>
+    <event index="53">
+      <displayname>File.qml:21</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>21</line>
+      <column>9</column>
+      <details>expression for columns</details>
+    </event>
+    <event index="54">
+      <displayname>File.qml:21</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>21</line>
+      <column>9</column>
+    </event>
+    <event index="55">
+      <displayname>File.qml:13</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>13</line>
+      <column>5</column>
+      <details>expression for lightMode</details>
+    </event>
+    <event index="56">
+      <displayname>File.qml:13</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt/qml/HW5/File.qml</filename>
+      <line>13</line>
+      <column>5</column>
+    </event>
+    <event index="57">
+      <displayname>ApplicationWindow.qml:12</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/ApplicationWindow.qml</filename>
+      <line>12</line>
+      <column>5</column>
+      <details>expression for color</details>
+    </event>
+    <event index="58">
+      <displayname>ApplicationWindow.qml:12</displayname>
+      <type>Binding</type>
+      <filename>qrc:/qt-project.org/imports/QtQuick/Controls/Basic/ApplicationWindow.qml</filename>
+      <line>12</line>
+      <column>5</column>
+    </event>
+    <event index="59">
+      <displayname>Creating:0</displayname>
+      <type>Creating</type>
+    </event>
+    <event index="60">
+      <displayname>Main.qml:84</displayname>
+      <type>Javascript</type>
+      <filename>qrc:/qt/qml/HW5/Main.qml</filename>
+      <line>84</line>
+      <column>23</column>
+      <details>expression for onClicked</details>
+    </event>
+    <event index="61">
+      <displayname>Main.qml:84</displayname>
+      <type>HandlingSignal</type>
+      <filename>qrc:/qt/qml/HW5/Main.qml</filename>
+      <line>84</line>
+      <column>23</column>
+    </event>
+  </eventData>
+  <profilerDataModel>
+    <range startTime="451865333" eventIndex="0" amount="647680"/>
+    <range startTime="451865333" eventIndex="1" amount="605632"/>
+    <range startTime="451865333" eventIndex="2" amount="0"/>
+    <range startTime="486067417" duration="1167" eventIndex="3"/>
+    <range startTime="498484042" duration="22" eventIndex="4"/>
+    <range startTime="503001250" duration="447666" eventIndex="5"/>
+    <range startTime="503033625" duration="11937834" eventIndex="3"/>
+    <range startTime="503040167" duration="5335125" eventIndex="6"/>
+    <range startTime="516273917" duration="4791" eventIndex="7"/>
+    <range startTime="516269500" duration="11583" eventIndex="8"/>
+    <range startTime="535267917" duration="1542" eventIndex="5"/>
+    <range startTime="535283250" duration="14708" eventIndex="3"/>
+    <range startTime="535288375" duration="1042" eventIndex="6"/>
+    <range startTime="2374021417" eventIndex="1" amount="64"/>
+    <range startTime="2374066875" eventIndex="1" amount="64"/>
+    <range startTime="2376027250" eventIndex="1" amount="64"/>
+    <range startTime="2376030792" eventIndex="1" amount="64"/>
+    <range startTime="2376034583" eventIndex="1" amount="64"/>
+    <range startTime="2376043458" eventIndex="1" amount="128"/>
+    <range startTime="2376046167" eventIndex="1" amount="64"/>
+    <range startTime="2376048292" eventIndex="1" amount="64"/>
+    <range startTime="2376049833" eventIndex="1" amount="128"/>
+    <range startTime="2376054708" eventIndex="1" amount="128"/>
+    <range startTime="2376064250" eventIndex="1" amount="128"/>
+    <range startTime="2376064917" eventIndex="1" amount="128"/>
+    <range startTime="2376065083" eventIndex="1" amount="128"/>
+    <range startTime="2376065458" eventIndex="1" amount="96"/>
+    <range startTime="2376112167" eventIndex="1" amount="128"/>
+    <range startTime="2376112917" eventIndex="1" amount="96"/>
+    <range startTime="2376867500" duration="1751833" eventIndex="9"/>
+    <range startTime="2378696750" eventIndex="1" amount="64"/>
+    <range startTime="2378712833" eventIndex="1" amount="96"/>
+    <range startTime="2378728833" eventIndex="1" amount="64"/>
+    <range startTime="2378729208" eventIndex="1" amount="64"/>
+    <range startTime="2378729250" eventIndex="1" amount="64"/>
+    <range startTime="2378729500" eventIndex="1" amount="64"/>
+    <range startTime="2378729583" eventIndex="1" amount="64"/>
+    <range startTime="2378729625" eventIndex="1" amount="64"/>
+    <range startTime="2378729708" eventIndex="1" amount="64"/>
+    <range startTime="2378729792" eventIndex="1" amount="64"/>
+    <range startTime="2378729875" eventIndex="1" amount="64"/>
+    <range startTime="2378729917" eventIndex="1" amount="64"/>
+    <range startTime="2378730000" eventIndex="1" amount="64"/>
+    <range startTime="2378730042" eventIndex="1" amount="64"/>
+    <range startTime="2378730125" eventIndex="1" amount="64"/>
+    <range startTime="2378730167" eventIndex="1" amount="64"/>
+    <range startTime="2378730208" eventIndex="1" amount="64"/>
+    <range startTime="2378730292" eventIndex="1" amount="64"/>
+    <range startTime="2378730333" eventIndex="1" amount="64"/>
+    <range startTime="2378730417" eventIndex="1" amount="64"/>
+    <range startTime="2378730458" eventIndex="1" amount="64"/>
+    <range startTime="2378730542" eventIndex="1" amount="64"/>
+    <range startTime="2378730583" eventIndex="1" amount="64"/>
+    <range startTime="2378730667" eventIndex="1" amount="64"/>
+    <range startTime="2378731042" eventIndex="1" amount="64"/>
+    <range startTime="2378731083" eventIndex="1" amount="64"/>
+    <range startTime="2378731167" eventIndex="1" amount="64"/>
+    <range startTime="2378731208" eventIndex="1" amount="64"/>
+    <range startTime="2378731292" eventIndex="1" amount="64"/>
+    <range startTime="2378731333" eventIndex="1" amount="64"/>
+    <range startTime="2378731417" eventIndex="1" amount="64"/>
+    <range startTime="2378731458" eventIndex="1" amount="64"/>
+    <range startTime="2378731500" eventIndex="1" amount="64"/>
+    <range startTime="2378731583" eventIndex="1" amount="64"/>
+    <range startTime="2378731625" eventIndex="1" amount="64"/>
+    <range startTime="2378731708" eventIndex="1" amount="64"/>
+    <range startTime="2378731750" eventIndex="1" amount="64"/>
+    <range startTime="2378731833" eventIndex="1" amount="64"/>
+    <range startTime="2378731875" eventIndex="1" amount="64"/>
+    <range startTime="2378731958" eventIndex="1" amount="64"/>
+    <range startTime="2378732000" eventIndex="1" amount="64"/>
+    <range startTime="2378732083" eventIndex="1" amount="64"/>
+    <range startTime="2378732125" eventIndex="1" amount="64"/>
+    <range startTime="2378732167" eventIndex="1" amount="64"/>
+    <range startTime="2378732250" eventIndex="1" amount="64"/>
+    <range startTime="2378732292" eventIndex="1" amount="64"/>
+    <range startTime="2378732375" eventIndex="1" amount="64"/>
+    <range startTime="2378732417" eventIndex="1" amount="64"/>
+    <range startTime="2378732500" eventIndex="1" amount="64"/>
+    <range startTime="2378732542" eventIndex="1" amount="64"/>
+    <range startTime="2378732625" eventIndex="1" amount="64"/>
+    <range startTime="2378732667" eventIndex="1" amount="64"/>
+    <range startTime="2378732750" eventIndex="1" amount="64"/>
+    <range startTime="2378732792" eventIndex="1" amount="64"/>
+    <range startTime="2378732875" eventIndex="1" amount="64"/>
+    <range startTime="2378732917" eventIndex="1" amount="64"/>
+    <range startTime="2378732958" eventIndex="1" amount="64"/>
+    <range startTime="2378733042" eventIndex="1" amount="64"/>
+    <range startTime="2378733083" eventIndex="1" amount="64"/>
+    <range startTime="2378733167" eventIndex="1" amount="64"/>
+    <range startTime="2378733208" eventIndex="1" amount="64"/>
+    <range startTime="2378733292" eventIndex="1" amount="64"/>
+    <range startTime="2378733333" eventIndex="1" amount="64"/>
+    <range startTime="2378733417" eventIndex="1" amount="64"/>
+    <range startTime="2378733458" eventIndex="1" amount="64"/>
+    <range startTime="2378733500" eventIndex="1" amount="64"/>
+    <range startTime="2378734500" eventIndex="1" amount="64"/>
+    <range startTime="2378734583" eventIndex="1" amount="64"/>
+    <range startTime="2378734625" eventIndex="1" amount="64"/>
+    <range startTime="2378734667" eventIndex="1" amount="64"/>
+    <range startTime="2378734750" eventIndex="1" amount="64"/>
+    <range startTime="2378849708" eventIndex="1" amount="64"/>
+    <range startTime="2378947500" eventIndex="1" amount="64"/>
+    <range startTime="2378957000" eventIndex="1" amount="96"/>
+    <range startTime="2378957292" eventIndex="1" amount="32"/>
+    <range startTime="2378767792" duration="191875" eventIndex="10"/>
+    <range startTime="2378962667" eventIndex="1" amount="64"/>
+    <range startTime="2378972000" eventIndex="1" amount="64"/>
+    <range startTime="2378973375" eventIndex="1" amount="64"/>
+    <range startTime="2378973750" eventIndex="1" amount="64"/>
+    <range startTime="2378974208" eventIndex="1" amount="96"/>
+    <range startTime="2378974292" eventIndex="1" amount="32"/>
+    <range startTime="2379031000" eventIndex="1" amount="64"/>
+    <range startTime="2379036958" eventIndex="1" amount="96"/>
+    <range startTime="2379037208" eventIndex="1" amount="32"/>
+    <range startTime="2379044625" eventIndex="1" amount="64"/>
+    <range startTime="2379045875" eventIndex="1" amount="96"/>
+    <range startTime="2379045917" eventIndex="1" amount="32"/>
+    <range startTime="2379050542" eventIndex="1" amount="64"/>
+    <range startTime="2379080292" eventIndex="1" amount="64"/>
+    <range startTime="2379085875" eventIndex="1" amount="96"/>
+    <range startTime="2379085958" eventIndex="1" amount="32"/>
+    <range startTime="2379056292" duration="31416" eventIndex="11"/>
+    <range startTime="2379089250" eventIndex="1" amount="96"/>
+    <range startTime="2379089333" eventIndex="1" amount="32"/>
+    <range startTime="2379093250" duration="7375" eventIndex="12"/>
+    <range startTime="2379054042" duration="62541" eventIndex="13"/>
+    <range startTime="2379128458" eventIndex="1" amount="96"/>
+    <range startTime="2379128583" eventIndex="1" amount="32"/>
+    <range startTime="2379126000" duration="3583" eventIndex="14"/>
+    <range startTime="2379047417" duration="85250" eventIndex="15"/>
+    <range startTime="2379134458" duration="2000" eventIndex="16"/>
+    <range startTime="2379041125" duration="95417" eventIndex="17"/>
+    <range startTime="2379140875" eventIndex="1" amount="64"/>
+    <range startTime="2379141750" eventIndex="1" amount="96"/>
+    <range startTime="2379141833" eventIndex="1" amount="32"/>
+    <range startTime="2379144333" eventIndex="1" amount="64"/>
+    <range startTime="2379148792" eventIndex="1" amount="64"/>
+    <range startTime="2379156208" eventIndex="1" amount="96"/>
+    <range startTime="2379156500" eventIndex="1" amount="32"/>
+    <range startTime="2379153750" duration="3292" eventIndex="18"/>
+    <range startTime="2379145500" duration="11625" eventIndex="19"/>
+    <range startTime="2379217250" eventIndex="1" amount="64"/>
+    <range startTime="2379158958" duration="62709" eventIndex="20"/>
+    <range startTime="2379226542" eventIndex="1" amount="96"/>
+    <range startTime="2379226875" eventIndex="1" amount="32"/>
+    <range startTime="2379223667" duration="4416" eventIndex="21"/>
+    <range startTime="2379142500" duration="87792" eventIndex="22"/>
+    <range startTime="2379231625" duration="2667" eventIndex="23"/>
+    <range startTime="2379139000" duration="95375" eventIndex="24"/>
+    <range startTime="2379024083" duration="212500" eventIndex="25"/>
+    <range startTime="2378763583" duration="482542" eventIndex="26"/>
+    <range startTime="2379253292" duration="13375" eventIndex="27"/>
+    <range startTime="2379250292" duration="20875" eventIndex="28"/>
+    <range startTime="2379272042" duration="1458" eventIndex="29"/>
+    <range startTime="2379271542" duration="2916" eventIndex="30"/>
+    <range startTime="2379275792" duration="7791" eventIndex="31"/>
+    <range startTime="2379274542" duration="10291" eventIndex="32"/>
+    <range startTime="2379286542" duration="2666" eventIndex="33"/>
+    <range startTime="2379286125" duration="4625" eventIndex="34"/>
+    <range startTime="2379291833" duration="24542" eventIndex="35"/>
+    <range startTime="2379291167" duration="27041" eventIndex="36"/>
+    <range startTime="2379318875" duration="1750" eventIndex="37"/>
+    <range startTime="2379318500" duration="2458" eventIndex="38"/>
+    <range startTime="2379321333" duration="2667" eventIndex="39"/>
+    <range startTime="2379321125" duration="3083" eventIndex="40"/>
+    <range startTime="2379324917" duration="3666" eventIndex="41"/>
+    <range startTime="2379324500" duration="5417" eventIndex="42"/>
+    <range startTime="2379330750" duration="3958" eventIndex="43"/>
+    <range startTime="2379330042" duration="5750" eventIndex="44"/>
+    <range startTime="2379336167" duration="53458" eventIndex="45"/>
+    <range startTime="2379390458" duration="2417" eventIndex="46"/>
+    <range startTime="2379390042" duration="4416" eventIndex="47"/>
+    <range startTime="2379395250" duration="1625" eventIndex="48"/>
+    <range startTime="2379394833" duration="2667" eventIndex="49"/>
+    <range startTime="2379398542" duration="30541" eventIndex="50"/>
+    <range startTime="2379398083" duration="31625" eventIndex="45"/>
+    <range startTime="2379430458" duration="3542" eventIndex="51"/>
+    <range startTime="2379429917" duration="4416" eventIndex="52"/>
+    <range startTime="2379435167" duration="10791" eventIndex="53"/>
+    <range startTime="2379434750" duration="12292" eventIndex="54"/>
+    <range startTime="2379447417" duration="2541" eventIndex="45"/>
+    <range startTime="2379523375" eventIndex="1" amount="64"/>
+    <range startTime="2379527542" eventIndex="1" amount="96"/>
+    <range startTime="2379450667" duration="117125" eventIndex="55"/>
+    <range startTime="2379450250" duration="119917" eventIndex="56"/>
+    <range startTime="2379571333" duration="10292" eventIndex="57"/>
+    <range startTime="2379570417" duration="12541" eventIndex="58"/>
+    <range startTime="2379583708" duration="40459" eventIndex="59"/>
+    <range startTime="2379624250" duration="244542" eventIndex="59"/>
+    <range startTime="2379868958" duration="141584" eventIndex="59"/>
+    <range startTime="2380010667" duration="541" eventIndex="59"/>
+    <range startTime="2380011250" duration="211375" eventIndex="59"/>
+    <range startTime="2380222750" duration="2102667" eventIndex="59"/>
+    <range startTime="2382327167" duration="1250" eventIndex="59"/>
+    <range startTime="2382328458" duration="41959" eventIndex="59"/>
+    <range startTime="2382390417" duration="2583" eventIndex="50"/>
+    <range startTime="2382389167" duration="5583" eventIndex="45"/>
+    <range startTime="2409394208" duration="14667" eventIndex="50"/>
+    <range startTime="2409389750" duration="23833" eventIndex="45"/>
+    <range startTime="2409423625" duration="458" eventIndex="50"/>
+    <range startTime="2409423333" duration="959" eventIndex="45"/>
+    <range startTime="2382370458" duration="27899417" eventIndex="59"/>
+    <range startTime="2410284958" eventIndex="1" amount="96"/>
+    <range startTime="2410337792" eventIndex="1" amount="96"/>
+    <range startTime="2373984708" duration="63701667" eventIndex="60"/>
+    <range startTime="2373953625" duration="63736042" eventIndex="61"/>
+    <range startTime="2442733792" duration="250" eventIndex="3"/>
+    <range startTime="2456362667" duration="18" eventIndex="4"/>
+    <range startTime="2457166000" duration="357417" eventIndex="5"/>
+    <range startTime="2457200875" duration="9263250" eventIndex="3"/>
+    <range startTime="2457205250" duration="4228875" eventIndex="6"/>
+    <range startTime="2490721750" duration="1625" eventIndex="5"/>
+    <range startTime="2490745375" duration="12792" eventIndex="3"/>
+    <range startTime="2490751042" duration="2500" eventIndex="6"/>
+    <range startTime="2949418875" duration="11625" eventIndex="6"/>
+    <range startTime="2949824042" duration="4542" eventIndex="5"/>
+    <range startTime="2949893625" duration="186042" eventIndex="3"/>
+    <range startTime="2974229458" duration="4584" eventIndex="5"/>
+    <range startTime="2974296000" duration="47958" eventIndex="3"/>
+    <range startTime="2974316792" duration="6833" eventIndex="6"/>
+    <range startTime="3465920375" duration="10834" eventIndex="6"/>
+    <range startTime="3466415125" duration="4708" eventIndex="5"/>
+    <range startTime="3466490542" duration="102417" eventIndex="3"/>
+    <range startTime="3999372167" duration="10667" eventIndex="6"/>
+    <range startTime="3999808083" duration="4791" eventIndex="5"/>
+    <range startTime="3999882875" duration="178834" eventIndex="3"/>
+    <range startTime="4515847042" duration="10708" eventIndex="6"/>
+    <range startTime="4516284417" duration="4792" eventIndex="5"/>
+    <range startTime="4516336625" duration="98125" eventIndex="3"/>
+    <range startTime="5049260458" duration="11000" eventIndex="6"/>
+    <range startTime="5049760417" duration="5250" eventIndex="5"/>
+    <range startTime="5049888167" duration="86958" eventIndex="3"/>
+    <range startTime="5565884958" duration="10708" eventIndex="6"/>
+    <range startTime="5566373542" duration="4125" eventIndex="5"/>
+    <range startTime="5566435500" duration="93084" eventIndex="3"/>
+    <range startTime="5897247417" duration="12250" eventIndex="50"/>
+    <range startTime="5897241458" duration="24125" eventIndex="45"/>
+  </profilerDataModel>
+</trace>
