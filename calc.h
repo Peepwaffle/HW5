@@ -14,7 +14,7 @@ class calc: public QObject{
       Q_OBJECT
   QML_ELEMENT
 public:
-void Reset();
+ Q_INVOKABLE void Reset();
     Q_INVOKABLE int FirstCheckInt(QString firstNumber);
     Q_INVOKABLE int CheckValidOp(QString Checking);
     Q_INVOKABLE int FirstCheckDouble(QString firstNumber);

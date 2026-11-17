@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<trace version="1.02" traceStart="279941333" traceEnd="1784281375">
-  <eventData totalTime="1504340042">
+<trace version="1.02" traceStart="295322708" traceEnd="1455518166">
+  <eventData totalTime="1160195458">
     <event index="0">
       <displayname>&lt;bytecode&gt;</displayname>
       <type>MemoryAllocation</type>
@@ -61,20 +61,20 @@
     </event>
   </eventData>
   <profilerDataModel>
-    <range startTime="415771416" eventIndex="0" amount="647680"/>
-    <range startTime="415771416" eventIndex="1" amount="605632"/>
-    <range startTime="415771416" eventIndex="2" amount="0"/>
-    <range startTime="437327708" duration="1417" eventIndex="3"/>
-    <range startTime="451076083" duration="22" eventIndex="4"/>
-    <range startTime="455464416" duration="466209" eventIndex="5"/>
-    <range startTime="455507000" duration="9633292" eventIndex="3"/>
-    <range startTime="455515041" duration="5524709" eventIndex="6"/>
-    <range startTime="468654458" duration="9792" eventIndex="7"/>
-    <range startTime="468649375" duration="17625" eventIndex="8"/>
-    <range startTime="488972875" duration="1708" eventIndex="5"/>
-    <range startTime="488987625" duration="17167" eventIndex="3"/>
-    <range startTime="488992250" duration="1667" eventIndex="6"/>
-    <range startTime="1736935958" duration="13375" eventIndex="9"/>
-    <range startTime="1736928791" duration="26000" eventIndex="10"/>
+    <range startTime="443463958" eventIndex="0" amount="647680"/>
+    <range startTime="443463958" eventIndex="1" amount="605824"/>
+    <range startTime="443463958" eventIndex="2" amount="0"/>
+    <range startTime="462613708" duration="542" eventIndex="3"/>
+    <range startTime="475407083" duration="22" eventIndex="4"/>
+    <range startTime="481359541" duration="491750" eventIndex="5"/>
+    <range startTime="481434333" duration="10824041" eventIndex="3"/>
+    <range startTime="481439375" duration="5273375" eventIndex="6"/>
+    <range startTime="496317000" duration="5458" eventIndex="7"/>
+    <range startTime="496312208" duration="13042" eventIndex="8"/>
+    <range startTime="513084875" duration="1333" eventIndex="5"/>
+    <range startTime="513099208" duration="15083" eventIndex="3"/>
+    <range startTime="513101625" duration="1334" eventIndex="6"/>
+    <range startTime="1414614291" duration="17500" eventIndex="9"/>
+    <range startTime="1414600000" duration="38416" eventIndex="10"/>
   </profilerDataModel>
 </trace>

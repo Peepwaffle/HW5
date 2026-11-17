@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "calc.h"
+#include "element.h"
 #include <QtQml>
 #include <QQmlContext>
 
@@ -10,6 +11,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
    calc Calculator;
     QQmlApplicationEngine engine;
+    Element TestElement;
 
  QObject::connect(
         &engine,
@@ -19,6 +21,7 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
 
 engine.rootContext()->setContextProperty("Calculator", &Calculator);
+engine.rootContext()->setContextProperty("TElement", &TestElement);
 
 
     engine.loadFromModule("HW5", "Main");

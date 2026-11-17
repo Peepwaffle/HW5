@@ -131,15 +131,10 @@ ApplicationWindow {
                         textEmpty.visible = true
                     }
                     else{
-                     
-    
-     
                     var component = Qt.createComponent("OperationsResults.qml")
                   var windowResult = component.createObject()
-                  windowResult.input= operationwindow.input;
-                
-         
-                     windowResult.show()   ;
+                  windowResult.input= operationwindow.input;        
+                     windowResult.show();
                 operationwindow.hide() 
             
 
