@@ -30,7 +30,7 @@ qt_add_qml_module(appHW5
      VERSION 1.0
 
     SOURCES
- calc.cpp calc.h element.cpp element.h
+ calc.cpp calc.h element.cpp element.h operation.h operation.cpp
     QML_FILES
         Main.qml
         File.qml

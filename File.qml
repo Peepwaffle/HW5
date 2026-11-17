@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
 import QML
+import HW5
 ApplicationWindow {
     id: filewindow
     width: 640
@@ -112,11 +113,17 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-                           var component = Qt.createComponent("FileResults.qml")
+                        
+                        
+                    
+                        const component = Qt.createComponent("FileResults.qml");
                   var windowResult = component.createObject()
                   windowResult.fileName= filewindow.fileName;
                      windowResult.show()   
                 filewindow.hide()
+                       
+                    
+                        
                       }
                     
                     

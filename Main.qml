@@ -91,8 +91,8 @@ ApplicationWindow {
 
                       onClicked: {
              
-                      var component = Qt.createComponent("File.qml")
-                var window2    = component.createObject()
+                      const component = Qt.createComponent("File.qml")
+                const window2    = component.createObject()
                 window2.show()
               
                 windowMain.hide()
@@ -123,8 +123,8 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-                      var component = Qt.createComponent("Terminal.qml")
-                var window2    = component.createObject()
+                      const component = Qt.createComponent("Terminal.qml")
+                const window2    = component.createObject()
                 window2.show()
             
                

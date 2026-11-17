@@ -17,6 +17,7 @@ ApplicationWindow {
     
    property bool isEnabled: false
    property string input : ""
+   
 
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -129,10 +130,12 @@ ApplicationWindow {
                     textEmpty.visible = true
                 }
                 else{
-               
-                  var component = Qt.createComponent("TerminalResults.qml")
-                  var windowResult = component.createObject()
+          
+        
+                  const component = Qt.createComponent("TerminalResults.qml")
+                  const windowResult = component.createObject()
                   windowResult.input= terminalwindow.input;
+                 
                      windowResult.show()
                   
                      
@@ -332,7 +335,9 @@ ApplicationWindow {
                     }
                     onClicked: 
                      if(terminalwindow.isEnabled== true){
-                        terminalwindow.input+=(" % ")}
+                        terminalwindow.input+=(" % ")
+                      
+                        }
                         else{
                             terminalwindow.input+=("5")
                         }
@@ -363,7 +368,8 @@ ApplicationWindow {
                     }
                     onClicked: 
                      if(terminalwindow.isEnabled== true){
-                        terminalwindow.input+=("0")}
+                        terminalwindow.input+=("0")
+                        }
                         else{
                             terminalwindow.input+=("6")
                         }

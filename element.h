@@ -5,13 +5,11 @@
 #include <QObject>
 #include <QtQmlIntegration/qqmlintegration.h>
 using namespace std;
-class Element: public QObject{
-    Q_OBJECT
-  QML_ELEMENT
+class Element: public QObject {
     public:
-   Q_INVOKABLE  virtual ~Element();
-      Q_INVOKABLE Element();
-    Q_INVOKABLE   Element(const Element& previousElement);
+Q_INVOKABLE virtual ~Element();
+   Q_INVOKABLE   Element();
+ Q_INVOKABLE   Element(const Element& previousElement);
     Q_INVOKABLE Element(int newInt);
     Q_INVOKABLE Element(double newDouble);
    Q_INVOKABLE  Element(const string& newVal);
