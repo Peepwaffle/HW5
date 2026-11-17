@@ -1,9 +1,15 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
+  
 
+import HW5
+
+
+ 
 
 ApplicationWindow {
+   
     id: windowMain
     width: 640
     height: 480
@@ -12,10 +18,12 @@ ApplicationWindow {
     visible: true
     title: qsTr("MainMenu")
     
-   
+
+
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
+
 
     GridLayout {
         id: grid
@@ -82,6 +90,7 @@ ApplicationWindow {
                     }
 
                       onClicked: {
+             
                       var component = Qt.createComponent("File.qml")
                 var window2    = component.createObject()
                 window2.show()
@@ -117,9 +126,11 @@ ApplicationWindow {
                       var component = Qt.createComponent("Terminal.qml")
                 var window2    = component.createObject()
                 window2.show()
+            
+               
                 windowMain.hide()
                       }
-                    
+                
                 }
                 Button {
                     id: buttonTerminal
@@ -144,6 +155,7 @@ ApplicationWindow {
                     }
 
                       onClicked: {
+                        
                       var component = Qt.createComponent("Operations.qml")
                       var window2 = component.createObject()
                 window2.show()
@@ -157,3 +169,4 @@ ApplicationWindow {
     }
 
 }
+

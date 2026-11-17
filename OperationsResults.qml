@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls.Basic
 
 
+
 ApplicationWindow {
     id: operationResultwindow
     width: 640

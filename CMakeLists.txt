@@ -27,9 +27,10 @@ WIN32 MACOSX_BUNDLE
 
 qt_add_qml_module(appHW5
     URI HW5
-    VERSION 1.0
+     VERSION 1.0
+
     SOURCES
-     calc.cpp calc.h
+ calc.cpp calc.h
     QML_FILES
         Main.qml
         File.qml
@@ -39,6 +40,7 @@ qt_add_qml_module(appHW5
         FileResults.qml
         OperationsResults.qml
 )
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

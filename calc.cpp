@@ -4,7 +4,7 @@
 #include <fstream>
 #include <QtQmlIntegration/qqmlintegration.h>
 #include "calc.h"
-#include "calc.moc"
+
 
 using namespace std;
 
@@ -44,9 +44,9 @@ void calc::SetSecondNum(double SecondVal){
 }
 
 
-int calc::FirstCheckInt(string firstNumber){
+int calc::FirstCheckInt(QString firstNumber){
   try{
-firstNumAsInt = stoi(firstNumber);
+firstNumAsInt = firstNumber.toInt();
 firstIsInt = true;
 return 0;
   }
@@ -54,27 +54,27 @@ return 0;
     return 1;
   }
 }
-int calc::CheckValidOp(string Checking){  
-  if(Checking.find("+") != string::npos){
+int calc::CheckValidOp(QString Checking){  
+  if(Checking.contains("+")){
     return 0;
   }
-  if(Checking.find("-") != string::npos){
+  if(Checking.contains("-")){
     return 0;
   }
-  if(Checking.find("*") != string::npos){
+  if(Checking.contains("*") ){
     return 0;
   }
-  if(Checking.find("/") != string::npos){
+  if(Checking.contains("/")){
     return 0;
   }
-  if(Checking.find("%") != string::npos){
+  if(Checking.contains("%") ){
     return 0;
   }
   return 4;
 }
-int calc::FirstCheckDouble(string firstNumber){
+int calc::FirstCheckDouble(QString firstNumber){
   try{
-firstNumAsDouble = stod(firstNumber);
+firstNumAsDouble = firstNumber.toDouble();
 firstIsDouble = true;
 return 0;
   }
@@ -82,9 +82,9 @@ return 0;
     return 1;
   }
 }
-int calc::ThirdCheckInt(string thirdvalue){
+int calc::ThirdCheckInt(QString thirdvalue){
   try{
-    secondNumAsInt = stoi(thirdvalue);
+    secondNumAsInt = thirdvalue.toInt();
     secondIsInt = true;
     return 0;
   }
@@ -92,9 +92,9 @@ int calc::ThirdCheckInt(string thirdvalue){
     return 1;
   }
 }
-int calc::ThirdCheckDouble(string thirdvalue){
+int calc::ThirdCheckDouble(QString thirdvalue){
   try{
-    secondNumAsDouble = stod(thirdvalue);
+    secondNumAsDouble = thirdvalue.toDouble();
     secondIsDouble = true;
   }
   catch(const invalid_argument&){  
@@ -103,8 +103,8 @@ int calc::ThirdCheckDouble(string thirdvalue){
   return 0;
 }
 
-int calc::LookAtFirstValue(string lengthCheck){
-    if(lengthCheck.find(".")!= string::npos ){
+int calc::LookAtFirstValue(QString lengthCheck){
+    if(lengthCheck.contains(".") ){
     if(FirstCheckDouble(lengthCheck)== 1){
       return 1;
     }
@@ -116,8 +116,8 @@ int calc::LookAtFirstValue(string lengthCheck){
     }
   return 0;
 }
-int calc::LookAtThirdValue(string thirdValue){
-  if(thirdValue.find(".")!= string::npos){
+int calc::LookAtThirdValue(QString thirdValue){
+  if(thirdValue.contains(".")){
      if(ThirdCheckDouble(thirdValue)== 1){
       return 1;
      }
@@ -129,100 +129,101 @@ int calc::LookAtThirdValue(string thirdValue){
   }
   return 0;
 }
-int calc::CalculateInts(string Op){
-     if((Op.find("/") != string::npos) && secondNumAsInt == 0){
+int calc::CalculateInts(QString Op){
+     if((Op.contains("/")) && secondNumAsInt == 0){
     throw domain_error("Error: Can't divide by 0");
   }
-   if((Op.find("%") != string::npos) && secondNumAsInt == 0){
+   if((Op.contains("%")) && secondNumAsInt == 0){
     throw domain_error("Error: Can't do modulo by 0");
   }
 
-  if(Op.find("+") != string::npos){
+  if(Op.contains("+")){
     return firstNumAsInt + secondNumAsInt;
   }
 
-   if(Op.find("-") != string::npos){
+   if(Op.contains("-")){
     return firstNumAsInt - secondNumAsInt;
 
   }
-    if(Op.find("*") != string::npos){
+    if(Op.contains("*")){
     return firstNumAsInt * secondNumAsInt;
   }
-    if(Op.find("/") != string::npos){
+    if(Op.contains("/")){
     return firstNumAsInt / secondNumAsInt;
   }
-  if(Op.find("%") != string::npos){
+  if(Op.contains("%")){
     return firstNumAsInt % secondNumAsInt;
   }  
   return 0;
 }
-double calc::CalcFirstDouble(string op){
-    if((op.find("/") != string::npos) && secondNumAsInt == 0){
+double calc::CalcFirstDouble(QString op){
+    if((op.contains("/"))&& secondNumAsInt == 0){
     throw domain_error("Error: Can't divide by 0");
   }
-   if((op.find("%") != string::npos) && secondNumAsInt == 0){
+   if((op.contains("%")) && secondNumAsInt == 0){
     throw domain_error("Error: Can't do modulo by 0");
   }
-  if(op.find("+") != string::npos){
+  if(op.contains("+") ){
     return firstNumAsDouble + secondNumAsInt;
   }
-  if(op.find("-") != string::npos){
+  if(op.contains("-")){
     return firstNumAsDouble - secondNumAsInt;
   }
-   if(op.find("*") != string::npos){
+   if(op.contains("*")){
     return firstNumAsDouble * secondNumAsInt;
   }
-   if(op.find("/") != string::npos){
+   if(op.contains("/")){
     return firstNumAsDouble / secondNumAsInt;
   }
   return 0.0;
 }
-double calc::CalcSecondDouble(string op){
-     if((op.find("/") != string::npos) && secondNumAsDouble == 0.0){
+double calc::CalcSecondDouble(QString op){
+     if((op.contains("/")) && secondNumAsDouble == 0.0){
     throw domain_error("Error: Can't divide by 0");
   }
-   if((op.find("%") != string::npos) && secondNumAsDouble == 0.0){
+   if((op.contains("%") ) && secondNumAsDouble == 0.0){
     throw domain_error("Error: Can't do modulo by 0");
   }
 
-  if(op.find("+") != string::npos){
+  if(op.contains("+")){
     return firstNumAsInt + secondNumAsDouble;
   }
- if(op.find("-") != string::npos){
+ if(op.contains("-")){
     return firstNumAsInt - secondNumAsDouble;
   }
-   if(op.find("*") != string::npos){
+   if(op.contains("*") ){
     return firstNumAsInt * secondNumAsDouble;
   }
-   if(op.find("/") != string::npos){
+   if(op.contains("/") ){
     return firstNumAsInt / secondNumAsDouble;
   }
   return 0.0;
 }
-double calc::CalcBothDoubles(string op){
-      if((op.find("/") != string::npos) && secondNumAsDouble == 0.0){
+double calc::CalcBothDoubles(QString op){
+      if((op.contains("/")) && secondNumAsDouble == 0.0){
     throw domain_error("Error: Can't divide by 0");
   }
-   if((op.find("%") != string::npos) && secondNumAsDouble == 0.0){
+   if((op.contains("%")) && secondNumAsDouble == 0.0){
     throw domain_error("Error: Can't do modulo by 0");
   }
-  if(op.find("+") != string::npos){
+  if(op.contains("+") ){
     return firstNumAsDouble + secondNumAsDouble;
   }
-   if(op.find("-") != string::npos){
+   if(op.contains("-")){
     return firstNumAsDouble - secondNumAsDouble;
   }
-   if(op.find("*") != string::npos){
+   if(op.contains("*")){
     return firstNumAsDouble * secondNumAsDouble;
   }
-   if(op.find("/") != string::npos){
+   if(op.contains("/")){
     return firstNumAsDouble / secondNumAsDouble;
   }
   return 0.0;
 }
-int calc::OpenUpFile(string inputFile ){
+int calc::OpenUpFile(QString inputFile ){
 ifstream inFS;
- inFS.open(inputFile);
+
+ inFS.open(inputFile.toStdString());
  if(!inFS.is_open()){
   return 2;
  }
@@ -230,54 +231,54 @@ ifstream inFS;
 }
 
 int calc::CheckInput(char* argv[]){
- string firstUp = argv[1];
+ QString firstUp = argv[1];
     if(LookAtFirstValue(firstUp)== 1){
      return 3;
      }
-     string op = argv[2];
+     QString op = argv[2];
    
    if(CheckValidOp(op)== 4){
     return 4;
    }
-   string thirdValue = argv[3];
+   QString thirdValue = argv[3];
    if(LookAtThirdValue(thirdValue)== 1){
     return 5;
    }
 return 0;
 }
-int calc::CheckInput(string argv[]){
- string firstUp= argv[0];
+int calc::CheckInput(QString argv[]){
+ QString firstUp= argv[0];
     if(LookAtFirstValue(firstUp)== 1){
      return 3;
      }
       
-     string op= argv[1];
+     QString op= argv[1];
     
    if(CheckValidOp(op)== 4){
     return 4;
    }
-   string thirdValue =  argv[2];
+   QString thirdValue =  argv[2];
    if(LookAtThirdValue(thirdValue)== 1){
     return 5;
    }
 return 0;
 }
-void calc::WhichError(int ErrorNumber,string argv[]){
+void calc::WhichError(int ErrorNumber,QString argv[]){
     if (ErrorNumber== 3){
-       cerr << "Error: Left operand "<< argv[0] << " is not a valid number" << endl;
+       cerr << "Error: Left operand "<< argv[0].toStdString() << " is not a valid number" << endl;
     }
      else if(ErrorNumber == 4){
        cerr << "Error: Invalid operator" << endl;
     
     }
     else if(ErrorNumber==5){
-        cerr << "Error: Right operand "<< argv[2] << " is not a valid number" << endl;
+        cerr << "Error: Right operand "<< argv[2].toStdString() << " is not a valid number" << endl;
       
     }   
 
 }
 
-int calc::CheckValidEquation(string op){
+int calc::CheckValidEquation(QString op){
   if(op == "/"){
     if(secondIsInt && secondNumAsInt ==0){
       return 6;
@@ -297,7 +298,7 @@ int calc::CheckValidEquation(string op){
 
 return 0;
 }
-void calc::RunCalculations(string whichOp){
+void calc::RunCalculations(QString whichOp){
    if((firstIsInt == true)&& (secondIsInt == true)){
     cout << CalculateInts(whichOp);
    }
@@ -338,53 +339,53 @@ void calc::WhichError(int ErrorNumber){
 
 }
 
-int calc::CheckLine(string line){
- int firstSpace = line.find(' ');
- string firstValue = line.substr(0, firstSpace);
+int calc::CheckLine(QString line){
+ int firstSpace = line.indexOf(' ');
+ QString firstValue = line.mid(0, firstSpace);
  if(firstValue.length()== 0){
   return 1;
  }
- string afterFirst = line.substr(firstSpace+1);
- int secondSpace = afterFirst.find(' ');
- string secondValue = afterFirst.substr(0, 1);
+ QString afterFirst = line.mid(firstSpace+1);
+ int secondSpace = afterFirst.indexOf(' ');
+ QString secondValue = afterFirst.mid(0, 1);
  if(secondValue.length() == 0){
   return 1;
  }
- string afterSecond= afterFirst.substr(secondSpace+1);
+ QString afterSecond= afterFirst.mid(secondSpace+1);
  if(afterSecond.length() == 0){
   return 1;
  }
 return 0;
 
 }
-int calc::readThroughFile(string inputFile){
-  string FirstNum;
-  string op;
-  string SecondNum;
-  string hold[3];
-string line;
-
+int calc::readThroughFile(QString inputFile){
+  QString FirstNum;
+  QString op;
+  QString SecondNum;
+  QString hold[3];
+QString line;
+string temp;
   int lineNumber = 0;
   ifstream inFS;
- inFS.open(inputFile);
+ inFS.open(inputFile.toStdString());
  while(!inFS.eof()){
-  getline(inFS,line);
-  
+  getline(inFS,temp);
+  line = QString::fromStdString(temp);
   if(CheckLine(line)== 1){
     cerr << "Error: Line " <<lineNumber+1 << " is missing an element" << endl;
     return lineNumber+3;
   }
  
-  FirstNum= line.substr(0, line.find(' '));
-  string cutoff = line.substr(line.find(' ')+1);
+  FirstNum= line.mid(0, line.indexOf(' '));
+  QString cutoff = line.mid(line.indexOf(' ')+1);
    hold[0] = FirstNum;
-     op = cutoff.substr(0, cutoff.find(' '));
+     op = cutoff.mid(0, cutoff.indexOf(' '));
    hold[1] = op;
    if(op.length()!= 1){
        cerr << "Error: Invalid operator" << endl;
        return 4;
    }
-   SecondNum = line.substr(line.find(op)+1);
+   SecondNum = line.mid(line.indexOf(op)+1);
    hold[2] = SecondNum;
   lineNumber++;  
   if (!inFS.fail()) {
@@ -402,24 +403,24 @@ string line;
    }
    if(secondIsInt == true){
   
-    if(secondNumAsInt == 0 && op.find("%") != string::npos){
+    if(secondNumAsInt == 0 && op.contains("%")){
       cerr << "Error: Can't perform modulo by 0" << endl;
       return 2 + lineNumber;
     }
-      if(secondNumAsInt == 0 && op.find("/") != string::npos){
+      if(secondNumAsInt == 0 && op.contains("/")){
         cerr << "Error: Can't divide by 0" << endl;
       return 2 + lineNumber;
     }
    }
   else {
 
-      if(secondNumAsDouble == 0.00 && op.find("/") != string::npos){
+      if(secondNumAsDouble == 0.00 && op.contains("/") ){
         cerr << "Error: Can't divide by 0" << endl;
       return 2 + lineNumber;
     }
   }
    if(secondIsDouble == true || firstIsDouble == true){
-    if(op.find("%") != string::npos){
+    if(op.contains("%")){
       cerr << "Error: Modulo is for integers only" << endl;
       return 2 + lineNumber;
     }

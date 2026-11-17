@@ -5,8 +5,8 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
-#include "calc.moc"
-#include <QOBJECT>
+
+#include <QObject>
 #include <QtQmlIntegration/qqmlintegration.h>
 
 using namespace std;
@@ -15,31 +15,31 @@ class calc: public QObject{
   QML_ELEMENT
 public:
 void Reset();
-int FirstCheckInt(string firstNumber);
-int CheckValidOp(string Checking);
-int FirstCheckDouble(string firstNumber);
-int ThirdCheckInt(std::string thirdvalue);
-int ThirdCheckDouble(std::string thirdvalue);
-int LookAtFirstValue(std::string lengthCheck);
-int LookAtThirdValue(std::string lengthCheck);
-int CalculateInts(std::string Op);
-double CalcFirstDouble(std::string op);
-double CalcSecondDouble(std::string op);
-double CalcBothDoubles(std::string op);
-int OpenUpFile(std::string inputFile);
-int CheckInput(char* argv[]);
-int CheckInput(std::string argv[]);
-void WhichError(int ErrorNumber, std::string argv[]);
-int CheckValidEquation(string op);
-void RunCalculations(std::string whichOp);
-void WhichError(int ErrorNumber, char* argv[]);
-void WhichError(int ErrorNumber);
-int readThroughFile(string inputFile);
-void SetFirstNum(int FirstVal);
-void SetFirstNum(double FirstVal);
-void SetSecondNum(int SecondVal);
-void SetSecondNum(double SecondVal);
-int CheckLine(string line);
+    Q_INVOKABLE int FirstCheckInt(QString firstNumber);
+    Q_INVOKABLE int CheckValidOp(QString Checking);
+    Q_INVOKABLE int FirstCheckDouble(QString firstNumber);
+     Q_INVOKABLE int ThirdCheckInt(QString thirdvalue);
+    Q_INVOKABLE int ThirdCheckDouble(QString thirdvalue);
+    Q_INVOKABLE int LookAtFirstValue(QString lengthCheck);
+Q_INVOKABLE int LookAtThirdValue(QString lengthCheck);
+Q_INVOKABLE int CalculateInts(QString Op);
+Q_INVOKABLE double CalcFirstDouble(QString op);
+Q_INVOKABLE double CalcSecondDouble(QString op);
+Q_INVOKABLE double CalcBothDoubles(QString op);
+Q_INVOKABLE int OpenUpFile(QString inputFile);
+Q_INVOKABLE int CheckInput(char* argv[]);
+Q_INVOKABLE int CheckInput(QString argv[]);
+Q_INVOKABLE void WhichError(int ErrorNumber, QString argv[]);
+Q_INVOKABLE int CheckValidEquation(QString op);
+Q_INVOKABLE void RunCalculations(QString whichOp);
+Q_INVOKABLE void WhichError(int ErrorNumber, char* argv[]);
+Q_INVOKABLE void WhichError(int ErrorNumber);
+Q_INVOKABLE int readThroughFile(QString inputFile);
+    Q_INVOKABLE void SetFirstNum(int FirstVal);
+    Q_INVOKABLE void SetFirstNum(double FirstVal);
+    Q_INVOKABLE void SetSecondNum(int SecondVal);
+    Q_INVOKABLE void SetSecondNum(double SecondVal);
+Q_INVOKABLE int CheckLine(QString line);
 private:
 int firstNumAsInt = 0;
 double firstNumAsDouble = 0.00;

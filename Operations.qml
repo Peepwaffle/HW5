@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
+import HW5
 
 
 ApplicationWindow {
@@ -14,7 +15,7 @@ ApplicationWindow {
     
      property string input : ""
      property bool isEnabled: false
-    
+
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -48,6 +49,7 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+         
                 Label {
                     id: textNote
                     color: operationwindow.dark
@@ -85,6 +87,7 @@ ApplicationWindow {
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
+                    
                 }
                  Label {
                     id: textInput
@@ -128,11 +131,18 @@ ApplicationWindow {
                         textEmpty.visible = true
                     }
                     else{
+                     
+    
+     
                     var component = Qt.createComponent("OperationsResults.qml")
                   var windowResult = component.createObject()
                   windowResult.input= operationwindow.input;
-                     windowResult.show()   
+                
+         
+                     windowResult.show()   ;
                 operationwindow.hide() 
+            
+
                 }
                 }            
                 }
