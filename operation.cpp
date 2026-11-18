@@ -6,7 +6,7 @@
 #include <vector>
 #include "operation.h"
 #include <QtQmlIntegration/qqmlintegration.h>
-
+#include <csignal>
 using namespace std;
 
 
@@ -27,7 +27,8 @@ Operation::Operation(){
 QString Operation::Test(){
     return QString::fromStdString(origFirstString);
 }
-void Operation::CreateString(QString input){
+
+int Operation::CreateString(QString input){
         vector<string> tokens;
  stringstream AsStream(input.toStdString());
    string token;
@@ -35,6 +36,9 @@ void Operation::CreateString(QString input){
  while(getline(AsStream, token, ' ')){
        tokens.push_back(token);
     }
+      if(tokens.size() != 3 && tokens.size()!= 4){
+return 1;
+       }
     string first;
     string op;
     string second;
@@ -61,15 +65,29 @@ void Operation::CreateString(QString input){
    origSecondString = second;
    }
   
-    
-    Element firsttemp = Element(first);
-   FirstElement = firsttemp.Clone();
+     try{
+        Element firsttemp = Element(first);
+        FirstElement = firsttemp.Clone();
+    }
+    catch(InvalidElement& e){
+    return 1;
+    }
+   
   
  char opAsChar = op[0];
+   if(ValidOp(opAsChar)!= true){
+        return 1;
+    }
 Op = opAsChar;
- Element secondtemp = Element(second);
-  SecondElement = secondtemp.Clone();
 
+ try{
+        Element secondtemp = Element(second);
+        SecondElement = secondtemp.Clone();
+    }
+    catch(InvalidElement& e){
+        return 1;
+    }       
+return 0;
 }
 
 
@@ -176,6 +194,17 @@ double Operation::DoubleValue() const{
 }
 int Operation::IntValue() const{
     return IntCalc();
+}
+bool Operation::IsGood(){
+      if(SecondElement->Value()== 0.0 && Op == '/'){
+       return false;
+    }
+    
+    if(SecondElement->IsDouble()== true && Op == '%'){
+        return false;
+    }
+   
+    return true;
 }
 double Operation::Value() const{
     if(SecondElement->Value()== 0.0 && Op == '/'){

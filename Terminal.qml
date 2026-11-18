@@ -14,6 +14,7 @@ ApplicationWindow {
     minimumHeight: 250
     visible: true
     title: qsTr("Terminal")
+    signal errorOccurred(message: string);
     
    property bool isEnabled: false
    property string input : ""
@@ -78,11 +79,11 @@ ApplicationWindow {
                     
                 }
                 Label{
-                    id :textOnlyDot
+                    id :textError
                     color: terminalwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
-                    text: ("No numbers have actually been entered, try again")
+                    text: ("Error: Something is wrong with your input")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -92,33 +93,21 @@ ApplicationWindow {
             
                 }
                  Label{
-                    id :textMoreOps
+                    id :textBadInput
                     color: terminalwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
-                    text: ("More than one operator used, try again")
+                    text: ("Invalid equation selected")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     visible:false
-                    
+            
                 }
-                  Label{
-                    id :textNoSecond
-                    color: terminalwindow.dark
-                    font.pixelSize: 80
-                    fontSizeMode: Text.Fit
-                    text: ("No second number selected, try again")
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    Layout.margins: 16
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    visible:false
-                    
-                }
+                 
+                 
                  Label {
                     id: textSwitch
                     color: terminalwindow.dark
@@ -170,44 +159,56 @@ ApplicationWindow {
                     color: terminalwindow.dark 
                 }    
                 onClicked:{
-                if(terminalwindow.input.length < 1){
-                    textEmpty.visible = true
-                }
-                
-                else if(terminalwindow.input=== (".")){
-                    textOnlyDot.visible = true;
-                }
-               
-                else if(terminalwindow.input.endsWith(" ")){
-                    textNoSecond.visible = true;
-                }
-                else if(terminalwindow.opCounter > 1){
-                    textMoreOps.visible = true;
+              
+                if (terminalwindow.input.length === 0) {
+                    textEmpty.visible = true;
+                    
                 }
                 else{
                      const last = terminalwindow.input.charAt(terminalwindow.input.length-1);
                      if(last === " "){
                       terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
                      }
-                  const component = Qt.createComponent("TerminalResults.qml")
-                  const windowResult = component.createObject()
-                  windowResult.input= terminalwindow.input;
+              
                   if(terminalwindow.opCounter === 0){
+                        const component = Qt.createComponent("TerminalResults.qml");
+                  const windowResult = component.createObject();
+                  windowResult.input= terminalwindow.input;
                     TElement.Value(terminalwindow.input.toString());
+                
                     const Value = TElement.Value();
                     windowResult.result = Value;
+                      windowResult.show();
+                       terminalwindow.hide();
 
                   }
                   else{
-                      Help.CreateString(terminalwindow.input);
-                 const Value = Help.Value();
-                     windowResult.result = Value;
+                    if(Help.CreateString(terminalwindow.input)=== 1){
+                        textError.visible = true;
+
+                    }
+                    else{
+                  if(Help.IsGood()=== false){
+                    textBadInput.visible= true;
+
                   }
-                     windowResult.show();
-                  
-                     
-                terminalwindow.hide();
+                  else{
+                            const component = Qt.createComponent("TerminalResults.qml");
+                  const windowResult = component.createObject();
+                  windowResult.input= terminalwindow.input;
+                         const Value = Help.Value();
+                     windowResult.result = Value;
+                      windowResult.show();
+                       terminalwindow.hide();
+                  }
+                    
+                  }
+                    
+
+                    }
                 }
+           
+                
                 }           
                 }
                 Button {
