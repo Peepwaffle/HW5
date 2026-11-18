@@ -79,7 +79,7 @@ property int opCount: 0
                     
                 }
                 Label{
-                    id :textError
+                    id : textError
                     color: operationwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
@@ -89,7 +89,7 @@ property int opCount: 0
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    visible:false
+                    visible: false
             
                 }
                 Label{
@@ -103,7 +103,7 @@ property int opCount: 0
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    visible:false
+                    visible: false
             
                 }
                      Label {
@@ -157,23 +157,45 @@ property int opCount: 0
                     color: operationwindow.dark 
                 }    
                 onClicked:{
+                        const last = operationwindow.input.charAt(operationwindow.input.length-1);
+                     if(last === " "){
+                      operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
+                     }
                     if(operationwindow.input.length < 1){
                         textEmpty.visible = true
                     }
-                    else{
-             
-                   const component = Qt.createComponent("OperationsResults.qml")
+                    else if(opCount == 0){
+                            const component = Qt.createComponent("OperationsResults.qml")
                  const windowResult = component.createObject();
        
                   windowResult.input= operationwindow.input;  
-               Par.SetQMLParseFlag("No flag");
-                  var Hold = Par.ParseQML(operationwindow.input); 
-                  
-               windowResult.result =   Hold.Value().toString();
+                       windowResult.result =   operationwindow.input;
                      windowResult.show();
                 operationwindow.hide() 
+                    }
+                    else{
+                          Par.SetQMLParseFlag("No flag");   
+               if (Par.IsGoodInput(operationwindow.input)=== 1) {
+                textError.visible = true;
+                
+               }
+               else if(Par.IsGoodNoFlag(operationwindow.input) === 1){
+                    textBadInput.visible = true;
+               }
+               else{
+                    const component = Qt.createComponent("OperationsResults.qml")
+                 const windowResult = component.createObject();
+       
+                  windowResult.input= operationwindow.input;  
+                         Par.SetQMLParseFlag("No flag");
+                  var Hold = Par.ParseQML(operationwindow.input); 
+                     windowResult.result = Hold.Value().toString();
+                     windowResult.show();
+                operationwindow.hide() 
+              
+    
             
-
+               }
                 }
                 }            
                 }

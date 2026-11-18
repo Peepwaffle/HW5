@@ -180,7 +180,6 @@ ApplicationWindow {
                     windowResult.result = Value;
                       windowResult.show();
                        terminalwindow.hide();
-
                   }
                   else{
                     if(Help.CreateString(terminalwindow.input)=== 1){

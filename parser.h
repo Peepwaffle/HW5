@@ -39,7 +39,9 @@ class Parser: public QObject {
   Q_INVOKABLE   int FindSecondPare(vector<string> Tokens);
   Q_INVOKABLE   int NumbersInTemp(vector<string> Tokens);
   Q_INVOKABLE   int OpsInTemp(vector<string> Tokens);
+  Q_INVOKABLE int IsGoodInput(QString equationStr);
    int HowManyInPare(vector<string> Tokens);
+   
    Q_INVOKABLE  Element* ParseQML(QString equationStr);
    Q_INVOKABLE  string ChangeString(vector<string> Tokens);
   Q_INVOKABLE   bool HasInnerPare(vector<string> checking);

@@ -47,7 +47,7 @@ void Parser::Reset(){
 bool Parser::IsAnOP(string toCheck){
     if(toCheck.find('+')!= string::npos){
         if(toCheck.length()!= 1){
-            throw InvalidEquationStructure("Successfully caught InvalidEquationStructure");
+           false;
         }
         else{
             return true;
@@ -62,14 +62,14 @@ bool Parser::IsAnOP(string toCheck){
     }
      if(toCheck.find('*')!= string::npos){
         if(toCheck.length()!= 1){
-            throw InvalidEquationStructure("Successfully caught InvalidEquationStructure");
+           return false;
         }
         else{
             return true;
         }
      if(toCheck == "%"){
         if(toCheck.length()!= 1){
-            throw InvalidEquationStructure("Successfully caught InvalidEquationStructure");
+           return false;
         }
         else{
             return true;
@@ -78,7 +78,48 @@ bool Parser::IsAnOP(string toCheck){
     }
     return false;
 }
+int Parser::IsGoodInput(QString equationStr){
+     numbers = 0;
+    operators = 0;
+    vector<string> Tokens;
+    stringstream AsStream(equationStr.toStdString());
+    string token;
+    while(getline(AsStream, token, ' ')){
+         Tokens.push_back(token);
+    } 
+ unsigned int i;   
+    for( i = 0; i < Tokens.size(); i++){   
+        if(Tokens.at(i)== "%"){
+       
+            operators+=1;
+        }
+       else if(Tokens.at(i)== "("|| Tokens.at(i)== ")"){
+            paretheses+=1;
+        }
+        else if(IsAnOP(Tokens.at(i))== true){
+           
+            operators+=1;
+        }
+        else{
+            try{
+               Element temp(Tokens.at(i));
+                numbers += 1;     
+            
+            }
+            catch(InvalidElement &e){
+              return 1;
+            }
+        }
+    }
+    if(paretheses % 2 != 0){
+       return 1;
+    }
+    if(numbers != (operators+1)){
+        return 1;
+    }
+    return 0;
 
+}
 vector<string> Parser::GoThroughInput(const string& equationStr){
     numbers = 0;
     operators = 0;
