@@ -6,7 +6,7 @@
 #include <vector>
 #include "operation.h"
 #include <QtQmlIntegration/qqmlintegration.h>
-#include <csignal>
+
 using namespace std;
 
 

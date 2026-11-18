@@ -3,6 +3,7 @@
 #include "calc.h"
 #include "element.h"
 #include "operation.h"
+#include "parser.h"
 #include <QtQml>
 #include <QQmlContext>
 
@@ -13,7 +14,8 @@ int main(int argc, char *argv[])
    calc Calculator;
     QQmlApplicationEngine engine;
     Element TestElement;
-   Operation temp;
+   Operation Operate;
+   Parser parsing;
 
  QObject::connect(
         &engine,
@@ -24,7 +26,8 @@ int main(int argc, char *argv[])
 
 engine.rootContext()->setContextProperty("Calculator", &Calculator);
 engine.rootContext()->setContextProperty("TElement", &TestElement);
-engine.rootContext()->setContextProperty("Help", &temp);
+engine.rootContext()->setContextProperty("Help", &Operate);
+engine.rootContext()->setContextProperty("Par", &parsing);
 
 
     engine.loadFromModule("HW5", "Main");

@@ -15,7 +15,9 @@ ApplicationWindow {
     
      property string input : ""
      property bool isEnabled: false
-
+     property int leftParCount : 0
+     property int rightParCount: 0
+property int opCount: 0
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
@@ -76,6 +78,34 @@ ApplicationWindow {
                     visible:false
                     
                 }
+                Label{
+                    id :textError
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("Error: Something is wrong with your input")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+            
+                }
+                Label{
+                    id :textBadInput
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("Invalid equation selected")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+            
+                }
                      Label {
                     id: textSwitch
                     color: operationwindow.dark
@@ -133,8 +163,13 @@ ApplicationWindow {
                     else{
              
                    const component = Qt.createComponent("OperationsResults.qml")
-                 const windowResult = component.createObject()
-                  windowResult.input= operationwindow.input;        
+                 const windowResult = component.createObject();
+       
+                  windowResult.input= operationwindow.input;  
+               Par.SetQMLParseFlag("No flag");
+                  var Hold = Par.ParseQML(operationwindow.input); 
+                  
+               windowResult.result =   Hold.Value().toString();
                      windowResult.show();
                 operationwindow.hide() 
             
@@ -207,7 +242,9 @@ ApplicationWindow {
 
                     onClicked:  
                     if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" + ")}
+                        operationwindow.input+=(" + ")
+                        operationwindow.opCount+=1;
+                        }
                         else{
                             operationwindow.input+=("1")
                         }
@@ -238,7 +275,9 @@ ApplicationWindow {
                     }
 
                     onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" - ")}
+                        operationwindow.input+=(" - ")
+                         operationwindow.opCount+=1;
+                         }
                         else{
                             operationwindow.input+=("2")
                         }
@@ -269,7 +308,9 @@ ApplicationWindow {
 
                     onClicked: 
                     if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" * ")}
+                        operationwindow.input+=(" * ")
+                         operationwindow.opCount+=1;
+                         }
                         else{
                             operationwindow.input+=("3")
                         }
@@ -299,7 +340,9 @@ ApplicationWindow {
                     }
                     onClicked: 
                     if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" / ")}
+                        operationwindow.input+=(" / ")
+                         operationwindow.opCount+=1;
+                         }
                         else{
                             operationwindow.input+=("4")
                         }
@@ -328,7 +371,9 @@ ApplicationWindow {
                         color: operationwindow.dark 
                     }
                     onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" % ")}
+                        operationwindow.input+=(" % ")
+                         operationwindow.opCount+=1;
+                         }
                         else{
                             operationwindow.input+=("5")
                         }
@@ -386,7 +431,8 @@ ApplicationWindow {
                         color:  operationwindow.dark 
                     }
                     onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=("(")}
+                        operationwindow.input+=("( ")
+                          operationwindow.leftParCount +=1;}
                         else{
                             operationwindow.input+=("7")
                         }
@@ -415,14 +461,21 @@ ApplicationWindow {
                         color: operationwindow.dark 
                     }
                     onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(")")}
+                        operationwindow.input+=(" )")
+                        operationwindow.rightParCount +=1;
+                        }
                         else{
                             operationwindow.input+=("8")
                         }
                 }      
                 Button {
                     id: button9
-                    text: ("9")
+                    text: if(operationwindow.isEnabled == true){
+                        (".")
+                        }
+                    else{
+                        ("9")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button9.text
@@ -438,7 +491,11 @@ ApplicationWindow {
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked: operationwindow.input+=("9")
+                    onClicked: if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(".")}
+                        else{
+                            operationwindow.input+=("9")
+                        }
                 }          
         }
     }

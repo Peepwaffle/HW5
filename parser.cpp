@@ -8,8 +8,21 @@
 #include "operation.h"
 #include <stdexcept>
 #include <fstream>
+#include <QtQmlIntegration/qqmlintegration.h>
 
 Parser::Parser(){
+}
+void Parser::SetQMLParseFlag(QString toFlag){
+     if(toFlag== "c"){
+        parseFlag = "c";
+    }
+    else if(toFlag == "No flag"){
+        parseFlag = "o";
+    }
+    else{
+        parseFlag = "f";
+    }
+
 }
 void Parser::SetParseFlag(string toFlag){
     if(toFlag== "c"){
@@ -425,6 +438,23 @@ Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
      Reset();
  }
  }
+  Element* Parser::ParseQML(QString equationStr){
+     Reset();
+      if(!equationStr.contains(' ') && parseFlag != "f"){
+        return new Element(equationStr.toStdString());
+    }
+    if(parseFlag == "c"){
+          initialValues =  GoThroughInput(equationStr.toStdString());
+        Operation operate(equationStr.toStdString());   
+        return new Element(operate.Value());
+    }
+    else{
+        initialValues = GoThroughInput(equationStr.toStdString());
+        stack<string> temp = Ops;
+        Ops = ReverseStack(temp);
+        return CreateNoFlag(initialValues, equationStr.toStdString());
+    }   
+  }
 Element* Parser::Parse(const string& equationStr){
     Reset();
     if(equationStr.find(' ')== string::npos && parseFlag != "f"){

@@ -9,35 +9,41 @@
 #include "operation.h"
 #include <stdexcept>
 #include <fstream>
+#include <QObject>
+#include <QtQmlIntegration/qqmlintegration.h>
 using namespace std;
-class Parser{
+class Parser: public QObject {
+   Q_OBJECT
+   QML_ELEMENT
     public:
     Parser();
-    stack<string> ReverseStack(stack<string> OriginalStack);
-    Element* Parse(const string& equationStr);
-    void SetParseFlag(string toFlag);
-    vector<string> GoThroughInput(const string& equationStr);
-    bool IsAnOP(string toCheck);
-    void Reset();
-    Element* CreateNoFlag(vector<string> Tokens, const string& equationStr);
-    Element* RunThroughNoParentheses(vector<string> Tokens);
-    string WhichOp();
-    int OperatorPriority(string OptoCheck);
-    Element* PerformNextCalculation(string nextOp, vector<string> Tokens);
-    vector<string> Remove(vector<string> Tokens, string nextOp, Element* toReplace);
-    stack<string> removeFromStack(string toRemove);
-    int numberofInstances(string toRemove);
-    vector<string> initialValues;
-    void readThroughFile(string fileName);
-    Element* GoParentheses(vector<string> Tokens);
-    int FindFirstPare(vector<string> Tokens);
-    int FindSecondPare(vector<string> Tokens);
-    int NumbersInTemp(vector<string> Tokens);
-    int OpsInTemp(vector<string> Tokens);
-    int HowManyInPare(vector<string> Tokens);
-    string ChangeString(vector<string> Tokens);
-    bool HasInnerPare(vector<string> checking);
-    vector<string> CreateTemp(vector<string> Tokens, unsigned int firstIndex, unsigned int secondIndex);
+    Q_INVOKABLE void SetQMLParseFlag(QString toFlag);
+    Q_INVOKABLE stack<string> ReverseStack(stack<string> OriginalStack);
+    Q_INVOKABLE Element* Parse(const string& equationStr);
+   Q_INVOKABLE  void SetParseFlag(string toFlag);
+   Q_INVOKABLE  vector<string> GoThroughInput(const string& equationStr);
+    Q_INVOKABLE bool IsAnOP(string toCheck);
+  Q_INVOKABLE   void Reset();
+   Q_INVOKABLE  Element* CreateNoFlag(vector<string> Tokens, const string& equationStr);
+   Q_INVOKABLE  Element* RunThroughNoParentheses(vector<string> Tokens);
+  Q_INVOKABLE   string WhichOp();
+  Q_INVOKABLE   int OperatorPriority(string OptoCheck);
+ Q_INVOKABLE    Element* PerformNextCalculation(string nextOp, vector<string> Tokens);
+ Q_INVOKABLE    vector<string> Remove(vector<string> Tokens, string nextOp, Element* toReplace);
+ Q_INVOKABLE    stack<string> removeFromStack(string toRemove);
+  Q_INVOKABLE   int numberofInstances(string toRemove);
+  Q_INVOKABLE  vector<string> initialValues;
+  Q_INVOKABLE   void readThroughFile(string fileName);
+  Q_INVOKABLE   Element* GoParentheses(vector<string> Tokens);
+  Q_INVOKABLE   int FindFirstPare(vector<string> Tokens);
+  Q_INVOKABLE   int FindSecondPare(vector<string> Tokens);
+  Q_INVOKABLE   int NumbersInTemp(vector<string> Tokens);
+  Q_INVOKABLE   int OpsInTemp(vector<string> Tokens);
+   int HowManyInPare(vector<string> Tokens);
+   Q_INVOKABLE  Element* ParseQML(QString equationStr);
+   Q_INVOKABLE  string ChangeString(vector<string> Tokens);
+  Q_INVOKABLE   bool HasInnerPare(vector<string> checking);
+   Q_INVOKABLE  vector<string> CreateTemp(vector<string> Tokens, unsigned int firstIndex, unsigned int secondIndex);
  
 
     private:
