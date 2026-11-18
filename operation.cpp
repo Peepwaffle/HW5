@@ -24,6 +24,28 @@ ostream& operator<<(ostream& lhs, const Operation& operate){
 
 Operation::Operation(){
 }
+void Operation::CreateString(QString input){
+        vector<string> tokens;
+ stringstream AsStream(input.toStdString());
+   string token;
+    
+ while(getline(AsStream, token, ' ')){
+       tokens.push_back(token);
+    } 
+   
+          string first =tokens[0];
+          origFirstString = first;
+    string op = tokens[1];
+    string second = tokens[2];
+    origSecondString = second;
+     Element firsttemp = Element(first);
+    FirstElement = firsttemp.Clone();
+char opAsChar = op[0];
+ Op = opAsChar;
+ Element secondtemp = Element(second);
+   SecondElement = secondtemp.Clone();
+
+}
 
 
 Operation::~Operation(){
@@ -149,12 +171,12 @@ double Operation::Value() const{
     }
 }
 Operation::Operation(const string& element){
-    vector<string> tokens;
-    stringstream AsStream(element);
-    string token;
+     vector<string> tokens;
+ stringstream AsStream(element);
+   string token;
     
-    while(getline(AsStream, token, ' ')){
-        tokens.push_back(token);
+ while(getline(AsStream, token, ' ')){
+       tokens.push_back(token);
     } 
     if(tokens.size() != 3){
       throw InvalidElement("Successfully caught InvalidElement");

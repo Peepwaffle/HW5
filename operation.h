@@ -15,10 +15,11 @@ class Operation : public Element {
       public:
 
      Q_INVOKABLE  Operation();
-     Q_INVOKABLE  Operation(const string& element);
+    Q_INVOKABLE  Operation(const string& element);
      Q_INVOKABLE  Operation(const Operation& other);
      Q_INVOKABLE  Operation& operator= (Operation other);
-      
+
+      Q_INVOKABLE void CreateString(QString input);
     Q_INVOKABLE   virtual ~Operation(); 
    Q_INVOKABLE   bool IsDouble() const override;
   Q_INVOKABLE   Operation(const Element& leftElem, char op, const Element& rightElem);
@@ -32,6 +33,7 @@ Q_INVOKABLE  Operation* Clone() const override;
   Q_INVOKABLE    int IntValue() const override;
     Q_INVOKABLE   friend ostream& operator<<(ostream& lhs, const Operation& operate);
     private:
+   
  string origFirstString;
  string origSecondString;
     Element* FirstElement;

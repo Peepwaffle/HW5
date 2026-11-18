@@ -149,15 +149,22 @@ ApplicationWindow {
                     textMoreOps.visible = true;
                 }
                 else{
-             
-               TElement.Value(terminalwindow.input.toString());
-       
-            
-               var Result = TElement.Value();
+                    
+                  
                   var component = Qt.createComponent("TerminalResults.qml")
                   var windowResult = component.createObject()
                   windowResult.input= terminalwindow.input;
-                  windowResult.result = Result;
+                  if(terminalwindow.opCounter === 0){
+                    TElement.Value(terminalwindow.input.toString());
+                    var Value = TElement.Value();
+                    windowResult.result = Value;
+
+                  }
+                  else{
+                      Help.CreateString(terminalwindow.input);
+                    var Value = Help.Value();
+                     windowResult.result = Value;
+                  }
                      windowResult.show();
                   
                      
@@ -184,10 +191,14 @@ ApplicationWindow {
                     }
                     onClicked:{
                         var last = terminalwindow.input.charAt(terminalwindow.input.length-1);
-                    if(terminalwindow.possibleOps.includes(last.toString())&& (last.toString!= ("-"))){ 
+                      
+                //TODO Add Functionality for negative numbers
+                  
+                    terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
+                       if(terminalwindow.possibleOps.includes(last.toString())){ 
                        terminalwindow.opCounter-=1;
                     } 
-                    terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
+                  
                     
                     }
                 }
@@ -272,11 +283,12 @@ ApplicationWindow {
                     }
 
                     onClicked:  if(terminalwindow.isEnabled== true){
-                        terminalwindow.input+=(" - ")
+                        terminalwindow.input+=(" - ");
+                        
                         
                         }
                         else{
-                            terminalwindow.input+=("2")
+                            terminalwindow.input+=("2");
                         }
                 }
                  Button {
