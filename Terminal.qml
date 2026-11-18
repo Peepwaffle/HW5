@@ -91,6 +91,20 @@ ApplicationWindow {
                     visible:false
                     
                 }
+                  Label{
+                    id :textNoSecond
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("No second number selected, try again")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+                    
+                }
                  Label {
                     id: textSwitch
                     color: terminalwindow.dark
@@ -103,7 +117,7 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
-                
+              
 
                 Label {
                     id: textInput
@@ -145,14 +159,19 @@ ApplicationWindow {
                 if(terminalwindow.input.length < 1){
                     textEmpty.visible = true
                 }
+                else if(terminalwindow.input.endsWith(" ")){
+                    textNoSecond.visible = true;
+                }
                 else if(terminalwindow.opCounter > 1){
                     textMoreOps.visible = true;
                 }
                 else{
-                    
-                  
-                  var component = Qt.createComponent("TerminalResults.qml")
-                  var windowResult = component.createObject()
+                     const last = terminalwindow.input.charAt(terminalwindow.input.length-1);
+                     if(last === " "){
+                      terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
+                     }
+                  const component = Qt.createComponent("TerminalResults.qml")
+                  const windowResult = component.createObject()
                   windowResult.input= terminalwindow.input;
                   if(terminalwindow.opCounter === 0){
                     TElement.Value(terminalwindow.input.toString());
@@ -162,7 +181,7 @@ ApplicationWindow {
                   }
                   else{
                       Help.CreateString(terminalwindow.input);
-                    var Value = Help.Value();
+                 var Value = Help.Value();
                      windowResult.result = Value;
                   }
                      windowResult.show();
@@ -191,15 +210,13 @@ ApplicationWindow {
                     }
                     onClicked:{
                         var last = terminalwindow.input.charAt(terminalwindow.input.length-1);
-                      
-                //TODO Add Functionality for negative numbers
-                  
                     terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
                        if(terminalwindow.possibleOps.includes(last.toString())){ 
                        terminalwindow.opCounter-=1;
                     } 
-                  
-                    
+                    else if(terminalwindow.input.charAt(terminalwindow.input.length-1) === "-" ){
+                        terminalwindow.opCounter-=1;
+                    }
                     }
                 }
                  Button {
@@ -284,7 +301,7 @@ ApplicationWindow {
 
                     onClicked:  if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" - ");
-                        
+                        terminalwindow.opCounter +=1;
                         
                         }
                         else{

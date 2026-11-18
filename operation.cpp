@@ -24,6 +24,9 @@ ostream& operator<<(ostream& lhs, const Operation& operate){
 
 Operation::Operation(){
 }
+QString Operation::Test(){
+    return QString::fromStdString(origFirstString);
+}
 void Operation::CreateString(QString input){
         vector<string> tokens;
  stringstream AsStream(input.toStdString());
@@ -31,19 +34,41 @@ void Operation::CreateString(QString input){
     
  while(getline(AsStream, token, ' ')){
        tokens.push_back(token);
-    } 
-   
-          string first =tokens[0];
-          origFirstString = first;
-    string op = tokens[1];
-    string second = tokens[2];
-    origSecondString = second;
-     Element firsttemp = Element(first);
-    FirstElement = firsttemp.Clone();
-char opAsChar = op[0];
- Op = opAsChar;
+    }
+    string first;
+    string op;
+    string second;
+    if(tokens.size()== 4 && ValidOp(tokens[1][0])== false){
+
+     first = tokens[1];
+         origFirstString = first;
+     op = tokens[2];
+ second = tokens[3];
+   origSecondString = second;
+   }
+   else if(tokens.size()== 4 && ValidOp(tokens[1][0])== true){
+    first = tokens[0];
+    origFirstString = first;
+      op = tokens[1];
+      second = tokens[3];
+      origSecondString = second;
+   }
+   else{
+    first = tokens[0];
+         origFirstString = first;
+          op = tokens[1];
+    second = tokens[2];
+   origSecondString = second;
+   }
+  
+    
+    Element firsttemp = Element(first);
+   FirstElement = firsttemp.Clone();
+  
+ char opAsChar = op[0];
+Op = opAsChar;
  Element secondtemp = Element(second);
-   SecondElement = secondtemp.Clone();
+  SecondElement = secondtemp.Clone();
 
 }
 

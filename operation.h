@@ -31,6 +31,7 @@ Q_INVOKABLE  Operation* Clone() const override;
   Q_INVOKABLE   int IntCalc() const;
   Q_INVOKABLE   virtual double DoubleValue() const override;
   Q_INVOKABLE    int IntValue() const override;
+  Q_INVOKABLE QString Test();
     Q_INVOKABLE   friend ostream& operator<<(ostream& lhs, const Operation& operate);
     private:
    
