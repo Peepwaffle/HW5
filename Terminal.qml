@@ -77,6 +77,20 @@ ApplicationWindow {
                     visible:false
                     
                 }
+                Label{
+                    id :textOnlyDot
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("No numbers have actually been entered, try again")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+            
+                }
                  Label{
                     id :textMoreOps
                     color: terminalwindow.dark
@@ -159,6 +173,11 @@ ApplicationWindow {
                 if(terminalwindow.input.length < 1){
                     textEmpty.visible = true
                 }
+                
+                else if(terminalwindow.input=== (".")){
+                    textOnlyDot.visible = true;
+                }
+               
                 else if(terminalwindow.input.endsWith(" ")){
                     textNoSecond.visible = true;
                 }
@@ -175,13 +194,13 @@ ApplicationWindow {
                   windowResult.input= terminalwindow.input;
                   if(terminalwindow.opCounter === 0){
                     TElement.Value(terminalwindow.input.toString());
-                    var Value = TElement.Value();
+                    const Value = TElement.Value();
                     windowResult.result = Value;
 
                   }
                   else{
                       Help.CreateString(terminalwindow.input);
-                 var Value = Help.Value();
+                 const Value = Help.Value();
                      windowResult.result = Value;
                   }
                      windowResult.show();
@@ -442,7 +461,12 @@ ApplicationWindow {
                 }    
                   Button {
                     id: button7
-                    text: ("7")
+                    text: if(terminalwindow.isEnabled == true){
+                        (".")
+                        }
+                    else{
+                        ("7")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button7.text
@@ -458,7 +482,13 @@ ApplicationWindow {
                         radius: 8
                         color:  terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("7")
+                    onClicked:  if(terminalwindow.isEnabled== true){
+                        terminalwindow.input+=(".")
+                        }
+                        else{
+                            terminalwindow.input+=("7")
+                        }
+                   
                 }
                  Button {
                     id: button8
