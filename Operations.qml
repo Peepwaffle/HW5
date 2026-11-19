@@ -17,6 +17,7 @@ ApplicationWindow {
      property bool isEnabled: false
      property int leftParCount : 0
      property int rightParCount: 0
+        property string possibleOps : "+-*/%";
 property int opCount: 0
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -157,6 +158,10 @@ property int opCount: 0
                     color: operationwindow.dark 
                 }    
                 onClicked:{
+                     const start = operationwindow.input.charAt(0);
+                      if(start === " "){
+                      operationwindow.input  = operationwindow.input.substring(1, operationwindow.input.length);
+                     }
                         const last = operationwindow.input.charAt(operationwindow.input.length-1);
                      if(last === " "){
                       operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
@@ -214,10 +219,18 @@ property int opCount: 0
                         implicitWidth: 120
                         implicitHeight: 36
                         radius: 8
-                        color:  operationwindow.dark 
+                        color: operationwindow.dark 
                     }
-                    onClicked:
-                    operationwindow.input = operationwindow.input.substring(0, operationwindow.input.length - 1);
+                    onClicked:{
+                     var last = operationwindow.input.charAt(operationwindow.input.length-1);
+                   operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
+                       if(operationwindow.possibleOps.includes(last.toString())){ 
+                       operationwindow.opCount-=1;
+                    } 
+                    else if(operationwindow.input.charAt(operationwindow.input.length-1) === "-" ){
+                        operationwindow.opCount-=1;
+                    }
+                    }
                 }
                  Button {
                     id: buttonSwitch
@@ -245,7 +258,8 @@ property int opCount: 0
                         ("+")
                         }
                     else{
-                        ("1")}
+                        ("1")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: button1.text
@@ -264,7 +278,8 @@ property int opCount: 0
 
                     onClicked:  
                     if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" + ")
+                      
+                     operationwindow.input+=(" + ")
                         operationwindow.opCount+=1;
                         }
                         else{
@@ -297,7 +312,10 @@ property int opCount: 0
                     }
 
                     onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" - ")
+                      
+                              operationwindow.input+=(" - ")
+                        
+        
                          operationwindow.opCount+=1;
                          }
                         else{

@@ -165,6 +165,11 @@ ApplicationWindow {
                     
                 }
                 else{
+                    const start = terminalwindow.input.charAt(0);
+                      if(start === " "){
+                      terminalwindow.input  = terminalwindow.input.substring(1, terminalwindow.input.length);
+                     }
+
                      const last = terminalwindow.input.charAt(terminalwindow.input.length-1);
                      if(last === " "){
                       terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
@@ -202,8 +207,7 @@ ApplicationWindow {
                   }
                     
                   }
-                    
-
+                  
                     }
                 }
            

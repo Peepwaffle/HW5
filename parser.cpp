@@ -182,6 +182,7 @@ vector<string> Parser::GoThroughInput(const string& equationStr){
     }
     return counter;
  }
+
 Element* Parser::PerformNextCalculation(string nextOp, vector<string> Tokens){
     string FirstElementValue;
     string SecondElementValue;
@@ -211,6 +212,52 @@ if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==tru
  catch(InvalidOperator &e){
     throw InvalidOperator("Invalid element value:" + nextOp[0]);
  }
+}
+int Parser::CanPerformNextCalc(string nextOp, vector<string> Tokens){
+    string FirstElementValue;
+    string SecondElementValue;
+  unsigned int i;
+ for( i = 0; i < Tokens.size(); i++){
+    if(Tokens.at(i) == nextOp){
+        FirstElementValue = Tokens.at(i-1);
+        SecondElementValue= Tokens.at(i+1);       
+        break;
+    }
+ }
+ Element FirstElement(FirstElementValue);
+if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==true){
+    FirstElement.ChangeType();
+}
+ Element SecondElement(SecondElementValue);
+ if(stoi(SecondElementValue)== SecondElement.Value()&& SecondElement.IsDouble()==true){
+    SecondElement.ChangeType();
+}    
+    string convert = to_string(FirstElement.Value())+" "+nextOp[0]+" "+to_string(SecondElement.Value());
+    Operation* Operate = new Operation();
+        Operate->CreateString(QString::fromStdString(convert));
+            if(Operate->IsGood()== false){
+                return 1;
+            }
+return 0;
+}
+int Parser::CanGoNoParentheses(vector<string> Tokens){
+    while(Tokens.size()!= 1){
+        string nextOp = WhichOp();      
+        if(CanPerformNextCalc(nextOp, Tokens)== 1){
+               break;
+          
+        }
+        Element* Calculated = PerformNextCalculation(nextOp, Tokens);
+        Tokens = Remove(Tokens, nextOp, Calculated);
+        Ops = removeFromStack(nextOp);
+        stack<string> temp = Ops;
+        Ops = ReverseStack(temp);
+}
+if(Tokens.size()!= 1){
+    return 1;
+}
+return 0;
+
 }
     Element* Parser::RunThroughNoParentheses(vector<string> Tokens){
 while(Tokens.size()!= 1){
@@ -382,7 +429,64 @@ bool Parser::HasInnerPare(vector<string> checking){
       }
 return false;
 }
+int Parser::CanGoParetheses(vector<string> Tokens){
+     while(paretheses !=0){
+       unsigned int firstIndex = FindFirstPare(Tokens);
+      unsigned  int secondIndex = FindSecondPare(Tokens);
+      vector<string> temp = CreateTemp(Tokens, firstIndex, secondIndex);
+      if(HasInnerPare(temp)== true){
+        temp.push_back(")");
+      }  
+      if(OpsInTemp(temp) == 1){
+        Element first(temp.at(0));
+        char op = temp.at(1)[0];
+        Element second(temp.at(2));
+        
+       
+        Element* OneOp = new Element(Operation(first, op, second).Value());
+       Ops = removeFromStack(temp.at(1));
+       if(firstIndex== 0 && Tokens.at(1)== "("){
+          Tokens.erase(Tokens.begin()+firstIndex+1, Tokens.begin()+secondIndex+1);
+         Tokens.emplace(Tokens.begin()+firstIndex+1, to_string(OneOp->Value()));
+       }
+       else{
+         paretheses -=2;
+        Tokens.erase(Tokens.begin()+firstIndex, Tokens.begin()+secondIndex+1);
+         Tokens.emplace(Tokens.begin()+firstIndex, to_string(OneOp->Value()));
+         }
+      }
+      else{
+            paretheses -=2;
+        stack<string> TempStack = Ops;
+        while(!Ops.empty()){
+            Ops.pop();
+        }
+        string ParString = ChangeString(temp);
+       Element* NewValue;
+       temp = GoThroughInput(ParString);
+       if(CanGoNoParentheses(temp)== 1){
+        return 1;
+       }
+         NewValue = RunThroughNoParentheses(temp);
+         Tokens.erase(Tokens.begin()+firstIndex, Tokens.begin()+secondIndex+1);
+         Tokens.insert(Tokens.begin()+firstIndex, to_string(NewValue->Value()));  
+       Ops = TempStack;
+       for(unsigned int i = 0; i< temp.size(); i++){
+      if(temp.at(i)[0]== '%'|| IsAnOP(temp.at(i))== true){
+         Ops = removeFromStack(temp.at(i));
+      }
+       }
+      }
+    }
+    if(paretheses != 0){
+        return 1;
+    }
+      
+ return CanGoNoParentheses(Tokens);
+
+}
 Element* Parser::GoParentheses(vector<string> Tokens){
+  
     while(paretheses !=0){
        unsigned int firstIndex = FindFirstPare(Tokens);
       unsigned  int secondIndex = FindSecondPare(Tokens);
@@ -394,6 +498,7 @@ Element* Parser::GoParentheses(vector<string> Tokens){
         Element first(temp.at(0));
         char op = temp.at(1)[0];
         Element second(temp.at(2));
+        
         Element* OneOp = new Element(Operation(first, op, second).Value());
        Ops = removeFromStack(temp.at(1));
        if(firstIndex== 0 && Tokens.at(1)== "("){
@@ -425,8 +530,11 @@ Element* Parser::GoParentheses(vector<string> Tokens){
       }
        }
       }
-    }
-    return RunThroughNoParentheses(Tokens);
+    
+      
+ return RunThroughNoParentheses(Tokens);
+ }
+
 }
 
  string Parser::ChangeString(vector<string> Tokens){
@@ -441,7 +549,33 @@ Element* Parser::GoParentheses(vector<string> Tokens){
     }
     return newString;
 }
-
+int Parser::IsGoodNoFlag(QString equationStr){
+   vector<string> Tokens =  GoThroughInput(equationStr.toStdString());
+    if(paretheses == 0 && operators!= 1){
+     if(CanGoNoParentheses(Tokens)== 1){
+        return 1;
+     }
+       
+    }
+    else if(paretheses != 0){
+        //if(CanGoParetheses(Tokens)== 1){
+     //    return 1;
+      // }
+   
+    }
+    if(operators == 1){
+      
+           
+            string Changed = ChangeString(Tokens); 
+         
+                   Operation* test = new Operation();
+            test->CreateString(QString::fromStdString(Changed));
+      if(test->IsGood()== false){
+                return 1;
+            } 
+    }
+return 0;
+}
 Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
   if(paretheses == 0 && operators!= 1){
         return RunThroughNoParentheses(Tokens);
@@ -452,6 +586,7 @@ Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
     if(operators == 1){
         try{
             string Changed = ChangeString(Tokens); 
+
          Operation operate(Changed);
          return new Element(operate.Value());
          }

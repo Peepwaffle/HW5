@@ -17,6 +17,9 @@ class Parser: public QObject {
    QML_ELEMENT
     public:
     Parser();
+    Q_INVOKABLE int CanGoParetheses(vector<string> Tokens);
+    Q_INVOKABLE int CanGoNoParentheses(vector<string> Tokens);
+    Q_INVOKABLE int CanPerformNextCalc(string nextOp, vector<string> Tokens);
     Q_INVOKABLE void SetQMLParseFlag(QString toFlag);
     Q_INVOKABLE stack<string> ReverseStack(stack<string> OriginalStack);
     Q_INVOKABLE Element* Parse(const string& equationStr);
@@ -41,7 +44,7 @@ class Parser: public QObject {
   Q_INVOKABLE   int OpsInTemp(vector<string> Tokens);
   Q_INVOKABLE int IsGoodInput(QString equationStr);
    int HowManyInPare(vector<string> Tokens);
-   
+   Q_INVOKABLE int IsGoodNoFlag(QString equationStr);
    Q_INVOKABLE  Element* ParseQML(QString equationStr);
    Q_INVOKABLE  string ChangeString(vector<string> Tokens);
   Q_INVOKABLE   bool HasInnerPare(vector<string> checking);
