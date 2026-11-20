@@ -119,8 +119,8 @@ ApplicationWindow {
                         const component = Qt.createComponent("FileResults.qml");
                   var windowResult = component.createObject()
                   windowResult.fileName= filewindow.fileName;
-                     windowResult.show()   
-                filewindow.hide()
+                     windowResult.show(); 
+                filewindow.hide();
                        
                     
                         

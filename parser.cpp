@@ -429,20 +429,33 @@ bool Parser::HasInnerPare(vector<string> checking){
       }
 return false;
 }
-int Parser::CanGoParetheses(vector<string> Tokens){
-     while(paretheses !=0){
+int Parser::CanGoParetheses(vector<string> Tokens){ 
+    
+  
+ while(paretheses !=0){
        unsigned int firstIndex = FindFirstPare(Tokens);
       unsigned  int secondIndex = FindSecondPare(Tokens);
       vector<string> temp = CreateTemp(Tokens, firstIndex, secondIndex);
       if(HasInnerPare(temp)== true){
         temp.push_back(")");
       }  
+      
       if(OpsInTemp(temp) == 1){
+        
+      
         Element first(temp.at(0));
+        string yes = temp.at(1);
         char op = temp.at(1)[0];
         Element second(temp.at(2));
+      
+         string convert = to_string(first.Value())+" "+op+" "+to_string(second.Value());
+    Operation* Operate = new Operation();
+        Operate->CreateString(QString::fromStdString(convert));
+            if(Operate->IsGood()== false){
+                return 1;
+            }
+     
         
-       
         Element* OneOp = new Element(Operation(first, op, second).Value());
        Ops = removeFromStack(temp.at(1));
        if(firstIndex== 0 && Tokens.at(1)== "("){
@@ -465,7 +478,7 @@ int Parser::CanGoParetheses(vector<string> Tokens){
        Element* NewValue;
        temp = GoThroughInput(ParString);
        if(CanGoNoParentheses(temp)== 1){
-        return 1;
+        break;
        }
          NewValue = RunThroughNoParentheses(temp);
          Tokens.erase(Tokens.begin()+firstIndex, Tokens.begin()+secondIndex+1);
@@ -478,11 +491,14 @@ int Parser::CanGoParetheses(vector<string> Tokens){
        }
       }
     }
-    if(paretheses != 0){
+     if(paretheses != 0){
         return 1;
-    }
+     }
+     
+
+return CanGoNoParentheses(Tokens);
       
- return CanGoNoParentheses(Tokens);
+
 
 }
 Element* Parser::GoParentheses(vector<string> Tokens){
@@ -494,7 +510,9 @@ Element* Parser::GoParentheses(vector<string> Tokens){
       if(HasInnerPare(temp)== true){
         temp.push_back(")");
       }  
+      
       if(OpsInTemp(temp) == 1){
+       
         Element first(temp.at(0));
         char op = temp.at(1)[0];
         Element second(temp.at(2));
@@ -530,11 +548,10 @@ Element* Parser::GoParentheses(vector<string> Tokens){
       }
        }
       }
-    
+    }
       
+    
  return RunThroughNoParentheses(Tokens);
- }
-
 }
 
  string Parser::ChangeString(vector<string> Tokens){
@@ -550,6 +567,7 @@ Element* Parser::GoParentheses(vector<string> Tokens){
     return newString;
 }
 int Parser::IsGoodNoFlag(QString equationStr){
+    Reset();
    vector<string> Tokens =  GoThroughInput(equationStr.toStdString());
     if(paretheses == 0 && operators!= 1){
      if(CanGoNoParentheses(Tokens)== 1){
@@ -558,9 +576,9 @@ int Parser::IsGoodNoFlag(QString equationStr){
        
     }
     else if(paretheses != 0){
-        //if(CanGoParetheses(Tokens)== 1){
-     //    return 1;
-      // }
+        if(CanGoParetheses(Tokens)== 1){
+           return 1;
+     }
    
     }
     if(operators == 1){
