@@ -45,13 +45,10 @@ void Parser::Reset(){
     parseFlag = "";
 }
 bool Parser::IsAnOP(string toCheck){
-    if(toCheck.find('+')!= string::npos){
-        if(toCheck.length()!= 1){
-           false;
-        }
-        else{
+    if(toCheck== "+"){
+       
             return true;
-        }
+        
     }
        if(toCheck== "/"){
        
@@ -67,15 +64,13 @@ bool Parser::IsAnOP(string toCheck){
         else{
             return true;
         }
+        }
      if(toCheck == "%"){
-        if(toCheck.length()!= 1){
-           return false;
-        }
-        else{
+      
             return true;
-        }
+        
     }
-    }
+    
     return false;
 }
 int Parser::IsGoodInput(QString equationStr){
@@ -89,11 +84,8 @@ int Parser::IsGoodInput(QString equationStr){
     } 
  unsigned int i;   
     for( i = 0; i < Tokens.size(); i++){   
-        if(Tokens.at(i)== "%"){
        
-            operators+=1;
-        }
-       else if(Tokens.at(i)== "("|| Tokens.at(i)== ")"){
+       if(Tokens.at(i)== "("|| Tokens.at(i)== ")"){
             paretheses+=1;
         }
         else if(IsAnOP(Tokens.at(i))== true){
@@ -107,7 +99,7 @@ int Parser::IsGoodInput(QString equationStr){
             
             }
             catch(InvalidElement &e){
-              return 1;
+              break;
             }
         }
     }
@@ -115,7 +107,7 @@ int Parser::IsGoodInput(QString equationStr){
        return 1;
     }
     if(numbers != (operators+1)){
-        return 1;
+        return 2;
     }
     return 0;
 
@@ -241,6 +233,7 @@ if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==tru
 return 0;
 }
 int Parser::CanGoNoParentheses(vector<string> Tokens){
+    stack<string> HolderCopy = Ops;
     while(Tokens.size()!= 1){
         string nextOp = WhichOp();      
         if(CanPerformNextCalc(nextOp, Tokens)== 1){
@@ -256,6 +249,7 @@ int Parser::CanGoNoParentheses(vector<string> Tokens){
 if(Tokens.size()!= 1){
     return 1;
 }
+Ops = HolderCopy;
 return 0;
 
 }
@@ -444,7 +438,7 @@ int Parser::CanGoParetheses(vector<string> Tokens){
         
       
         Element first(temp.at(0));
-        string yes = temp.at(1);
+   
         char op = temp.at(1)[0];
         Element second(temp.at(2));
       
@@ -477,15 +471,16 @@ int Parser::CanGoParetheses(vector<string> Tokens){
         string ParString = ChangeString(temp);
        Element* NewValue;
        temp = GoThroughInput(ParString);
-       if(CanGoNoParentheses(temp)== 1){
+    if(CanGoNoParentheses(temp)== 1){
         break;
-       }
+    }
          NewValue = RunThroughNoParentheses(temp);
+      
          Tokens.erase(Tokens.begin()+firstIndex, Tokens.begin()+secondIndex+1);
          Tokens.insert(Tokens.begin()+firstIndex, to_string(NewValue->Value()));  
        Ops = TempStack;
        for(unsigned int i = 0; i< temp.size(); i++){
-      if(temp.at(i)[0]== '%'|| IsAnOP(temp.at(i))== true){
+      if(IsAnOP(temp.at(i))== true){
          Ops = removeFromStack(temp.at(i));
       }
        }

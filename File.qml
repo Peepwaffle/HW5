@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
 import QML
-import HW5
+import QtQuick.Dialogs
 ApplicationWindow {
     id: filewindow
     width: 640
@@ -83,6 +83,9 @@ ApplicationWindow {
                   }
                 }
                 }
+     
+      
+    
               Button {
                     id: buttonYes
                     text: ("Yes")
@@ -119,8 +122,9 @@ ApplicationWindow {
                         const component = Qt.createComponent("FileResults.qml");
                   var windowResult = component.createObject()
                   windowResult.fileName= filewindow.fileName;
+                
                      windowResult.show(); 
-                filewindow.hide();
+               filewindow.hide();
                        
                     
                         

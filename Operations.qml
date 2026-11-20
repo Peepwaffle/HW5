@@ -107,6 +107,20 @@ property int opCount: 0
                     visible: false
             
                 }
+                 Label{
+                    id :textTooManyOps
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("Too many operators")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible: false
+            
+                }
                      Label {
                     id: textSwitch
                     color: operationwindow.dark
@@ -180,9 +194,15 @@ property int opCount: 0
                     }
                     else{
                           Par.SetQMLParseFlag("No flag");   
-               if (Par.IsGoodInput(operationwindow.input)=== 1) {
-                textError.visible = true;
-                
+                          var TestInput = Par.IsGoodInput(operationwindow.input);
+               if (TestInput != 0) {
+                if(TestInput === 2){
+                    textTooManyOps.visible = true;
+
+                }
+                else{
+                    textError.visible = true;
+                }
                }
                else if(Par.IsGoodNoFlag(operationwindow.input) === 1){
                     textBadInput.visible = true;
