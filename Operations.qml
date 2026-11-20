@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
-import HW5
+
 
 
 ApplicationWindow {
@@ -183,7 +183,7 @@ property int opCount: 0
                     if(operationwindow.input.length < 1){
                         textEmpty.visible = true
                     }
-                    else if(opCount == 0){
+                    else if(operationwindow.opCount == 0){
                             const component = Qt.createComponent("OperationsResults.qml")
                  const windowResult = component.createObject();
        

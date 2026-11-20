@@ -47,6 +47,19 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                   Label {
+                    id: textNotFoundFile
+                    color: filewindow.dark 
+                    font.pixelSize: 120
+                    fontSizeMode: Text.Fit
+                    text: qsTr("Error: Selected file cannot be accessed")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible: false
+                }
             }
         }
 
@@ -91,10 +104,10 @@ ApplicationWindow {
                     text: ("Yes")
                     visible: { 
                         if(filewindow.fileName.length!= 0){
-                            true
+                            true;
                         }
                         else{
-                            false
+                            false;
                         }
                     }                                      
                     Layout.bottomMargin: 16
@@ -116,7 +129,12 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-                        
+                      
+                       
+                      if(Calculator.OpenUpFile(filewindow.fileName)=== 2){
+
+                      }
+                      else{
                         
                     
                         const component = Qt.createComponent("FileResults.qml");
@@ -125,7 +143,7 @@ ApplicationWindow {
                 
                      windowResult.show(); 
                filewindow.hide();
-                       
+                      }
                     
                         
                       }

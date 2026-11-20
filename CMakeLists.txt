@@ -57,6 +57,7 @@ set_target_properties(appHW5 PROPERTIES
 target_link_libraries(appHW5
     PRIVATE Qt6::Quick
     PRIVATE Qt6::Core
+    PRIVATE Qt6::Widgets
 )
 
 install(TARGETS appHW5
