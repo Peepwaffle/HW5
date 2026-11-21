@@ -13,6 +13,7 @@ ApplicationWindow {
     title: qsTr("File reader")
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
     property string fileName : ""
+ 
    
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -132,13 +133,20 @@ ApplicationWindow {
                       
                        
                       if(Calculator.OpenUpFile(filewindow.fileName)=== 2){
+                        textNotFoundFile.visible = true;
 
                       }
                       else{
                         
-                    
+                    Par.SetQMLParseFlag("f");
                         const component = Qt.createComponent("FileResults.qml");
                   var windowResult = component.createObject()
+                  var result = Par.CanReadThroughFile(filewindow.fileName);
+                  if(result!= 0){
+                    windowResult.boolEnd = true;
+                    windowResult.endedFile = result;
+
+                  }
                   windowResult.fileName= filewindow.fileName;
                 
                      windowResult.show(); 

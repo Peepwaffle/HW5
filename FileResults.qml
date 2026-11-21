@@ -12,11 +12,14 @@ ApplicationWindow {
     visible: true
     title: qsTr("File Result")
    
-    
-    property color dark: "#262626"
-    property color reallyLight: "#e7e7e7"
-    property color light: "#e0e0e0"
-    property string fileName: ""
+    property var equations : [];
+    property var solutions : [];
+    property color dark: "#262626";
+    property color reallyLight: "#e7e7e7";
+    property color light: "#e0e0e0";
+    property string fileName: "";
+    property int endedFile : 0;
+    property bool boolEnd: false;
 
     GridLayout {
         id: grid
@@ -59,9 +62,32 @@ ApplicationWindow {
             ColumnLayout {
                 anchors.fill: parent
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                Text{
+                id: textEnded;
+                text : "An issue occurred on line "+ (fileResultwindow.endedFile) ;
+                        Layout.alignment: Qt.AlignCenter | Qt.AlignCenter
+                visible: fileResultwindow.boolEnd; 
+
+            }
+                  Text{
+            id: textEquation;
+            text: fileResultwindow.equations + "="
+  // /Users/ethan/Qt2/HW5-1/test.txt
+  //6 % 4
+//-43 / 3
+//( 4 + -3.0007 ) 
+//4 * -2
+            }
+            Text{
+                id: textSolutions;
+                text : fileResultwindow.solutions + " 100";
+                        Layout.alignment: Qt.AlignVCenter | Qt.AlignTop
+
+            }
 
               
             }
+        
         }
     }
 

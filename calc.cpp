@@ -6,6 +6,8 @@
 #include "calc.h"
 
 
+
+
 using namespace std;
 
 void calc::Reset(){
@@ -221,6 +223,8 @@ double calc::CalcBothDoubles(QString op){
   return 0.0;
 }
 int calc::OpenUpFile(QString inputFile ){
+
+
 ifstream inFS;
 
  inFS.open(inputFile.toStdString());

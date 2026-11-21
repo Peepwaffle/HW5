@@ -627,6 +627,43 @@ Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
      Reset();
  }
  }
+  int Parser::CanReadThroughFile(QString fileName){
+  
+   string line;
+   int counter = 1;
+      ifstream inFS;
+ inFS.open(fileName.toStdString());
+ while(!inFS.eof()){
+     getline(inFS, line);
+    
+   if(line != ""){
+    
+    try{
+GoThroughInput(line);
+    }
+    catch(exception &e){
+        cout << e.what() << endl;
+        return counter;
+    }
+    
+    
+    
+     
+     try{
+        string value = to_string(Parse(line)->Value());
+       
+Equations.push_back(line);
+Solutions.push_back(value);
+     }
+     catch(exception &e){
+        cout << e.what() << endl;
+        return counter;
+     }
+     }   
+     counter += 1;
+ }
+ return 0;
+ }
   Element* Parser::ParseQML(QString equationStr){
      Reset();
       if(!equationStr.contains(' ') && parseFlag != "f"){

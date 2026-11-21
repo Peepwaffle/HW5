@@ -17,6 +17,7 @@ class Parser: public QObject {
    QML_ELEMENT
     public:
     Parser();
+   Q_INVOKABLE int CanReadThroughFile(QString fileName);
     Q_INVOKABLE int CanGoParetheses(vector<string> Tokens);
     Q_INVOKABLE int CanGoNoParentheses(vector<string> Tokens);
     Q_INVOKABLE int CanPerformNextCalc(string nextOp, vector<string> Tokens);
@@ -55,6 +56,8 @@ class Parser: public QObject {
    string parseFlag;
    stack<Element> NumStack;
    stack<string> Ops;
+   vector<string> Equations;
+   vector<string> Solutions;
      int paretheses = 0;
     int operators = 0;
     int numbers = 0;
