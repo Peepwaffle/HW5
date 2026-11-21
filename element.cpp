@@ -2,7 +2,7 @@
 #include <string>
 #include "exceptions.h"
 #include "element.h"
-#include <QtQmlIntegration/qqmlintegration.h>
+
 using namespace std;
  Element::Element(const Element& previousElement){
   asString = previousElement.asString;

@@ -7,12 +7,12 @@
 #include "exceptions.h"
 #include <vector>
 #include <QObject>
-#include <csignal>
-#include <QtQmlIntegration/qqmlintegration.h>
+
+
 using namespace std;
 class Operation : public Element {
      Q_OBJECT
-  QML_ELEMENT
+
       public:
 
      Q_INVOKABLE  Operation();

@@ -5,7 +5,7 @@
 #include "exceptions.h"
 #include <vector>
 #include "operation.h"
-#include <QtQmlIntegration/qqmlintegration.h>
+
 
 using namespace std;
 

@@ -3,10 +3,9 @@ cmake_minimum_required(VERSION 3.16)
 project(HW5 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
-find_package(Qt6 REQUIRED COMPONENTS Core)
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 6.10 REQUIRED COMPONENTS Core Qml Quick Widgets)
 
 qt_standard_project_setup(REQUIRES 6.10)
 
@@ -19,6 +18,12 @@ qt_add_executable(appHW5
 WIN32 MACOSX_BUNDLE
 
     main.cpp
+    calc.cpp
+    calc.h
+    parser.cpp
+    parser.h
+    element.cpp
+    element.h
    
 
     
@@ -58,6 +63,7 @@ target_link_libraries(appHW5
     PRIVATE Qt6::Quick
     PRIVATE Qt6::Core
     PRIVATE Qt6::Widgets
+    PRIVATE Qt6::Qml
 )
 
 install(TARGETS appHW5

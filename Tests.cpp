@@ -33,39 +33,39 @@ Element TestElementModulo(string firstNum, string secondNum);
 };
 int Tests::CheckInt(string check){
     calc calculator;
-    return  calculator.FirstCheckInt(check);
+    return  calculator.FirstCheckInt(QString::fromStdString(check));
 }
 int Tests::CheckDouble(string check){
     calc calculator;
-    return calculator.FirstCheckDouble(check);
+    return calculator.FirstCheckDouble(QString::fromStdString(check));
 }
 int Tests::ValidOp(string check){
     calc calculator;
-    return calculator.CheckValidOp(check);
+    return calculator.CheckValidOp(QString::fromStdString(check));
 }
 int Tests::BothInts(int first, string op, int second){
     calc calculator;
     calculator.SetFirstNum(first);
     calculator.SetSecondNum(second);
-    return calculator.CalculateInts(op);
+    return calculator.CalculateInts(QString::fromStdString(op));
 }
 double Tests::FirstDouble(double first, string op, int second){
     calc calculator;
     calculator.SetFirstNum(first);
     calculator.SetSecondNum(second);
-    return calculator.CalcFirstDouble(op);
+    return calculator.CalcFirstDouble(QString::fromStdString(op));
 }
 double Tests::SecondDouble(int first, string op, double second){
     calc calculator;
     calculator.SetFirstNum(first);
     calculator.SetSecondNum(second);
-    return calculator.CalcSecondDouble(op);
+    return calculator.CalcSecondDouble(QString::fromStdString(op));
 }
 double Tests::BothDoubles(double first, string op, double second){
     calc calculator;
     calculator.SetFirstNum(first);
     calculator.SetSecondNum(second);
-    return calculator.CalcBothDoubles(op);
+    return calculator.CalcBothDoubles(QString::fromStdString(op));
 }
 int Tests::CreateIntElement(int value){
     Element testElement(value);

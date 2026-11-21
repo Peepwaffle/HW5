@@ -23,7 +23,7 @@ string Runner::CorrectlySpace(string toStart){
       }   
   return CorrectString;
 }
-bool CanBeOp(string trying){
+bool Runner::CanBeOp(string trying){
 string test = CorrectlySpace(trying);
 try{
 Operation tryer(test);
@@ -82,7 +82,8 @@ return "No flag";
 }
 
 int Run(int argc, char* argv[]){
-  string flag = CheckFlags(argc, argv);
+  Runner ran;
+  string flag = ran.CheckFlags(argc, argv);
   if(flag == "Not found"){
     cerr << "Error: Flag not found" << endl;
     return 2;
@@ -120,9 +121,9 @@ return 0;
           return 4;
         }
       }  
-      string Converted = ConvertToString(argv, argc, flag);    
+      string Converted = ran.ConvertToString(argv, argc, flag);    
 if(flag == "No flag"&& argc == 2){
-Converted = CorrectlySpace(Converted);
+Converted = ran.CorrectlySpace(Converted);
 }
       Parser test;
       test.SetParseFlag(flag);
@@ -138,9 +139,9 @@ Converted = CorrectlySpace(Converted);
   string asOne = "";
       if(flag == "No flag"){
         for(int i = 1; i< argc; ++i){
-          if(CanBeOp(argv[i]) == true){
+          if(ran.CanBeOp(argv[i]) == true){
            string Converted2 = argv[i];
-            Converted2 = CorrectlySpace(Converted2);
+            Converted2 = ran.CorrectlySpace(Converted2);
             Element* hold = test.Parse(Converted2);
       for(unsigned int index = 0; index < test.initialValues.size(); index++){
         cout << test.initialValues.at(index) << " ";
@@ -151,7 +152,7 @@ Converted = CorrectlySpace(Converted);
           else{
           asOne = asOne+ argv[i]+" ";
           try{
-            asOne = CorrectlySpace(asOne);
+            asOne = ran.CorrectlySpace(asOne);
             Operation tempOperation(asOne);
             test.Parse(asOne);
         cout << test.initialValues.at(0) << " = " << test.initialValues.at(0) << endl;
@@ -163,7 +164,7 @@ Converted = CorrectlySpace(Converted);
           }
         }
         if(asOne!= ""){
-        string correct = CorrectlySpace(asOne);
+        string correct = ran.CorrectlySpace(asOne);
            Element* hold = test.Parse(correct);
             cout << correct << "= " << *hold << endl;}
       }  

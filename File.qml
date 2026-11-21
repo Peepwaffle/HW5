@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
 import QML
-import QtQuick.Dialogs
+
 ApplicationWindow {
     id: filewindow
     width: 640

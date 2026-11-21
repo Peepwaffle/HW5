@@ -1,3 +1,29 @@
 <RCC>
-    <qresource prefix="/HW5Submission"/>
+    <qresource prefix="/HW5Submission">
+        <file>calc.cpp</file>
+        <file>calc.h</file>
+        <file>element.cpp</file>
+        <file>element.h</file>
+        <file>element.o</file>
+        <file>Main.qml</file>
+        <file>File.qml</file>
+        <file>FileResults.qml</file>
+        <file>main.cpp</file>
+        <file>operation.h</file>
+        <file>operation.o</file>
+        <file>operation.cpp</file>
+        <file>Operations.qml</file>
+        <file>parser.h</file>
+        <file>parser.o</file>
+        <file>OperationsResults.qml</file>
+        <file>runner.cpp</file>
+        <file>runner.h</file>
+        <file>Terminal.qml</file>
+        <file>parser.cpp</file>
+        <file>runner.o</file>
+        <file>Tests.cpp</file>
+        <file>test.txt</file>
+        <file>TerminalResults.qml</file>
+        <file>Tests.h</file>
+    </qresource>
 </RCC>

@@ -3,11 +3,12 @@
 #include <iostream>
 #include <string>
 #include <QObject>
-#include <QtQmlIntegration/qqmlintegration.h>
+
+
 using namespace std;
 class Element: public QObject {
    Q_OBJECT
-   QML_ELEMENT
+
     public:
 Q_INVOKABLE virtual ~Element();
    Q_INVOKABLE   Element();

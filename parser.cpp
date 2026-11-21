@@ -8,10 +8,11 @@
 #include "operation.h"
 #include <stdexcept>
 #include <fstream>
-#include <QtQmlIntegration/qqmlintegration.h>
+
 
 Parser::Parser(){
 }
+
 void Parser::SetQMLParseFlag(QString toFlag){
      if(toFlag== "c"){
         parseFlag = "c";
@@ -202,7 +203,9 @@ if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==tru
     throw DivideByZeroError("Divide by zero error");
  }
  catch(InvalidOperator &e){
-    throw InvalidOperator("Invalid element value:" + nextOp[0]);
+    string ErrorMessage = "Invalid element value: ";
+    ErrorMessage.push_back(nextOp[0]);
+    throw InvalidOperator(ErrorMessage);
  }
 }
 int Parser::CanPerformNextCalc(string nextOp, vector<string> Tokens){

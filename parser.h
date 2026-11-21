@@ -10,13 +10,14 @@
 #include <stdexcept>
 #include <fstream>
 #include <QObject>
-#include <QtQmlIntegration/qqmlintegration.h>
+
 using namespace std;
 class Parser: public QObject {
    Q_OBJECT
-   QML_ELEMENT
+
     public:
-    Parser();
+  Q_INVOKABLE Parser();
+   // virtual ~Parser() {};
    Q_INVOKABLE int CanReadThroughFile(QString fileName);
     Q_INVOKABLE int CanGoParetheses(vector<string> Tokens);
     Q_INVOKABLE int CanGoNoParentheses(vector<string> Tokens);

@@ -13,11 +13,12 @@
 #include <unistd.h>
 #include "parser.h"
 class Runner{
+    public:
     string CorrectlySpace(string toStart);
     bool CanBeOp(string trying);
     string ConvertToString(char* array[], int size, string flag);
     string CheckFlags(int argc,char* argv[]);
     int Run(int argc, char* argv[]);
 
-}
+};
 #endif

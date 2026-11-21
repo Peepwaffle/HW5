@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+
 #include "calc.h"
 #include "element.h"
 #include "operation.h"
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 
  QObject::connect(
         &engine,
-       &QQmlApplicationEngine::objectCreationFailed,
+      &QQmlApplicationEngine::objectCreationFailed,
         &app,
        []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
@@ -30,8 +31,8 @@ engine.rootContext()->setContextProperty("Help", &Operate);
 engine.rootContext()->setContextProperty("Par", &parsing);
 
 
-    engine.loadFromModule("HW5", "Main");
+   engine.loadFromModule("HW5", "Main");
   
-
+//app.loadFromModule("HW5", "Main");
     return app.exec();
 }

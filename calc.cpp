@@ -2,7 +2,7 @@
 #include <string>
 #include <stdexcept>
 #include <fstream>
-#include <QtQmlIntegration/qqmlintegration.h>
+
 #include "calc.h"
 
 

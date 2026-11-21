@@ -7,12 +7,13 @@
 #include <fstream>
 
 #include <QObject>
-#include <QtQmlIntegration/qqmlintegration.h>
+
+//#include <QtQmlIntegration/qqmlintegration.h>
 
 using namespace std;
 class calc: public QObject{
       Q_OBJECT
-  QML_ELEMENT
+ 
 public:
  Q_INVOKABLE void Reset();
     Q_INVOKABLE int FirstCheckInt(QString firstNumber);
