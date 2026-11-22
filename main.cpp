@@ -1,12 +1,12 @@
 #include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include <QtQml/qqmlapplicationengine.h>
 
 #include "calc.h"
 #include "element.h"
 #include "operation.h"
 #include "parser.h"
-#include <QtQml>
-#include <QQmlContext>
+
+#include <QtQml/qqmlcontext.h>
 
 int main(int argc, char *argv[])
 {

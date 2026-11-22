@@ -1,0 +1,4 @@
+/Users/ethan/Qt2/HW5-1/appHW5_autogen/include/../EWIEGA46WW/moc_calc.cpp.json
+/Users/ethan/Qt2/HW5-1/appHW5_autogen/include/../EWIEGA46WW/moc_element.cpp.json
+/Users/ethan/Qt2/HW5-1/appHW5_autogen/include/../EWIEGA46WW/moc_operation.cpp.json
+/Users/ethan/Qt2/HW5-1/appHW5_autogen/include/../EWIEGA46WW/moc_parser.cpp.json

@@ -1,0 +1,448 @@
+{
+    "classes": [
+        {
+            "className": "Parser",
+            "constructors": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 19,
+                    "name": "Parser",
+                    "returnType": ""
+                }
+            ],
+            "lineNumber": 15,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fileName",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 21,
+                    "name": "CanReadThroughFile",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 22,
+                    "name": "CanGoParetheses",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 23,
+                    "name": "CanGoNoParentheses",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nextOp",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 24,
+                    "name": "CanPerformNextCalc",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "toFlag",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 25,
+                    "name": "SetQMLParseFlag",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "OriginalStack",
+                            "type": "stack<string>"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 26,
+                    "name": "ReverseStack",
+                    "returnType": "stack<string>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "equationStr",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 27,
+                    "name": "Parse",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "toFlag",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 28,
+                    "name": "SetParseFlag",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "equationStr",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 8,
+                    "lineNumber": 29,
+                    "name": "GoThroughInput",
+                    "returnType": "vector<string>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "toCheck",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 9,
+                    "lineNumber": 30,
+                    "name": "IsAnOP",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "lineNumber": 31,
+                    "name": "Reset",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        },
+                        {
+                            "name": "equationStr",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 11,
+                    "lineNumber": 32,
+                    "name": "CreateNoFlag",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 12,
+                    "lineNumber": 33,
+                    "name": "RunThroughNoParentheses",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "index": 13,
+                    "lineNumber": 34,
+                    "name": "WhichOp",
+                    "returnType": "string"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "OptoCheck",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 14,
+                    "lineNumber": 35,
+                    "name": "OperatorPriority",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nextOp",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 15,
+                    "lineNumber": 36,
+                    "name": "PerformNextCalculation",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        },
+                        {
+                            "name": "nextOp",
+                            "type": "string"
+                        },
+                        {
+                            "name": "toReplace",
+                            "type": "Element*"
+                        }
+                    ],
+                    "index": 16,
+                    "lineNumber": 37,
+                    "name": "Remove",
+                    "returnType": "vector<string>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "toRemove",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 17,
+                    "lineNumber": 38,
+                    "name": "removeFromStack",
+                    "returnType": "stack<string>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "toRemove",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 18,
+                    "lineNumber": 39,
+                    "name": "numberofInstances",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "fileName",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 19,
+                    "lineNumber": 41,
+                    "name": "readThroughFile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 20,
+                    "lineNumber": 42,
+                    "name": "GoParentheses",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 21,
+                    "lineNumber": 43,
+                    "name": "FindFirstPare",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 22,
+                    "lineNumber": 44,
+                    "name": "FindSecondPare",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 23,
+                    "lineNumber": 45,
+                    "name": "NumbersInTemp",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 24,
+                    "lineNumber": 46,
+                    "name": "OpsInTemp",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "equationStr",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 25,
+                    "lineNumber": 47,
+                    "name": "IsGoodInput",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "equationStr",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 26,
+                    "lineNumber": 49,
+                    "name": "IsGoodNoFlag",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "equationStr",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 27,
+                    "lineNumber": 50,
+                    "name": "ParseQML",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 28,
+                    "lineNumber": 51,
+                    "name": "ChangeString",
+                    "returnType": "string"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "checking",
+                            "type": "vector<string>"
+                        }
+                    ],
+                    "index": 29,
+                    "lineNumber": 52,
+                    "name": "HasInnerPare",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Tokens",
+                            "type": "vector<string>"
+                        },
+                        {
+                            "name": "firstIndex",
+                            "type": "uint"
+                        },
+                        {
+                            "name": "secondIndex",
+                            "type": "uint"
+                        }
+                    ],
+                    "index": 30,
+                    "lineNumber": 53,
+                    "name": "CreateTemp",
+                    "returnType": "vector<string>"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "Parser",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "parser.h",
+    "outputRevision": 69
+}

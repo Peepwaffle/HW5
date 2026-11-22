@@ -1,0 +1,155 @@
+{
+    "classes": [
+        {
+            "className": "Element",
+            "constructors": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 14,
+                    "name": "Element",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "previousElement",
+                            "type": "Element"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 15,
+                    "name": "Element",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newInt",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 16,
+                    "name": "Element",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newDouble",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 17,
+                    "name": "Element",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newVal",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 18,
+                    "name": "Element",
+                    "returnType": ""
+                }
+            ],
+            "lineNumber": 9,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "isConst": true,
+                    "lineNumber": 19,
+                    "name": "Value",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "isConst": true,
+                    "lineNumber": 20,
+                    "name": "DoubleValue",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "isConst": true,
+                    "lineNumber": 21,
+                    "name": "IntValue",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "newVal",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 22,
+                    "name": "Value",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 23,
+                    "name": "ChangeType",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 24,
+                    "name": "ChangeString",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "isConst": true,
+                    "lineNumber": 25,
+                    "name": "Clone",
+                    "returnType": "Element*"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "isConst": true,
+                    "lineNumber": 26,
+                    "name": "IsDouble",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "lineNumber": 33,
+                    "name": "getString",
+                    "returnType": "string"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "Element",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "element.h",
+    "outputRevision": 69
+}

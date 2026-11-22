@@ -1,0 +1,1144 @@
+[
+    {
+        "classes": [
+            {
+                "className": "calc",
+                "lineNumber": 14,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 18,
+                        "name": "Reset",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "firstNumber",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 19,
+                        "name": "FirstCheckInt",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Checking",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 20,
+                        "name": "CheckValidOp",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "firstNumber",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 21,
+                        "name": "FirstCheckDouble",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "thirdvalue",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 22,
+                        "name": "ThirdCheckInt",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "thirdvalue",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "lineNumber": 23,
+                        "name": "ThirdCheckDouble",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "lengthCheck",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 24,
+                        "name": "LookAtFirstValue",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "lengthCheck",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "lineNumber": 25,
+                        "name": "LookAtThirdValue",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Op",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "lineNumber": 26,
+                        "name": "CalculateInts",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "op",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 9,
+                        "lineNumber": 27,
+                        "name": "CalcFirstDouble",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "op",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 10,
+                        "lineNumber": 28,
+                        "name": "CalcSecondDouble",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "op",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 11,
+                        "lineNumber": 29,
+                        "name": "CalcBothDoubles",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "inputFile",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 12,
+                        "lineNumber": 30,
+                        "name": "OpenUpFile",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "argv",
+                                "type": "char*[]"
+                            }
+                        ],
+                        "index": 13,
+                        "lineNumber": 31,
+                        "name": "CheckInput",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "argv",
+                                "type": "QString[]"
+                            }
+                        ],
+                        "index": 14,
+                        "lineNumber": 32,
+                        "name": "CheckInput",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ErrorNumber",
+                                "type": "int"
+                            },
+                            {
+                                "name": "argv",
+                                "type": "QString[]"
+                            }
+                        ],
+                        "index": 15,
+                        "lineNumber": 33,
+                        "name": "WhichError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "op",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 16,
+                        "lineNumber": 34,
+                        "name": "CheckValidEquation",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "whichOp",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 17,
+                        "lineNumber": 35,
+                        "name": "RunCalculations",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ErrorNumber",
+                                "type": "int"
+                            },
+                            {
+                                "name": "argv",
+                                "type": "char*[]"
+                            }
+                        ],
+                        "index": 18,
+                        "lineNumber": 36,
+                        "name": "WhichError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ErrorNumber",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 19,
+                        "lineNumber": 37,
+                        "name": "WhichError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "inputFile",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 20,
+                        "lineNumber": 38,
+                        "name": "readThroughFile",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "FirstVal",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 21,
+                        "lineNumber": 39,
+                        "name": "SetFirstNum",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "FirstVal",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 22,
+                        "lineNumber": 40,
+                        "name": "SetFirstNum",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "SecondVal",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 23,
+                        "lineNumber": 41,
+                        "name": "SetSecondNum",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "SecondVal",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 24,
+                        "lineNumber": 42,
+                        "name": "SetSecondNum",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "line",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 25,
+                        "lineNumber": 43,
+                        "name": "CheckLine",
+                        "returnType": "int"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "calc",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "calc.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Element",
+                "constructors": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 14,
+                        "name": "Element",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "previousElement",
+                                "type": "Element"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 15,
+                        "name": "Element",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newInt",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 16,
+                        "name": "Element",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newDouble",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 17,
+                        "name": "Element",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newVal",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 18,
+                        "name": "Element",
+                        "returnType": ""
+                    }
+                ],
+                "lineNumber": 9,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "isConst": true,
+                        "lineNumber": 19,
+                        "name": "Value",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "isConst": true,
+                        "lineNumber": 20,
+                        "name": "DoubleValue",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "isConst": true,
+                        "lineNumber": 21,
+                        "name": "IntValue",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newVal",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 22,
+                        "name": "Value",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "lineNumber": 23,
+                        "name": "ChangeType",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 24,
+                        "name": "ChangeString",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "isConst": true,
+                        "lineNumber": 25,
+                        "name": "Clone",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "index": 7,
+                        "isConst": true,
+                        "lineNumber": 26,
+                        "name": "IsDouble",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "lineNumber": 33,
+                        "name": "getString",
+                        "returnType": "string"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Element",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "element.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Operation",
+                "constructors": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 18,
+                        "name": "Operation",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "element",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 19,
+                        "name": "Operation",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "other",
+                                "type": "Operation"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 20,
+                        "name": "Operation",
+                        "returnType": ""
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "leftElem",
+                                "type": "Element"
+                            },
+                            {
+                                "name": "op",
+                                "type": "char"
+                            },
+                            {
+                                "name": "rightElem",
+                                "type": "Element"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 26,
+                        "name": "Operation",
+                        "returnType": ""
+                    }
+                ],
+                "lineNumber": 13,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "input",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 23,
+                        "name": "CreateString",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "isConst": true,
+                        "lineNumber": 25,
+                        "name": "IsDouble",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "op",
+                                "type": "char"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 27,
+                        "name": "ValidOp",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "isConst": true,
+                        "lineNumber": 28,
+                        "name": "Clone",
+                        "returnType": "Operation*"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "lineNumber": 29,
+                        "name": "GetOp",
+                        "returnType": "char"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "isConst": true,
+                        "lineNumber": 30,
+                        "name": "Value",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "isConst": true,
+                        "lineNumber": 31,
+                        "name": "RunCalc",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 7,
+                        "isConst": true,
+                        "lineNumber": 32,
+                        "name": "IntCalc",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "isConst": true,
+                        "lineNumber": 33,
+                        "name": "DoubleValue",
+                        "returnType": "double"
+                    },
+                    {
+                        "access": "public",
+                        "index": 9,
+                        "isConst": true,
+                        "lineNumber": 34,
+                        "name": "IntValue",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "lineNumber": 35,
+                        "name": "Test",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "index": 11,
+                        "lineNumber": 36,
+                        "name": "IsGood",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Operation",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "Element"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "operation.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Parser",
+                "constructors": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 19,
+                        "name": "Parser",
+                        "returnType": ""
+                    }
+                ],
+                "lineNumber": 15,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileName",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 21,
+                        "name": "CanReadThroughFile",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 22,
+                        "name": "CanGoParetheses",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 23,
+                        "name": "CanGoNoParentheses",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nextOp",
+                                "type": "string"
+                            },
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 24,
+                        "name": "CanPerformNextCalc",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "toFlag",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 25,
+                        "name": "SetQMLParseFlag",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "OriginalStack",
+                                "type": "stack<string>"
+                            }
+                        ],
+                        "index": 5,
+                        "lineNumber": 26,
+                        "name": "ReverseStack",
+                        "returnType": "stack<string>"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "equationStr",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 27,
+                        "name": "Parse",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "toFlag",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 7,
+                        "lineNumber": 28,
+                        "name": "SetParseFlag",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "equationStr",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 8,
+                        "lineNumber": 29,
+                        "name": "GoThroughInput",
+                        "returnType": "vector<string>"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "toCheck",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 9,
+                        "lineNumber": 30,
+                        "name": "IsAnOP",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "lineNumber": 31,
+                        "name": "Reset",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            },
+                            {
+                                "name": "equationStr",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 11,
+                        "lineNumber": 32,
+                        "name": "CreateNoFlag",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 12,
+                        "lineNumber": 33,
+                        "name": "RunThroughNoParentheses",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "index": 13,
+                        "lineNumber": 34,
+                        "name": "WhichOp",
+                        "returnType": "string"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "OptoCheck",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 14,
+                        "lineNumber": 35,
+                        "name": "OperatorPriority",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nextOp",
+                                "type": "string"
+                            },
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 15,
+                        "lineNumber": 36,
+                        "name": "PerformNextCalculation",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            },
+                            {
+                                "name": "nextOp",
+                                "type": "string"
+                            },
+                            {
+                                "name": "toReplace",
+                                "type": "Element*"
+                            }
+                        ],
+                        "index": 16,
+                        "lineNumber": 37,
+                        "name": "Remove",
+                        "returnType": "vector<string>"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "toRemove",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 17,
+                        "lineNumber": 38,
+                        "name": "removeFromStack",
+                        "returnType": "stack<string>"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "toRemove",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 18,
+                        "lineNumber": 39,
+                        "name": "numberofInstances",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileName",
+                                "type": "string"
+                            }
+                        ],
+                        "index": 19,
+                        "lineNumber": 41,
+                        "name": "readThroughFile",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 20,
+                        "lineNumber": 42,
+                        "name": "GoParentheses",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 21,
+                        "lineNumber": 43,
+                        "name": "FindFirstPare",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 22,
+                        "lineNumber": 44,
+                        "name": "FindSecondPare",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 23,
+                        "lineNumber": 45,
+                        "name": "NumbersInTemp",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 24,
+                        "lineNumber": 46,
+                        "name": "OpsInTemp",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "equationStr",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 25,
+                        "lineNumber": 47,
+                        "name": "IsGoodInput",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "equationStr",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 26,
+                        "lineNumber": 49,
+                        "name": "IsGoodNoFlag",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "equationStr",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 27,
+                        "lineNumber": 50,
+                        "name": "ParseQML",
+                        "returnType": "Element*"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 28,
+                        "lineNumber": 51,
+                        "name": "ChangeString",
+                        "returnType": "string"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "checking",
+                                "type": "vector<string>"
+                            }
+                        ],
+                        "index": 29,
+                        "lineNumber": 52,
+                        "name": "HasInnerPare",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Tokens",
+                                "type": "vector<string>"
+                            },
+                            {
+                                "name": "firstIndex",
+                                "type": "uint"
+                            },
+                            {
+                                "name": "secondIndex",
+                                "type": "uint"
+                            }
+                        ],
+                        "index": 30,
+                        "lineNumber": 53,
+                        "name": "CreateTemp",
+                        "returnType": "vector<string>"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Parser",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "parser.h",
+        "outputRevision": 69
+    }
+]

@@ -14,6 +14,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("Terminal")
     signal errorOccurred(message: string);
+    property bool messageUp: false;
     
    property bool isEnabled: false
    property string input : ""
@@ -24,6 +25,15 @@ ApplicationWindow {
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
+function setButton(){
+    if(messageUp === false){
+        textEmpty.visible = false;
+        textBadInput.visible = false;
+        textError.visible = false;
+
+    }
+
+}   
 
     GridLayout {
         id: grid
@@ -63,6 +73,7 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+             
                  Label{
                     id :textEmpty
                     color: terminalwindow.dark
@@ -74,7 +85,7 @@ ApplicationWindow {
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    visible:false
+                    visible: false;
                     
                 }
                 Label{
@@ -161,6 +172,7 @@ ApplicationWindow {
               
                 if (terminalwindow.input.length === 0) {
                     textEmpty.visible = true;
+                    terminalwindow.messageUp = true;
                     
                 }
                 else{
@@ -188,11 +200,13 @@ ApplicationWindow {
                   else{
                     if(Help.CreateString(terminalwindow.input)=== 1){
                         textError.visible = true;
+                        terminalwindow.messageUp = true;
 
                     }
                     else{
                   if(Help.IsGood()=== false){
                     textBadInput.visible= true;
+                      terminalwindow.messageUp = true;
 
                   }
                   else{
@@ -286,13 +300,17 @@ ApplicationWindow {
                         color: terminalwindow.dark 
                     }
 
-                    onClicked: 
+                    onClicked: {
+                    terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
+                        
                         terminalwindow.input+=(" + ")
                         terminalwindow.opCounter += 1;
                         }
                         else{
                             terminalwindow.input+=("1")
+                        }
                         }
                 }
 
@@ -355,7 +373,9 @@ ApplicationWindow {
                         color: terminalwindow.dark 
                     }
 
-                    onClicked:  
+                    onClicked:  {
+                    terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" * ")
                         terminalwindow.opCounter+=1;
@@ -363,7 +383,7 @@ ApplicationWindow {
                         else{
                             terminalwindow.input+=("3")
                         }
-                }
+                }}
                  Button {
                     id: button4
                     text: 

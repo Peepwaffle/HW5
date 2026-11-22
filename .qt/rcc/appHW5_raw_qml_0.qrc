@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/qt/qml/HW5/">
+    <file alias="Main.qml">/Users/ethan/Qt2/HW5-1/Main.qml</file>
+    <file alias="File.qml">/Users/ethan/Qt2/HW5-1/File.qml</file>
+    <file alias="Terminal.qml">/Users/ethan/Qt2/HW5-1/Terminal.qml</file>
+    <file alias="Operations.qml">/Users/ethan/Qt2/HW5-1/Operations.qml</file>
+    <file alias="TerminalResults.qml">/Users/ethan/Qt2/HW5-1/TerminalResults.qml</file>
+    <file alias="FileResults.qml">/Users/ethan/Qt2/HW5-1/FileResults.qml</file>
+    <file alias="OperationsResults.qml">/Users/ethan/Qt2/HW5-1/OperationsResults.qml</file>
+  </qresource>
+</RCC>
+

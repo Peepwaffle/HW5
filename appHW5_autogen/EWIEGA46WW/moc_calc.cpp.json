@@ -1,0 +1,360 @@
+{
+    "classes": [
+        {
+            "className": "calc",
+            "lineNumber": 14,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 18,
+                    "name": "Reset",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "firstNumber",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 19,
+                    "name": "FirstCheckInt",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Checking",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 20,
+                    "name": "CheckValidOp",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "firstNumber",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 21,
+                    "name": "FirstCheckDouble",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "thirdvalue",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 22,
+                    "name": "ThirdCheckInt",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "thirdvalue",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 23,
+                    "name": "ThirdCheckDouble",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "lengthCheck",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 24,
+                    "name": "LookAtFirstValue",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "lengthCheck",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 25,
+                    "name": "LookAtThirdValue",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Op",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 8,
+                    "lineNumber": 26,
+                    "name": "CalculateInts",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "op",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 9,
+                    "lineNumber": 27,
+                    "name": "CalcFirstDouble",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "op",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "lineNumber": 28,
+                    "name": "CalcSecondDouble",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "op",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 11,
+                    "lineNumber": 29,
+                    "name": "CalcBothDoubles",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "inputFile",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 12,
+                    "lineNumber": 30,
+                    "name": "OpenUpFile",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "argv",
+                            "type": "char*[]"
+                        }
+                    ],
+                    "index": 13,
+                    "lineNumber": 31,
+                    "name": "CheckInput",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "argv",
+                            "type": "QString[]"
+                        }
+                    ],
+                    "index": 14,
+                    "lineNumber": 32,
+                    "name": "CheckInput",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ErrorNumber",
+                            "type": "int"
+                        },
+                        {
+                            "name": "argv",
+                            "type": "QString[]"
+                        }
+                    ],
+                    "index": 15,
+                    "lineNumber": 33,
+                    "name": "WhichError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "op",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 16,
+                    "lineNumber": 34,
+                    "name": "CheckValidEquation",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "whichOp",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 17,
+                    "lineNumber": 35,
+                    "name": "RunCalculations",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ErrorNumber",
+                            "type": "int"
+                        },
+                        {
+                            "name": "argv",
+                            "type": "char*[]"
+                        }
+                    ],
+                    "index": 18,
+                    "lineNumber": 36,
+                    "name": "WhichError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ErrorNumber",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 19,
+                    "lineNumber": 37,
+                    "name": "WhichError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "inputFile",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 20,
+                    "lineNumber": 38,
+                    "name": "readThroughFile",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "FirstVal",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 21,
+                    "lineNumber": 39,
+                    "name": "SetFirstNum",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "FirstVal",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 22,
+                    "lineNumber": 40,
+                    "name": "SetFirstNum",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "SecondVal",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 23,
+                    "lineNumber": 41,
+                    "name": "SetSecondNum",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "SecondVal",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 24,
+                    "lineNumber": 42,
+                    "name": "SetSecondNum",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "line",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 25,
+                    "lineNumber": 43,
+                    "name": "CheckLine",
+                    "returnType": "int"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "calc",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "calc.h",
+    "outputRevision": 69
+}

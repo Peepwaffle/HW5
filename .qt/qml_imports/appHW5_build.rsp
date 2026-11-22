@@ -1,0 +1,14 @@
+-rootPath
+/Users/ethan/Qt2/HW5-1
+-cmake-output
+-output-file
+/Users/ethan/Qt2/HW5-1/.qt/qml_imports/appHW5_build.cmake
+-importPath
+/Users/ethan/Qt2/HW5-1
+-importPath
+/Users/ethan/Qt2/HW5-1/HW5
+-importPath
+/opt/homebrew/share/qt/qml
+-qrcFiles
+/Users/ethan/Qt2/HW5-1/.qt/rcc/qmake_HW5.qrc
+/Users/ethan/Qt2/HW5-1/.qt/rcc/appHW5_raw_qml_0.qrc

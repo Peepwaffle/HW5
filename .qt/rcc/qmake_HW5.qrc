@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/HW5">
+    <file alias="qmldir">/Users/ethan/Qt2/HW5-1/HW5/qmldir</file>
+  </qresource>
+</RCC>
+

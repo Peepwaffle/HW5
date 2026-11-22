@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGETS "appHW5")
+set(__QT_DEPLOY_TARGET_appHW5_FILE /Users/ethan/Qt2/HW5-1/appHW5.app/Contents/MacOS/appHW5)
+set(__QT_DEPLOY_TARGET_appHW5_TYPE EXECUTABLE)

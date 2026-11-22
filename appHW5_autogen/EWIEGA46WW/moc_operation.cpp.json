@@ -1,0 +1,179 @@
+{
+    "classes": [
+        {
+            "className": "Operation",
+            "constructors": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 18,
+                    "name": "Operation",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "element",
+                            "type": "string"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 19,
+                    "name": "Operation",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "other",
+                            "type": "Operation"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 20,
+                    "name": "Operation",
+                    "returnType": ""
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "leftElem",
+                            "type": "Element"
+                        },
+                        {
+                            "name": "op",
+                            "type": "char"
+                        },
+                        {
+                            "name": "rightElem",
+                            "type": "Element"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 26,
+                    "name": "Operation",
+                    "returnType": ""
+                }
+            ],
+            "lineNumber": 13,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "input",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 23,
+                    "name": "CreateString",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "isConst": true,
+                    "lineNumber": 25,
+                    "name": "IsDouble",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "op",
+                            "type": "char"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 27,
+                    "name": "ValidOp",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "isConst": true,
+                    "lineNumber": 28,
+                    "name": "Clone",
+                    "returnType": "Operation*"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 29,
+                    "name": "GetOp",
+                    "returnType": "char"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "isConst": true,
+                    "lineNumber": 30,
+                    "name": "Value",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "isConst": true,
+                    "lineNumber": 31,
+                    "name": "RunCalc",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "isConst": true,
+                    "lineNumber": 32,
+                    "name": "IntCalc",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "isConst": true,
+                    "lineNumber": 33,
+                    "name": "DoubleValue",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "isConst": true,
+                    "lineNumber": 34,
+                    "name": "IntValue",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "lineNumber": 35,
+                    "name": "Test",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "lineNumber": 36,
+                    "name": "IsGood",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "Operation",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "Element"
+                }
+            ]
+        }
+    ],
+    "inputFile": "operation.h",
+    "outputRevision": 69
+}
