@@ -14,6 +14,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("Terminal")
     signal errorOccurred(message: string);
+    property bool messageUp: false;
     
    property bool isEnabled: false
    property string input : ""
@@ -24,6 +25,15 @@ ApplicationWindow {
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
+function setButton(){
+    if(messageUp === false){
+        textEmpty.visible = false;
+        textBadInput.visible = false;
+        textError.visible = false;
+
+    }
+
+}   
 
     GridLayout {
         id: grid
@@ -63,6 +73,7 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
+                
                  Label{
                     id :textEmpty
                     color: terminalwindow.dark
@@ -74,7 +85,7 @@ ApplicationWindow {
                     Layout.margins: 16
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    visible:false
+                    visible: false;
                     
                 }
                 Label{
@@ -92,6 +103,21 @@ ApplicationWindow {
             
                 }
                  Label{
+                    id :textErrorExplain
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+             
+                    text: "You may have entered in only an operator, \n more than 2 numbers, \n or only 1 number and an operator"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textError.visible
+            
+                }
+                 Label{
                     id :textBadInput
                     color: terminalwindow.dark
                     font.pixelSize: 80
@@ -103,6 +129,20 @@ ApplicationWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     visible:false
+            
+                }
+                 Label{
+                    id :textBadInputExplain
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: "You are trying to do modulo by doubles \n or division by 0"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textBadInput.visible
             
                 }
                  
@@ -161,6 +201,7 @@ ApplicationWindow {
               
                 if (terminalwindow.input.length === 0) {
                     textEmpty.visible = true;
+                    terminalwindow.messageUp = true;
                     
                 }
                 else{
@@ -188,11 +229,13 @@ ApplicationWindow {
                   else{
                     if(Help.CreateString(terminalwindow.input)=== 1){
                         textError.visible = true;
+                        terminalwindow.messageUp = true;
 
                     }
                     else{
                   if(Help.IsGood()=== false){
                     textBadInput.visible= true;
+                      terminalwindow.messageUp = true;
 
                   }
                   else{
@@ -286,13 +329,17 @@ ApplicationWindow {
                         color: terminalwindow.dark 
                     }
 
-                    onClicked: 
+                    onClicked: {
+                    terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
+                        
                         terminalwindow.input+=(" + ")
                         terminalwindow.opCounter += 1;
                         }
                         else{
                             terminalwindow.input+=("1")
+                        }
                         }
                 }
 
@@ -321,14 +368,17 @@ ApplicationWindow {
                         color: terminalwindow.dark 
                     }
 
-                    onClicked:  if(terminalwindow.isEnabled== true){
+                    onClicked:  {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                        if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" - ");
                         terminalwindow.opCounter +=1;
                         
                         }
                         else{
                             terminalwindow.input+=("2");
-                        }
+                        }}
                 }
                  Button {
                     id: button3
@@ -355,7 +405,9 @@ ApplicationWindow {
                         color: terminalwindow.dark 
                     }
 
-                    onClicked:  
+                    onClicked:  {
+                    terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" * ")
                         terminalwindow.opCounter+=1;
@@ -363,7 +415,7 @@ ApplicationWindow {
                         else{
                             terminalwindow.input+=("3")
                         }
-                }
+                }}
                  Button {
                     id: button4
                     text: 
@@ -388,13 +440,15 @@ ApplicationWindow {
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked:  
+                    onClicked:  {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" / ")
                         terminalwindow.opCounter+=1;}
                         else{
                             terminalwindow.input+=("4")
-                        }
+                        }}
                 }
             Button {
                     id: button5
@@ -419,7 +473,9 @@ ApplicationWindow {
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: 
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                      if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" % ")
                         terminalwindow.opCounter+=1;
@@ -427,6 +483,7 @@ ApplicationWindow {
                         }
                         else{
                             terminalwindow.input+=("5")
+                        }
                         }
                 }
               Button {
@@ -453,14 +510,16 @@ ApplicationWindow {
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: 
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                      if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=("0")
                         }
                         else{
                             terminalwindow.input+=("6")
                         }
-                   
+                    }
                 }    
                   Button {
                     id: button7
@@ -485,11 +544,15 @@ ApplicationWindow {
                         radius: 8
                         color:  terminalwindow.dark 
                     }
-                    onClicked:  if(terminalwindow.isEnabled== true){
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(".")
                         }
                         else{
                             terminalwindow.input+=("7")
+                        }
                         }
                    
                 }
@@ -511,7 +574,10 @@ ApplicationWindow {
                         radius: 8
                         color:  terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("8")
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                    terminalwindow.input+=("8")}
                 }      
                 Button {
                     id: button9
@@ -531,7 +597,11 @@ ApplicationWindow {
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("9")
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                        terminalwindow.input+=("9")
+                        }
                 }          
         }
     }

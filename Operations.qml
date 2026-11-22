@@ -14,14 +14,24 @@ ApplicationWindow {
     title: qsTr("Operations")
     
      property string input : ""
-     property bool isEnabled: false
-     property int leftParCount : 0
-     property int rightParCount: 0
+     property bool isEnabled: false;
+property bool messageUp : false;
+property int parCount : 0
         property string possibleOps : "+-*/%";
 property int opCount: 0
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
     property color light: "#e0e0e0"
+    function setButton(){
+    if(messageUp === false){
+        textEmpty.visible = false;
+        textBadInput.visible = false;
+        textError.visible = false;
+        textTooManyOps.visible = false;
+    }
+
+}   
+
 
     GridLayout {
         id: grid
@@ -94,6 +104,20 @@ property int opCount: 0
             
                 }
                 Label{
+                    id :textErrorExplain
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: "You may have an uneven number parentheses,\n or more of one type of parentheses than the other,\n or your total operators + 1 != your total numbers, \n or your input is only parentheses or operators, \n or it could be a spacing issue \n (spaces must separate operators and numbers) "
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textError.visible
+            
+                }
+                Label{
                     id :textBadInput
                     color: operationwindow.dark
                     font.pixelSize: 80
@@ -105,6 +129,19 @@ property int opCount: 0
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     visible: false
+                }
+                Label{
+                    id :textBadInputExplain
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: "You are trying to do modulo by doubles \n or division by 0 \n (Directly or through the results of a nested equation)"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textBadInput.visible
             
                 }
                  Label{
@@ -112,7 +149,7 @@ property int opCount: 0
                     color: operationwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
-                    text: ("Too many operators")
+                    text: ("Too many operators (Be sure to add "*" if attempting to multiply)")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -121,7 +158,7 @@ property int opCount: 0
                     visible: false
             
                 }
-                     Label {
+                Label {
                     id: textSwitch
                     color: operationwindow.dark
                     font.pixelSize: 80
@@ -172,27 +209,20 @@ property int opCount: 0
                     color: operationwindow.dark 
                 }    
                 onClicked:{
-                     const start = operationwindow.input.charAt(0);
-                      if(start === " "){
-                      operationwindow.input  = operationwindow.input.substring(1, operationwindow.input.length);
-                     }
-                        const last = operationwindow.input.charAt(operationwindow.input.length-1);
-                     if(last === " "){
-                      operationwindow.input  = operationwindow.input.substring(0, operationwindow.input.length - 1);
-                     }
+                    
                     if(operationwindow.input.length < 1){
                         textEmpty.visible = true
                     }
                     else if(operationwindow.opCount == 0){
                             const component = Qt.createComponent("OperationsResults.qml")
                  const windowResult = component.createObject();
-       
                   windowResult.input= operationwindow.input;  
+                  
                        windowResult.result =   operationwindow.input;
                      windowResult.show();
                 operationwindow.hide() 
                     }
-                    else{
+                    else{        
                           Par.SetQMLParseFlag("No flag");   
                           var TestInput = Par.IsGoodInput(operationwindow.input);
                if (TestInput != 0) {
@@ -214,10 +244,10 @@ property int opCount: 0
                   windowResult.input= operationwindow.input;  
                          Par.SetQMLParseFlag("No flag");
                   var Hold = Par.ParseQML(operationwindow.input); 
-                     windowResult.result = Hold.Value().toString();
+                     windowResult.result = Hold.DoubleValue().toString();
                      windowResult.show();
                 operationwindow.hide() 
-              
+                       
     
             
                }
@@ -249,6 +279,10 @@ property int opCount: 0
                     } 
                     else if(operationwindow.input.charAt(operationwindow.input.length-1) === "-" ){
                         operationwindow.opCount-=1;
+                    }
+                    if(last === ")" || last === "("){
+                        operationwindow.parCount -=1;
+
                     }
                     }
                 }
@@ -296,7 +330,9 @@ property int opCount: 0
                         color: operationwindow.dark 
                     }
 
-                    onClicked:  
+                    onClicked:  {
+                            operationwindow.messageUp= false;
+                    operationwindow.setButton();
                     if(operationwindow.isEnabled== true){
                       
                      operationwindow.input+=(" + ")
@@ -304,6 +340,7 @@ property int opCount: 0
                         }
                         else{
                             operationwindow.input+=("1")
+                        }
                         }
                 }
 
@@ -331,7 +368,10 @@ property int opCount: 0
                         color: operationwindow.dark 
                     }
 
-                    onClicked:  if(operationwindow.isEnabled== true){
+                    onClicked: {
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                     if(operationwindow.isEnabled== true){
                       
                               operationwindow.input+=(" - ")
                         
@@ -341,6 +381,7 @@ property int opCount: 0
                         else{
                             operationwindow.input+=("2")
                         }
+                    }
                 }
                  Button {
                     id: button3
@@ -366,7 +407,9 @@ property int opCount: 0
                         color: operationwindow.dark
                     }
 
-                    onClicked: 
+                    onClicked: {
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
                     if(operationwindow.isEnabled== true){
                         operationwindow.input+=(" * ")
                          operationwindow.opCount+=1;
@@ -374,6 +417,7 @@ property int opCount: 0
                         else{
                             operationwindow.input+=("3")
                         }
+                    }
                 }
                  Button {
                     id: button4
@@ -398,7 +442,9 @@ property int opCount: 0
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked: 
+                    onClicked: {
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
                     if(operationwindow.isEnabled== true){
                         operationwindow.input+=(" / ")
                          operationwindow.opCount+=1;
@@ -406,6 +452,7 @@ property int opCount: 0
                         else{
                             operationwindow.input+=("4")
                         }
+                    }
                 }
             Button {
                     id: button5
@@ -430,12 +477,16 @@ property int opCount: 0
                         radius: 8
                         color: operationwindow.dark 
                     }
-                    onClicked:  if(operationwindow.isEnabled== true){
+                    onClicked:  {
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                    if(operationwindow.isEnabled== true){
                         operationwindow.input+=(" % ")
                          operationwindow.opCount+=1;
                          }
                         else{
                             operationwindow.input+=("5")
+                        }
                         }
                 }
               Button {
@@ -461,11 +512,15 @@ property int opCount: 0
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked:  if(operationwindow.isEnabled== true){
+                    onClicked: {
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                    if(operationwindow.isEnabled== true){
                         operationwindow.input+=("0")}
                         else{
                             operationwindow.input+=("6")
                         }
+                    }
                 }    
                   Button {
                     id: button7
@@ -490,12 +545,17 @@ property int opCount: 0
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked:  if(operationwindow.isEnabled== true){
+                    onClicked:  {   
+                        operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                        if(operationwindow.isEnabled== true){
                         operationwindow.input+=("( ")
-                          operationwindow.leftParCount +=1;}
+                                                operationwindow.parCount+=1;
+                          }
                         else{
                             operationwindow.input+=("7")
                         }
+                    }
                 }
                  Button {
                     id: button8
@@ -520,13 +580,18 @@ property int opCount: 0
                         radius: 8
                         color: operationwindow.dark 
                     }
-                    onClicked:  if(operationwindow.isEnabled== true){
-                        operationwindow.input+=(" )")
-                        operationwindow.rightParCount +=1;
+                    onClicked: { 
+                           operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                        if(operationwindow.isEnabled== true){
+                        operationwindow.input+=(" )");
+                        operationwindow.parCount+=1;
+              
                         }
                         else{
-                            operationwindow.input+=("8")
+                            operationwindow.input+=("8");
                         }
+                    }
                 }      
                 Button {
                     id: button9
@@ -551,11 +616,15 @@ property int opCount: 0
                         radius: 8
                         color:  operationwindow.dark 
                     }
-                    onClicked: if(operationwindow.isEnabled== true){
+                    onClicked: {
+                    operationwindow.messageUp= false;
+                    operationwindow.setButton();
+                        if(operationwindow.isEnabled== true){
                         operationwindow.input+=(".")}
                         else{
                             operationwindow.input+=("9")
                         }
+                    }
                 }          
         }
     }

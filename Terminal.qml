@@ -107,8 +107,7 @@ function setButton(){
                     color: terminalwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
-             
-                    text: "You may have entered in only an operator, \n more than 2 numbers, \n or only 1 number and an operator"
+                    text: "You may have entered in only an operator, \n more than 2 numbers, \n only 1 number and an operator, \n or it could be a spacing issue \n (spaces must separate operators and numbers)"
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16

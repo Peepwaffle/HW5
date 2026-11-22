@@ -214,13 +214,14 @@ double Operation::Value() const{
     if(SecondElement->IsDouble()== true && Op == '%'){
            throw ModuloByDoubleError("Successfully caught modulo by 0");
     }
-    if(IsDouble()== true && Op == '%'){
-    return IntValue();
-    }
-   else if(IsDouble()== true){      
+   
+   if(IsDouble()== true){      
     return DoubleValue();
     }
-    else{     
+    else{    
+        if((DoubleValue())!= IntValue()){
+            return DoubleValue();
+        } 
         return IntValue();
     }
 }
