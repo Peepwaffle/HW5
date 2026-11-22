@@ -12,8 +12,8 @@ ApplicationWindow {
     visible: true
     title: qsTr("File Result")
    
-    property var equations : [];
-    property var solutions : [];
+    property string equations: "";
+ 
     property color dark: "#262626";
     property color reallyLight: "#e7e7e7";
     property color light: "#e0e0e0";
@@ -64,26 +64,21 @@ ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                 Text{
                 id: textEnded;
-                text : "An issue occurred on line "+ (fileResultwindow.endedFile) ;
+                text : "An issue occurred on line "+ (fileResultwindow.endedFile) + ". \n No equations after were read." ;
                         Layout.alignment: Qt.AlignCenter | Qt.AlignCenter
                 visible: fileResultwindow.boolEnd; 
 
             }
                   Text{
             id: textEquation;
-            text: fileResultwindow.equations + "="
+            text: fileResultwindow.equations
   // /Users/ethan/Qt2/HW5-1/test.txt
   //6 % 4
 //-43 / 3
 //( 4 + -3.0007 ) 
 //4 * -2
             }
-            Text{
-                id: textSolutions;
-                text : fileResultwindow.solutions + " 100";
-                        Layout.alignment: Qt.AlignVCenter | Qt.AlignTop
-
-            }
+        
 
               
             }

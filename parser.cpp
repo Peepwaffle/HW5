@@ -8,11 +8,13 @@
 #include "operation.h"
 #include <stdexcept>
 #include <fstream>
-
+#include "runner.h"
 
 Parser::Parser(){
 }
-
+QString Parser::getEquations(){
+    return QString::fromStdString(equations);
+}
 void Parser::SetQMLParseFlag(QString toFlag){
      if(toFlag== "c"){
         parseFlag = "c";
@@ -631,14 +633,14 @@ Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
  }
  }
   int Parser::CanReadThroughFile(QString fileName){
-  
+
    string line;
    int counter = 1;
       ifstream inFS;
  inFS.open(fileName.toStdString());
  while(!inFS.eof()){
      getline(inFS, line);
-    
+
    if(line != ""){
     
     try{
@@ -648,15 +650,14 @@ GoThroughInput(line);
         cout << e.what() << endl;
         return counter;
     }
-    
-    
-    
      
      try{
         string value = to_string(Parse(line)->Value());
+        equations+= (line + " = "+ value);
+        equations+= "\n";
+
        
-Equations.push_back(line);
-Solutions.push_back(value);
+
      }
      catch(exception &e){
         cout << e.what() << endl;

@@ -7,6 +7,7 @@
 #include <vector>
 #include <stack>
 #include "operation.h"
+#include "runner.h"
 #include <stdexcept>
 #include <fstream>
 #include <QObject>
@@ -17,7 +18,7 @@ class Parser: public QObject {
 
     public:
   Q_INVOKABLE Parser();
-   // virtual ~Parser() {};
+ 
    Q_INVOKABLE int CanReadThroughFile(QString fileName);
     Q_INVOKABLE int CanGoParetheses(vector<string> Tokens);
     Q_INVOKABLE int CanGoNoParentheses(vector<string> Tokens);
@@ -50,6 +51,7 @@ class Parser: public QObject {
    Q_INVOKABLE  Element* ParseQML(QString equationStr);
    Q_INVOKABLE  string ChangeString(vector<string> Tokens);
   Q_INVOKABLE   bool HasInnerPare(vector<string> checking);
+  Q_INVOKABLE QString getEquations();
    Q_INVOKABLE  vector<string> CreateTemp(vector<string> Tokens, unsigned int firstIndex, unsigned int secondIndex);
  
 
@@ -57,8 +59,7 @@ class Parser: public QObject {
    string parseFlag;
    stack<Element> NumStack;
    stack<string> Ops;
-   vector<string> Equations;
-   vector<string> Solutions;
+ string equations;
      int paretheses = 0;
     int operators = 0;
     int numbers = 0;

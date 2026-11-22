@@ -219,7 +219,7 @@ double Operation::Value() const{
     return DoubleValue();
     }
     else{    
-        if((DoubleValue())!= IntValue()){
+        if((DoubleValue())!= IntValue() && Op == '/'){
             return DoubleValue();
         } 
         return IntValue();

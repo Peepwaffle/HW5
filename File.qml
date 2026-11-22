@@ -87,6 +87,7 @@ ApplicationWindow {
                 placeholderText: qsTr("File path")
                    Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
                 onAccepted:{
+                    textNotFoundFile.visible = false;
                     if(text.length< 1){
                         textFirstLine.text = "You didn't enter in a file, please try again."
                     }
@@ -148,6 +149,7 @@ ApplicationWindow {
 
                   }
                   windowResult.fileName= filewindow.fileName;
+                  windowResult.equations = Par.getEquations();
                 
                      windowResult.show(); 
                filewindow.hide();

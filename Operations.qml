@@ -223,6 +223,10 @@ property int opCount: 0
                 operationwindow.hide() 
                     }
                     else{        
+                        if(operationwindow.input.startsWith("(")&& operationwindow.input.endsWith(")") && operationwindow.parCount === 2){
+                            operationwindow.input = operationwindow.input.substring(2, operationwindow.input.length-2);
+                        }
+                        
                           Par.SetQMLParseFlag("No flag");   
                           var TestInput = Par.IsGoodInput(operationwindow.input);
                if (TestInput != 0) {
