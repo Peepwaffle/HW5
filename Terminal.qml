@@ -73,7 +73,7 @@ function setButton(){
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
-             
+                
                  Label{
                     id :textEmpty
                     color: terminalwindow.dark
@@ -103,6 +103,21 @@ function setButton(){
             
                 }
                  Label{
+                    id :textErrorExplain
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+             
+                    text: "You may have entered in only an operator, \n more than 2 numbers, \n or only 1 number and an operator"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textError.visible
+            
+                }
+                 Label{
                     id :textBadInput
                     color: terminalwindow.dark
                     font.pixelSize: 80
@@ -114,6 +129,20 @@ function setButton(){
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     visible:false
+            
+                }
+                 Label{
+                    id :textBadInputExplain
+                    color: terminalwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: "You are trying to do modulo by doubles \n or division by 0"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:textBadInput.visible
             
                 }
                  
@@ -339,14 +368,17 @@ function setButton(){
                         color: terminalwindow.dark 
                     }
 
-                    onClicked:  if(terminalwindow.isEnabled== true){
+                    onClicked:  {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                        if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" - ");
                         terminalwindow.opCounter +=1;
                         
                         }
                         else{
                             terminalwindow.input+=("2");
-                        }
+                        }}
                 }
                  Button {
                     id: button3
@@ -408,13 +440,15 @@ function setButton(){
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked:  
+                    onClicked:  {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" / ")
                         terminalwindow.opCounter+=1;}
                         else{
                             terminalwindow.input+=("4")
-                        }
+                        }}
                 }
             Button {
                     id: button5
@@ -439,7 +473,9 @@ function setButton(){
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: 
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                      if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(" % ")
                         terminalwindow.opCounter+=1;
@@ -447,6 +483,7 @@ function setButton(){
                         }
                         else{
                             terminalwindow.input+=("5")
+                        }
                         }
                 }
               Button {
@@ -473,14 +510,16 @@ function setButton(){
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: 
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
                      if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=("0")
                         }
                         else{
                             terminalwindow.input+=("6")
                         }
-                   
+                    }
                 }    
                   Button {
                     id: button7
@@ -505,11 +544,15 @@ function setButton(){
                         radius: 8
                         color:  terminalwindow.dark 
                     }
-                    onClicked:  if(terminalwindow.isEnabled== true){
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                     if(terminalwindow.isEnabled== true){
                         terminalwindow.input+=(".")
                         }
                         else{
                             terminalwindow.input+=("7")
+                        }
                         }
                    
                 }
@@ -531,7 +574,10 @@ function setButton(){
                         radius: 8
                         color:  terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("8")
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                    terminalwindow.input+=("8")}
                 }      
                 Button {
                     id: button9
@@ -551,7 +597,11 @@ function setButton(){
                         radius: 8
                         color: terminalwindow.dark 
                     }
-                    onClicked: terminalwindow.input+=("9")
+                    onClicked: {
+                            terminalwindow.messageUp= false;
+                    terminalwindow.setButton();
+                        terminalwindow.input+=("9")
+                        }
                 }          
         }
     }
