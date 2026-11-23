@@ -2,8 +2,8 @@
 /Users/ethan/Qt2/HW5-1/operation.cpp
 /Users/ethan/Qt2/HW5-1/element.cpp
 /Users/ethan/Qt2/HW5-1/calc.cpp
-/Users/ethan/Qt2/HW5-1/parser.cpp
 /Users/ethan/Qt2/HW5-1/main.cpp
+/Users/ethan/Qt2/HW5-1/parser.cpp
 /Users/ethan/Qt2/HW5-1/operation.h
  mmc:Q_OBJECT
  mdp:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h

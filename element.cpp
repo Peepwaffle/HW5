@@ -110,6 +110,9 @@ Element operator%(const Element& first, const Element& second){
         isDouble = false;
     }
  }
+ int Element::CanBeAnElement(QString Value){
+  return 0;
+ }
  void Element::Value(double newVal){
   asString = to_string(newVal);
     numValue = newVal;
@@ -138,6 +141,7 @@ Element::Element(const string& newVal){
             numValue = stod(newVal);
           }
           catch(const invalid_argument&){  
+         
             string error_message = "Successfully caught InvalidElement";
            throw InvalidElement(error_message);
           }
@@ -149,6 +153,7 @@ Element::Element(const string& newVal){
              numValue = stoi(newVal);
           }
           catch(const invalid_argument&){  
+           
                      string error_message = "Successfully caught InvalidElement";
            throw InvalidElement(error_message);
           }

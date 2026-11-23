@@ -73,10 +73,7 @@ ApplicationWindow {
             id: textEquation;
             text: fileResultwindow.equations
   // /Users/ethan/Qt2/HW5-1/test.txt
-  //6 % 4
-//-43 / 3
-//( 4 + -3.0007 ) 
-//4 * -2
+
             }
         
 

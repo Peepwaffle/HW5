@@ -181,12 +181,19 @@ vector<string> Parser::GoThroughInput(const string& equationStr){
 Element* Parser::PerformNextCalculation(string nextOp, vector<string> Tokens){
     string FirstElementValue;
     string SecondElementValue;
+
+
   unsigned int i;
  for( i = 0; i < Tokens.size(); i++){
+  
     if(Tokens.at(i) == nextOp){
+   
         FirstElementValue = Tokens.at(i-1);
-        SecondElementValue= Tokens.at(i+1);       
+
+        SecondElementValue= Tokens.at(i+1);  
+      
         break;
+
     }
  }
  Element FirstElement(FirstElementValue);
@@ -205,8 +212,8 @@ if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==tru
     throw DivideByZeroError("Divide by zero error");
  }
  catch(InvalidOperator &e){
-    string ErrorMessage = "Invalid element value: ";
-    ErrorMessage.push_back(nextOp[0]);
+    string ErrorMessage = "Invalid element value";
+    
     throw InvalidOperator(ErrorMessage);
  }
 }
@@ -214,12 +221,15 @@ int Parser::CanPerformNextCalc(string nextOp, vector<string> Tokens){
     string FirstElementValue;
     string SecondElementValue;
   unsigned int i;
+
  for( i = 0; i < Tokens.size(); i++){
     if(Tokens.at(i) == nextOp){
+       
         FirstElementValue = Tokens.at(i-1);
         SecondElementValue= Tokens.at(i+1);       
         break;
     }
+    
  }
  Element FirstElement(FirstElementValue);
 if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==true){
@@ -238,6 +248,7 @@ if(stoi(FirstElementValue)== FirstElement.Value()&& FirstElement.IsDouble()==tru
 return 0;
 }
 int Parser::CanGoNoParentheses(vector<string> Tokens){
+ 
     stack<string> HolderCopy = Ops;
     while(Tokens.size()!= 1){
         string nextOp = WhichOp();      
@@ -260,8 +271,10 @@ return 0;
 }
     Element* Parser::RunThroughNoParentheses(vector<string> Tokens){
 while(Tokens.size()!= 1){
+ 
         string nextOp = WhichOp();      
         Element* Calculated = PerformNextCalculation(nextOp, Tokens);
+    
         Tokens = Remove(Tokens, nextOp, Calculated);
         Ops = removeFromStack(nextOp);
         stack<string> temp = Ops;
@@ -345,8 +358,10 @@ string Parser::WhichOp(){
     if(Ops.size()!= 1){
     stack<string> tempStack(Ops);
     string TopOp = tempStack.top();
+    
     tempStack.pop();
     string nextOp = tempStack.top();
+
     if(OperatorPriority(TopOp) > OperatorPriority(nextOp)){
         return TopOp;
     }
@@ -358,6 +373,7 @@ string Parser::WhichOp(){
     }
     }
     else{
+      
         return Ops.top();
     }
 }
@@ -443,12 +459,15 @@ int Parser::CanGoParetheses(vector<string> Tokens){
         
       
         Element first(temp.at(0));
+ 
    
         char op = temp.at(1)[0];
         Element second(temp.at(2));
       
          string convert = to_string(first.Value())+" "+op+" "+to_string(second.Value());
+        
     Operation* Operate = new Operation();
+   
         Operate->CreateString(QString::fromStdString(convert));
             if(Operate->IsGood()== false){
                 return 1;
@@ -456,6 +475,7 @@ int Parser::CanGoParetheses(vector<string> Tokens){
      
         
         Element* OneOp = new Element(Operation(first, op, second).Value());
+      
        Ops = removeFromStack(temp.at(1));
        if(firstIndex== 0 && Tokens.at(1)== "("){
           Tokens.erase(Tokens.begin()+firstIndex+1, Tokens.begin()+secondIndex+1);
@@ -471,6 +491,7 @@ int Parser::CanGoParetheses(vector<string> Tokens){
             paretheses -=2;
         stack<string> TempStack = Ops;
         while(!Ops.empty()){
+      
             Ops.pop();
         }
         string ParString = ChangeString(temp);
@@ -544,6 +565,7 @@ Element* Parser::GoParentheses(vector<string> Tokens){
        Ops = TempStack;
        for(unsigned int i = 0; i< temp.size(); i++){
       if(temp.at(i)[0]== '%'|| IsAnOP(temp.at(i))== true){
+       
          Ops = removeFromStack(temp.at(i));
       }
        }
@@ -641,23 +663,21 @@ Element* Parser::CreateNoFlag(vector<string> Tokens, const string& equationStr){
  while(!inFS.eof()){
      getline(inFS, line);
 
+
    if(line != ""){
-    
-    try{
-GoThroughInput(line);
-    }
-    catch(exception &e){
-        cout << e.what() << endl;
-        return counter;
-    }
-     
      try{
-        string value = to_string(Parse(line)->Value());
+Element* found = Parse(line);
+string value = "";
+if(found->DoubleValue()== found->IntValue()){
+value = to_string(found->IntValue());
+}
+else{
+     value = to_string(found->Value());
+}
+      
+      
         equations+= (line + " = "+ value);
         equations+= "\n";
-
-       
-
      }
      catch(exception &e){
         cout << e.what() << endl;
@@ -698,7 +718,9 @@ Element* Parser::Parse(const string& equationStr){
     else{
         initialValues = GoThroughInput(equationStr);
         stack<string> temp = Ops;
+      
         Ops = ReverseStack(temp);
+ 
         return CreateNoFlag(initialValues, equationStr);
     }   
 }

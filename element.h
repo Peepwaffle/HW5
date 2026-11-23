@@ -31,6 +31,7 @@ Q_INVOKABLE virtual ~Element();
  Q_INVOKABLE friend Element operator%(const Element& first, const Element& second);
   Q_INVOKABLE friend ostream &operator<<(ostream &lhs, const Element &first);
    Q_INVOKABLE  string getString();
+   Q_INVOKABLE int CanBeAnElement(QString Value);
 private:
     string asString = "";
  double numValue = 0.0;
