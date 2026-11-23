@@ -111,6 +111,12 @@ Element operator%(const Element& first, const Element& second){
     }
  }
  int Element::CanBeAnElement(QString Value){
+  try{
+    Element(Value.toStdString());
+  }
+  catch(exception &e){
+    return 1;
+  }
   return 0;
  }
  void Element::Value(double newVal){
