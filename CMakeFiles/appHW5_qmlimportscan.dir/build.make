@@ -78,6 +78,7 @@ CMakeFiles/appHW5_qmlimportscan: .qt/qml_imports/appHW5_build.cmake
 .qt/qml_imports/appHW5_build.cmake: TerminalResults.qml
 .qt/qml_imports/appHW5_build.cmake: FileResults.qml
 .qt/qml_imports/appHW5_build.cmake: OperationsResults.qml
+.qt/qml_imports/appHW5_build.cmake: Testing.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for appHW5"
 	/opt/homebrew/share/qt/libexec/qmlimportscanner @/Users/ethan/Qt2/HW5-1/.qt/qml_imports/appHW5_build.rsp
 

@@ -7,6 +7,7 @@
     <file alias="TerminalResults.qml">/Users/ethan/Qt2/HW5-1/TerminalResults.qml</file>
     <file alias="FileResults.qml">/Users/ethan/Qt2/HW5-1/FileResults.qml</file>
     <file alias="OperationsResults.qml">/Users/ethan/Qt2/HW5-1/OperationsResults.qml</file>
+    <file alias="Testing.qml">/Users/ethan/Qt2/HW5-1/Testing.qml</file>
   </qresource>
 </RCC>
 

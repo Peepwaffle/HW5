@@ -74,6 +74,7 @@ CMakeFiles/appHW5_qmllint: Operations.qml
 CMakeFiles/appHW5_qmllint: TerminalResults.qml
 CMakeFiles/appHW5_qmllint: FileResults.qml
 CMakeFiles/appHW5_qmllint: OperationsResults.qml
+CMakeFiles/appHW5_qmllint: Testing.qml
 CMakeFiles/appHW5_qmllint: .rcc/qmllint/appHW5.rsp
 	/opt/homebrew/bin/qmllint @/Users/ethan/Qt2/HW5-1/.rcc/qmllint/appHW5.rsp
 

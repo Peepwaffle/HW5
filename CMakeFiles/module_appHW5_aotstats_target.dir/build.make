@@ -75,6 +75,7 @@ CMakeFiles/module_appHW5_aotstats_target: .rcc/qmlcache/module_appHW5.aotstats
 .rcc/qmlcache/module_appHW5.aotstats: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats
 .rcc/qmlcache/module_appHW5.aotstats: .rcc/qmlcache/appHW5_FileResults_qml.cpp.aotstats
 .rcc/qmlcache/module_appHW5.aotstats: .rcc/qmlcache/appHW5_OperationsResults_qml.cpp.aotstats
+.rcc/qmlcache/module_appHW5.aotstats: .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats
 .rcc/qmlcache/module_appHW5.aotstats: .rcc/qmlcache/module_appHW5.aotstatslist
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_appHW5.aotstats"
 	/opt/homebrew/share/qt/libexec/qmlaotstats aggregate /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/module_appHW5.aotstatslist /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/module_appHW5.aotstats
@@ -170,6 +171,19 @@ CMakeFiles/module_appHW5_aotstats_target: .rcc/qmlcache/module_appHW5.aotstats
 .rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats: .rcc/qmlcache/appHW5_Terminal_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats
 
+.rcc/qmlcache/appHW5_Testing_qml.cpp: /opt/homebrew/share/qt/libexec/qmlcachegen
+.rcc/qmlcache/appHW5_Testing_qml.cpp: Testing.qml
+.rcc/qmlcache/appHW5_Testing_qml.cpp: .qt/rcc/qmake_HW5.qrc
+.rcc/qmlcache/appHW5_Testing_qml.cpp: .qt/rcc/appHW5_raw_qml_0.qrc
+.rcc/qmlcache/appHW5_Testing_qml.cpp: HW5/appHW5.qmltypes
+.rcc/qmlcache/appHW5_Testing_qml.cpp: HW5/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating .rcc/qmlcache/appHW5_Testing_qml.cpp, .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats"
+	/opt/homebrew/bin/cmake -E make_directory /Users/ethan/Qt2/HW5-1/.rcc/qmlcache
+	/opt/homebrew/share/qt/libexec/qmlcachegen --bare --resource-path /qt/qml/HW5/Testing.qml -I /Users/ethan/Qt2/HW5-1 -I /opt/homebrew/share/qt/qml -i /Users/ethan/Qt2/HW5-1/HW5/qmldir --resource /Users/ethan/Qt2/HW5-1/.qt/rcc/qmake_HW5.qrc --resource /Users/ethan/Qt2/HW5-1/.qt/rcc/appHW5_raw_qml_0.qrc --dump-aot-stats "--module-id=HW5(appHW5)" -o /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp /Users/ethan/Qt2/HW5-1/Testing.qml
+
+.rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats: .rcc/qmlcache/appHW5_Testing_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats
+
 CMakeFiles/module_appHW5_aotstats_target.dir/codegen:
 .PHONY : CMakeFiles/module_appHW5_aotstats_target.dir/codegen
 
@@ -187,6 +201,8 @@ module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp
 module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats
 module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_Terminal_qml.cpp
 module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats
+module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_Testing_qml.cpp
+module_appHW5_aotstats_target: .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats
 module_appHW5_aotstats_target: .rcc/qmlcache/module_appHW5.aotstats
 module_appHW5_aotstats_target: CMakeFiles/module_appHW5_aotstats_target
 module_appHW5_aotstats_target: CMakeFiles/module_appHW5_aotstats_target.dir/build.make

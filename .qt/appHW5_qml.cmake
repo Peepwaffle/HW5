@@ -16,6 +16,8 @@ set(src_and_dest_list
     "/Users/ethan/Qt2/HW5-1/HW5/FileResults.qml"
     "/Users/ethan/Qt2/HW5-1/OperationsResults.qml"
     "/Users/ethan/Qt2/HW5-1/HW5/OperationsResults.qml"
+    "/Users/ethan/Qt2/HW5-1/Testing.qml"
+    "/Users/ethan/Qt2/HW5-1/HW5/Testing.qml"
 
 )
 set(timestamp_file "/Users/ethan/Qt2/HW5-1/.qt/appHW5_qml.txt")

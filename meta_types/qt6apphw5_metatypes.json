@@ -2,6 +2,42 @@
     {
         "classes": [
             {
+                "className": "Tests",
+                "constructors": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 19,
+                        "name": "Tests",
+                        "returnType": ""
+                    }
+                ],
+                "lineNumber": 15,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 18,
+                        "name": "RunTests",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Tests",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "Tests.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
                 "className": "calc",
                 "lineNumber": 14,
                 "methods": [

@@ -12,9 +12,11 @@
 #include "operation.h"
 #include "parser.h"
 using namespace std;
-class Tests{
+class Tests : public QObject{
+       Q_OBJECT
     public:
-    void RunTests();
+   Q_INVOKABLE QString RunTests();
+ Q_INVOKABLE Tests();
     int CheckInt(string check);
     int CheckDouble(string check);
     int ValidOp(string check);
@@ -36,5 +38,10 @@ class Tests{
     Element TestElementMultiplication(string firstNum, string secondNum);
     Element TestElementDivision(string firstNum, string secondNum);
     Element TestElementModulo(string firstNum, string secondNum);
+   Operation* TestStringOperation(string testString);
+   Operation* TestElementOperation( Element leftElem, char op,  Element rightElem);
+   Element* TestParseString(string ParseOp);
+   private: 
+   string results;
     };
 #endif

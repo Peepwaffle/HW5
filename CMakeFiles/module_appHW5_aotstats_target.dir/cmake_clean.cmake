@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   ".rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats"
   ".rcc/qmlcache/appHW5_Terminal_qml.cpp"
   ".rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats"
+  ".rcc/qmlcache/appHW5_Testing_qml.cpp"
+  ".rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats"
   ".rcc/qmlcache/module_appHW5.aotstats"
   "CMakeFiles/module_appHW5_aotstats_target"
 )

@@ -90,8 +90,8 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-             
-                      const component = Qt.createComponent("File.qml")
+          
+                      const component = Qt.createComponent("File.qml");
                 const window2    = component.createObject()
                 window2.show()
               
@@ -99,6 +99,36 @@ ApplicationWindow {
                       }
                     
                     
+                }
+                Button {
+                    id: buttonTest
+                    text: ("Run tests")
+                       
+                    Layout.bottomMargin: 16
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+
+                    contentItem: Text {
+                        text: buttonTest.text
+                        color: windowMain.light 
+                        font: buttonTest.font
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    background: Rectangle {
+                        implicitWidth: 120
+                        implicitHeight: 36
+                        radius: 8
+                        color: windowMain.dark 
+                    }
+
+                      onClicked: {
+                      const component = Qt.createComponent("Testing.qml")
+                const window2    = component.createObject()
+                window2.show();   
+                windowMain.hide();
+                      }
+                
                 }
                  Button {
                     id: buttonElement

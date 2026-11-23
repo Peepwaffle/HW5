@@ -1655,6 +1655,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/ethan/Qt2/HW5-1/Tests.h",
+			"MU",
+			"EWIEGA46WW/moc_Tests.cpp",
+			null
+		],
+		[
 			"/Users/ethan/Qt2/HW5-1/calc.h",
 			"MU",
 			"EWIEGA46WW/moc_calc.cpp",
@@ -1759,6 +1765,7 @@
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp",
+		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_qmlcache_loader.cpp",
 		"/Users/ethan/Qt2/HW5-1/apphw5_qmltyperegistrations.cpp"
 	],
@@ -1772,6 +1779,7 @@
 	"SETTINGS_FILE" : "/Users/ethan/Qt2/HW5-1/CMakeFiles/appHW5_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/Users/ethan/Qt2/HW5-1/Tests.cpp", "MU", null ],
 		[ "/Users/ethan/Qt2/HW5-1/calc.cpp", "MU", null ],
 		[ "/Users/ethan/Qt2/HW5-1/element.cpp", "MU", null ],
 		[ "/Users/ethan/Qt2/HW5-1/main.cpp", "MU", null ],
@@ -1791,6 +1799,7 @@
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp",
+		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp",
 		"/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_qmlcache_loader.cpp",
 		"/Users/ethan/Qt2/HW5-1/apphw5_qmltyperegistrations.cpp"
 	],

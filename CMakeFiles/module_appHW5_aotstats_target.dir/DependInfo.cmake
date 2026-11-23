@@ -19,6 +19,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp"
+  "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp"
   )
 
 

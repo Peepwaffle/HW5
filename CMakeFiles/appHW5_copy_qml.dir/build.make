@@ -76,6 +76,7 @@ CMakeFiles/appHW5_copy_qml: .qt/appHW5_qml.txt
 .qt/appHW5_qml.txt: TerminalResults.qml
 .qt/appHW5_qml.txt: FileResults.qml
 .qt/appHW5_qml.txt: OperationsResults.qml
+.qt/appHW5_qml.txt: Testing.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying appHW5 qml sources into build dir"
 	/opt/homebrew/bin/cmake -DFILES_INFO_PATH=/Users/ethan/Qt2/HW5-1/.qt/appHW5_qml.cmake -P /opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 

@@ -18,7 +18,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o" "gcc" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o" "gcc" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o" "gcc" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o.d"
+  "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o" "gcc" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_qmlcache_loader.cpp" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o" "gcc" "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o.d"
+  "/Users/ethan/Qt2/HW5-1/Tests.cpp" "CMakeFiles/appHW5.dir/Tests.cpp.o" "gcc" "CMakeFiles/appHW5.dir/Tests.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/appHW5_autogen/mocs_compilation.cpp" "CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/apphw5_qmltyperegistrations.cpp" "CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o" "gcc" "CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o.d"
   "/Users/ethan/Qt2/HW5-1/calc.cpp" "CMakeFiles/appHW5.dir/calc.cpp.o" "gcc" "CMakeFiles/appHW5.dir/calc.cpp.o.d"
@@ -37,6 +39,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp"
   "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp"
+  "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats" "/Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp"
   "/Users/ethan/Qt2/HW5-1/HW5/appHW5.qmltypes" "/Users/ethan/Qt2/HW5-1/apphw5_qmltyperegistrations.cpp"
   )
 

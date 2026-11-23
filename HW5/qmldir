@@ -8,5 +8,6 @@ Operations 1.0 Operations.qml
 TerminalResults 1.0 TerminalResults.qml
 FileResults 1.0 FileResults.qml
 OperationsResults 1.0 OperationsResults.qml
+Testing 1.0 Testing.qml
 depends QtQuick
 

@@ -884,6 +884,7 @@ appHW5_autogen/timestamp: /Applications/Xcode.app/Contents/Developer/Platforms/M
   CMakeFiles/4.3.4/CMakeCXXCompiler.cmake \
   CMakeFiles/4.3.4/CMakeSystem.cmake \
   CMakeLists.txt \
+  Tests.cpp \
   Tests.h \
   appHW5_autogen/moc_predefs.h \
   calc.cpp \
@@ -3810,6 +3811,8 @@ exceptions.h:
 
 /opt/homebrew/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake:
 
+Tests.cpp:
+
 /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake:
 
 .qt/qml_imports/appHW5_conf.cmake:
@@ -4908,10 +4911,6 @@ CMakeFiles/4.3.4/CMakeSystem.cmake:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/blsr.h:
-
-/opt/homebrew/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake:
-
 /opt/homebrew/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargetsPrecheck.cmake:
 
 /opt/homebrew/lib/cmake/Qt6Network/Qt6NetworkTargets-release.cmake:
@@ -5945,6 +5944,10 @@ appHW5_autogen/moc_predefs.h:
 /opt/homebrew/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginAdditionalTargetInfo.cmake:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__log_hardening_failure:
+
+/opt/homebrew/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/blsr.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/binary_search.h:
 

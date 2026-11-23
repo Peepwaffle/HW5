@@ -47,14 +47,18 @@ void calc::SetSecondNum(double SecondVal){
 
 
 int calc::FirstCheckInt(QString firstNumber){
+
   try{
+  int test =   stoi(firstNumber.toStdString());
 firstNumAsInt = firstNumber.toInt();
 firstIsInt = true;
-return 0;
+
   }
   catch(const invalid_argument&){
+   
     return 1;
   }
+  return 0;
 }
 int calc::CheckValidOp(QString Checking){  
   if(Checking.contains("+")){
@@ -76,6 +80,7 @@ int calc::CheckValidOp(QString Checking){
 }
 int calc::FirstCheckDouble(QString firstNumber){
   try{
+  int test = stoi(firstNumber.toStdString());
 firstNumAsDouble = firstNumber.toDouble();
 firstIsDouble = true;
 return 0;

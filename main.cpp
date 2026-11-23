@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     Element TestElement;
    Operation Operate;
    Parser parsing;
+   Tests TestRun;
 
  QObject::connect(
         &engine,
@@ -30,9 +31,10 @@ engine.rootContext()->setContextProperty("TElement", &TestElement);
 engine.rootContext()->setContextProperty("Help", &Operate);
 engine.rootContext()->setContextProperty("Par", &parsing);
 
+engine.rootContext()->setContextProperty("Tester", &TestRun);
 
    engine.loadFromModule("HW5", "Main");
   
-//app.loadFromModule("HW5", "Main");
+
     return app.exec();
 }

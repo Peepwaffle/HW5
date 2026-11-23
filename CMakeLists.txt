@@ -35,7 +35,7 @@ qt_add_qml_module(appHW5
      VERSION 1.0
 
     SOURCES
- main.cpp calc.cpp calc.h element.cpp element.h operation.cpp operation.h parser.cpp parser.h
+ main.cpp calc.cpp calc.h element.cpp element.h operation.cpp operation.h parser.cpp parser.h Tests.cpp Tests.h
     QML_FILES
         Main.qml
         File.qml
@@ -44,6 +44,7 @@ qt_add_qml_module(appHW5
         TerminalResults.qml
         FileResults.qml
         OperationsResults.qml
+        Testing.qml
 )
 
 

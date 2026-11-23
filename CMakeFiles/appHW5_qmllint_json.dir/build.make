@@ -74,6 +74,7 @@ CMakeFiles/appHW5_qmllint_json: Operations.qml
 CMakeFiles/appHW5_qmllint_json: TerminalResults.qml
 CMakeFiles/appHW5_qmllint_json: FileResults.qml
 CMakeFiles/appHW5_qmllint_json: OperationsResults.qml
+CMakeFiles/appHW5_qmllint_json: Testing.qml
 CMakeFiles/appHW5_qmllint_json: .rcc/qmllint/appHW5_json.rsp
 	/opt/homebrew/bin/qmllint @/Users/ethan/Qt2/HW5-1/.rcc/qmllint/appHW5_json.rsp
 

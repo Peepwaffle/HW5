@@ -197,6 +197,19 @@ HW5/appHW5.qmltypes: apphw5_qmltyperegistrations.cpp
 .rcc/qmlcache/appHW5_OperationsResults_qml.cpp.aotstats: .rcc/qmlcache/appHW5_OperationsResults_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/appHW5_OperationsResults_qml.cpp.aotstats
 
+.rcc/qmlcache/appHW5_Testing_qml.cpp: /opt/homebrew/share/qt/libexec/qmlcachegen
+.rcc/qmlcache/appHW5_Testing_qml.cpp: Testing.qml
+.rcc/qmlcache/appHW5_Testing_qml.cpp: .qt/rcc/qmake_HW5.qrc
+.rcc/qmlcache/appHW5_Testing_qml.cpp: .qt/rcc/appHW5_raw_qml_0.qrc
+.rcc/qmlcache/appHW5_Testing_qml.cpp: HW5/appHW5.qmltypes
+.rcc/qmlcache/appHW5_Testing_qml.cpp: HW5/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating .rcc/qmlcache/appHW5_Testing_qml.cpp, .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats"
+	/opt/homebrew/bin/cmake -E make_directory /Users/ethan/Qt2/HW5-1/.rcc/qmlcache
+	/opt/homebrew/share/qt/libexec/qmlcachegen --bare --resource-path /qt/qml/HW5/Testing.qml -I /Users/ethan/Qt2/HW5-1 -I /opt/homebrew/share/qt/qml -i /Users/ethan/Qt2/HW5-1/HW5/qmldir --resource /Users/ethan/Qt2/HW5-1/.qt/rcc/qmake_HW5.qrc --resource /Users/ethan/Qt2/HW5-1/.qt/rcc/appHW5_raw_qml_0.qrc --dump-aot-stats "--module-id=HW5(appHW5)" -o /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp /Users/ethan/Qt2/HW5-1/Testing.qml
+
+.rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats: .rcc/qmlcache/appHW5_Testing_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats
+
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: Main.qml
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: File.qml
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: Terminal.qml
@@ -204,25 +217,26 @@ HW5/appHW5.qmltypes: apphw5_qmltyperegistrations.cpp
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: TerminalResults.qml
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: FileResults.qml
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: OperationsResults.qml
+.qt/rcc/qrc_appHW5_raw_qml_0.cpp: Testing.qml
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: .qt/rcc/appHW5_raw_qml_0.qrc
 .qt/rcc/qrc_appHW5_raw_qml_0.cpp: /opt/homebrew/share/qt/libexec/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Running rcc for resource appHW5_raw_qml_0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Running rcc for resource appHW5_raw_qml_0"
 	/opt/homebrew/share/qt/libexec/rcc --output /Users/ethan/Qt2/HW5-1/.qt/rcc/qrc_appHW5_raw_qml_0.cpp --name appHW5_raw_qml_0 /Users/ethan/Qt2/HW5-1/.qt/rcc/appHW5_raw_qml_0.qrc
 
 appHW5_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
 appHW5_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
 appHW5_autogen/timestamp: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Automatic MOC and UIC for target appHW5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Automatic MOC and UIC for target appHW5"
 	/opt/homebrew/bin/cmake -E cmake_autogen /Users/ethan/Qt2/HW5-1/CMakeFiles/appHW5_autogen.dir/AutogenInfo.json ""
 	/opt/homebrew/bin/cmake -E touch /Users/ethan/Qt2/HW5-1/appHW5_autogen/timestamp
 
 meta_types/appHW5_json_file_list.txt: /opt/homebrew/share/qt/libexec/cmake_automoc_parser
 meta_types/appHW5_json_file_list.txt: appHW5_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Running AUTOMOC file extraction for target appHW5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Running AUTOMOC file extraction for target appHW5"
 	/opt/homebrew/share/qt/libexec/cmake_automoc_parser --cmake-autogen-cache-file /Users/ethan/Qt2/HW5-1/CMakeFiles/appHW5_autogen.dir/ParseCache.txt --cmake-autogen-info-file /Users/ethan/Qt2/HW5-1/CMakeFiles/appHW5_autogen.dir/AutogenInfo.json --output-file-path /Users/ethan/Qt2/HW5-1/meta_types/appHW5_json_file_list.txt --timestamp-file-path /Users/ethan/Qt2/HW5-1/meta_types/appHW5_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /Users/ethan/Qt2/HW5-1/appHW5_autogen/include
 
 meta_types/qt6apphw5_metatypes.json: meta_types/qt6apphw5_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating meta_types/qt6apphw5_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating meta_types/qt6apphw5_metatypes.json"
 	/opt/homebrew/bin/cmake -E true
 
 CMakeFiles/appHW5.dir/codegen:
@@ -231,7 +245,7 @@ CMakeFiles/appHW5.dir/codegen:
 CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o: appHW5_autogen/mocs_compilation.cpp
 CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o -MF CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o -c /Users/ethan/Qt2/HW5-1/appHW5_autogen/mocs_compilation.cpp
 
 CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.i: cmake_force
@@ -245,7 +259,7 @@ CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/main.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/main.cpp.o: main.cpp
 CMakeFiles/appHW5.dir/main.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appHW5.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appHW5.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/main.cpp.o -MF CMakeFiles/appHW5.dir/main.cpp.o.d -o CMakeFiles/appHW5.dir/main.cpp.o -c /Users/ethan/Qt2/HW5-1/main.cpp
 
 CMakeFiles/appHW5.dir/main.cpp.i: cmake_force
@@ -259,7 +273,7 @@ CMakeFiles/appHW5.dir/main.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/calc.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/calc.cpp.o: calc.cpp
 CMakeFiles/appHW5.dir/calc.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appHW5.dir/calc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/appHW5.dir/calc.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/calc.cpp.o -MF CMakeFiles/appHW5.dir/calc.cpp.o.d -o CMakeFiles/appHW5.dir/calc.cpp.o -c /Users/ethan/Qt2/HW5-1/calc.cpp
 
 CMakeFiles/appHW5.dir/calc.cpp.i: cmake_force
@@ -273,7 +287,7 @@ CMakeFiles/appHW5.dir/calc.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/parser.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/parser.cpp.o: parser.cpp
 CMakeFiles/appHW5.dir/parser.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/appHW5.dir/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/appHW5.dir/parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/parser.cpp.o -MF CMakeFiles/appHW5.dir/parser.cpp.o.d -o CMakeFiles/appHW5.dir/parser.cpp.o -c /Users/ethan/Qt2/HW5-1/parser.cpp
 
 CMakeFiles/appHW5.dir/parser.cpp.i: cmake_force
@@ -287,7 +301,7 @@ CMakeFiles/appHW5.dir/parser.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/element.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/element.cpp.o: element.cpp
 CMakeFiles/appHW5.dir/element.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/appHW5.dir/element.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/appHW5.dir/element.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/element.cpp.o -MF CMakeFiles/appHW5.dir/element.cpp.o.d -o CMakeFiles/appHW5.dir/element.cpp.o -c /Users/ethan/Qt2/HW5-1/element.cpp
 
 CMakeFiles/appHW5.dir/element.cpp.i: cmake_force
@@ -301,7 +315,7 @@ CMakeFiles/appHW5.dir/element.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o: apphw5_qmltyperegistrations.cpp
 CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o -MF CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o.d -o CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o -c /Users/ethan/Qt2/HW5-1/apphw5_qmltyperegistrations.cpp
 
 CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.i: cmake_force
@@ -315,7 +329,7 @@ CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o: .qt/rcc/qrc_qmake_HW5.cpp
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o -MF CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o.d -o CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o -c /Users/ethan/Qt2/HW5-1/.qt/rcc/qrc_qmake_HW5.cpp
 
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.i: cmake_force
@@ -329,7 +343,7 @@ CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/operation.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/operation.cpp.o: operation.cpp
 CMakeFiles/appHW5.dir/operation.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/appHW5.dir/operation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/appHW5.dir/operation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/operation.cpp.o -MF CMakeFiles/appHW5.dir/operation.cpp.o.d -o CMakeFiles/appHW5.dir/operation.cpp.o -c /Users/ethan/Qt2/HW5-1/operation.cpp
 
 CMakeFiles/appHW5.dir/operation.cpp.i: cmake_force
@@ -340,10 +354,24 @@ CMakeFiles/appHW5.dir/operation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appHW5.dir/operation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ethan/Qt2/HW5-1/operation.cpp -o CMakeFiles/appHW5.dir/operation.cpp.s
 
+CMakeFiles/appHW5.dir/Tests.cpp.o: CMakeFiles/appHW5.dir/flags.make
+CMakeFiles/appHW5.dir/Tests.cpp.o: Tests.cpp
+CMakeFiles/appHW5.dir/Tests.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/appHW5.dir/Tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/Tests.cpp.o -MF CMakeFiles/appHW5.dir/Tests.cpp.o.d -o CMakeFiles/appHW5.dir/Tests.cpp.o -c /Users/ethan/Qt2/HW5-1/Tests.cpp
+
+CMakeFiles/appHW5.dir/Tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appHW5.dir/Tests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ethan/Qt2/HW5-1/Tests.cpp > CMakeFiles/appHW5.dir/Tests.cpp.i
+
+CMakeFiles/appHW5.dir/Tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appHW5.dir/Tests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ethan/Qt2/HW5-1/Tests.cpp -o CMakeFiles/appHW5.dir/Tests.cpp.s
+
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o: .rcc/qmlcache/appHW5_qmlcache_loader.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_qmlcache_loader.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.i: cmake_force
@@ -357,7 +385,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o: .rcc/qmlcache/appHW5_Main_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Main_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.i: cmake_force
@@ -371,7 +399,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o: .rcc/qmlcache/appHW5_File_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_File_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.i: cmake_force
@@ -385,7 +413,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o: .rcc/qmlcache/appHW5_Terminal_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Terminal_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.i: cmake_force
@@ -399,7 +427,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Terminal_qml.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o: .rcc/qmlcache/appHW5_Operations_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Operations_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.i: cmake_force
@@ -413,7 +441,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Operations_qml.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.i: cmake_force
@@ -427,7 +455,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.s: cmake_forc
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o: .rcc/qmlcache/appHW5_FileResults_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_FileResults_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.i: cmake_force
@@ -441,7 +469,7 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.s: cmake_force
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o: .rcc/qmlcache/appHW5_OperationsResults_qml.cpp
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp
 
 CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.i: cmake_force
@@ -452,10 +480,24 @@ CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.s
 
+CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o: CMakeFiles/appHW5.dir/flags.make
+CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o: .rcc/qmlcache/appHW5_Testing_qml.cpp
+CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o -MF CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o.d -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o -c /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp
+
+CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp > CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.i
+
+CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ethan/Qt2/HW5-1/.rcc/qmlcache/appHW5_Testing_qml.cpp -o CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.s
+
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o: CMakeFiles/appHW5.dir/flags.make
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o: .qt/rcc/qrc_appHW5_raw_qml_0.cpp
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o: CMakeFiles/appHW5.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o -MF CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o.d -o CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o -c /Users/ethan/Qt2/HW5-1/.qt/rcc/qrc_appHW5_raw_qml_0.cpp
 
 CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.i: cmake_force
@@ -476,6 +518,7 @@ appHW5_OBJECTS = \
 "CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o" \
 "CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o" \
 "CMakeFiles/appHW5.dir/operation.cpp.o" \
+"CMakeFiles/appHW5.dir/Tests.cpp.o" \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o" \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o" \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o" \
@@ -484,6 +527,7 @@ appHW5_OBJECTS = \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o" \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o" \
 "CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o" \
+"CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o" \
 "CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o"
 
 # External object files for target appHW5
@@ -497,6 +541,7 @@ appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/element.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/apphw5_qmltyperegistrations.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.qt/rcc/qrc_qmake_HW5.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/operation.cpp.o
+appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/Tests.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_qmlcache_loader.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Main_qml.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_File_qml.cpp.o
@@ -505,6 +550,7 @@ appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Ope
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_TerminalResults_qml.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_FileResults_qml.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_OperationsResults_qml.cpp.o
+appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.rcc/qmlcache/appHW5_Testing_qml.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/.qt/rcc/qrc_appHW5_raw_qml_0.cpp.o
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/build.make
 appHW5.app/Contents/MacOS/appHW5: /opt/homebrew/lib/QtQuick.framework/Versions/A/QtQuick
@@ -515,7 +561,7 @@ appHW5.app/Contents/MacOS/appHW5: /opt/homebrew/lib/QtNetwork.framework/Versions
 appHW5.app/Contents/MacOS/appHW5: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 appHW5.app/Contents/MacOS/appHW5: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 appHW5.app/Contents/MacOS/appHW5: CMakeFiles/appHW5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable appHW5.app/Contents/MacOS/appHW5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ethan/Qt2/HW5-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable appHW5.app/Contents/MacOS/appHW5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/appHW5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -542,6 +588,8 @@ CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp
 CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_TerminalResults_qml.cpp.aotstats
 CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_Terminal_qml.cpp
 CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_Terminal_qml.cpp.aotstats
+CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_Testing_qml.cpp
+CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_Testing_qml.cpp.aotstats
 CMakeFiles/appHW5.dir/depend: .rcc/qmlcache/appHW5_qmlcache_loader.cpp
 CMakeFiles/appHW5.dir/depend: HW5/appHW5.qmltypes
 CMakeFiles/appHW5.dir/depend: appHW5_autogen/timestamp
