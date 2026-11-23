@@ -5,7 +5,7 @@
 #include "element.h"
 #include "operation.h"
 #include "parser.h"
-
+#include "Tests.h"
 #include <QtQml/qqmlcontext.h>
 
 int main(int argc, char *argv[])

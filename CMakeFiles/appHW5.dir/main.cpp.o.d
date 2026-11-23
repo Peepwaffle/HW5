@@ -1233,5 +1233,12 @@ CMakeFiles/appHW5.dir/main.cpp.o: \
   /Users/ethan/Qt2/HW5-1/operation.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/ethan/Qt2/HW5-1/exceptions.h /Users/ethan/Qt2/HW5-1/parser.h \
+  /Users/ethan/Qt2/HW5-1/runner.h /Users/ethan/Qt2/HW5-1/Tests.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/gethostuuid.h \
   /opt/homebrew/include/QtQml/qqmlcontext.h \
   /opt/homebrew/lib/QtQml.framework/Headers/qqmlcontext.h

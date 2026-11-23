@@ -4,9 +4,11 @@ prefer :/qt/qml/HW5/
 Main 1.0 Main.qml
 File 1.0 File.qml
 Terminal 1.0 Terminal.qml
+Testing 1.0 Testing.qml
 Operations 1.0 Operations.qml
 TerminalResults 1.0 TerminalResults.qml
 FileResults 1.0 FileResults.qml
 OperationsResults 1.0 OperationsResults.qml
+
 depends QtQuick
 

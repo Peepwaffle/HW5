@@ -30,6 +30,7 @@ function setButton(){
         textEmpty.visible = false;
         textBadInput.visible = false;
         textError.visible = false;
+        textNotElement.visible = false;
 
     }
 
@@ -115,6 +116,19 @@ function setButton(){
                     verticalAlignment: Text.AlignVCenter
                     visible:textError.visible
             
+                }
+                Label {
+                    id: textNotElement
+                    color: terminalwindow.dark
+                    font.pixelSize: 100
+                    fontSizeMode: Text.Fit
+                    text: qsTr("Error: Your input cannot be an element")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible : false;
                 }
                  Label{
                     id :textBadInput
@@ -215,7 +229,15 @@ function setButton(){
                      }
               
                   if(terminalwindow.opCounter === 0){
-                        const component = Qt.createComponent("TerminalResults.qml");
+                   
+                  if(TElement.CanBeAnElement(terminalwindow.input)===1){
+                       textNotElement.visible = true;
+                     terminalwindow.messageUp = true;
+                    
+
+                  }
+                  else{   
+                    const component = Qt.createComponent("TerminalResults.qml");
                   const windowResult = component.createObject();
                   windowResult.input= terminalwindow.input;
                     TElement.Value(terminalwindow.input.toString());
@@ -223,7 +245,7 @@ function setButton(){
                     const Value = TElement.Value();
                     windowResult.result = Value;
                       windowResult.show();
-                       terminalwindow.hide();
+                       terminalwindow.hide();}
                   }
                   else{
                     if(Help.CreateString(terminalwindow.input)=== 1){
@@ -257,7 +279,12 @@ function setButton(){
                 }
                 Button {
                     id: buttonDelete
-                    text: ("Delete")
+                    text:  if(terminalwindow.isEnabled == true){
+                        ("Clear")
+                        }
+                    else{
+                        ("Delete")
+                        }
                     Layout.bottomMargin: 16
                     contentItem: Text {
                         text: buttonDelete.text
@@ -273,14 +300,23 @@ function setButton(){
                         color: terminalwindow.dark 
                     }
                     onClicked:{
+                        if(terminalwindow.isEnabled === true){
+                            terminalwindow.input = "";
+                            terminalwindow.opCounter = 0;
+                        }
+                        else{
+                        
                         var last = terminalwindow.input.charAt(terminalwindow.input.length-1);
+                        
+                        
                     terminalwindow.input  = terminalwindow.input.substring(0, terminalwindow.input.length - 1);
                        if(terminalwindow.possibleOps.includes(last.toString())){ 
+                        console.log("Deleted");
                        terminalwindow.opCounter-=1;
                     } 
-                    else if(terminalwindow.input.charAt(terminalwindow.input.length-1) === "-" ){
+                    else if(terminalwindow.input.charAt(terminalwindow.input.length-1) === "-" && terminalwindow.opCounter != 0 ){
                         terminalwindow.opCounter-=1;
-                    }
+                    }}
                     }
                 }
                  Button {

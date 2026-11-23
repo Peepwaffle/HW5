@@ -138,6 +138,19 @@
                     "lineNumber": 33,
                     "name": "getString",
                     "returnType": "string"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 9,
+                    "lineNumber": 34,
+                    "name": "CanBeAnElement",
+                    "returnType": "int"
                 }
             ],
             "object": true,

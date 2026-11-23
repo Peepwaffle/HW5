@@ -1102,4 +1102,13 @@ CMakeFiles/appHW5.dir/appHW5_autogen/mocs_compilation.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/../../exceptions.h \
   /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/moc_parser.cpp \
-  /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/../../parser.h
+  /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/../../parser.h \
+  /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/../../runner.h \
+  /Users/ethan/Qt2/HW5-1/appHW5_autogen/EWIEGA46WW/../../Tests.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/gethostuuid.h

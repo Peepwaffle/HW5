@@ -6,6 +6,11 @@
 #include <cassert>
 #include <stdexcept>
 #include <fstream>
+#include <QObject>
+#include "calc.h"
+#include "element.h"
+#include "operation.h"
+#include "parser.h"
 using namespace std;
 class Tests{
     public:

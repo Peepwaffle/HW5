@@ -90,8 +90,8 @@ ApplicationWindow {
                     }
 
                       onClicked: {
-             
-                      const component = Qt.createComponent("File.qml")
+          
+                      const component = Qt.createComponent("File.qml");
                 const window2    = component.createObject()
                 window2.show()
               

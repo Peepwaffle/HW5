@@ -499,6 +499,19 @@
                         "lineNumber": 33,
                         "name": "getString",
                         "returnType": "string"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "Value",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 9,
+                        "lineNumber": 34,
+                        "name": "CanBeAnElement",
+                        "returnType": "int"
                     }
                 ],
                 "object": true,
@@ -701,12 +714,12 @@
                     {
                         "access": "public",
                         "index": 0,
-                        "lineNumber": 19,
+                        "lineNumber": 20,
                         "name": "Parser",
                         "returnType": ""
                     }
                 ],
-                "lineNumber": 15,
+                "lineNumber": 16,
                 "methods": [
                     {
                         "access": "public",
@@ -717,7 +730,7 @@
                             }
                         ],
                         "index": 0,
-                        "lineNumber": 21,
+                        "lineNumber": 22,
                         "name": "CanReadThroughFile",
                         "returnType": "int"
                     },
@@ -730,7 +743,7 @@
                             }
                         ],
                         "index": 1,
-                        "lineNumber": 22,
+                        "lineNumber": 23,
                         "name": "CanGoParetheses",
                         "returnType": "int"
                     },
@@ -743,7 +756,7 @@
                             }
                         ],
                         "index": 2,
-                        "lineNumber": 23,
+                        "lineNumber": 24,
                         "name": "CanGoNoParentheses",
                         "returnType": "int"
                     },
@@ -760,7 +773,7 @@
                             }
                         ],
                         "index": 3,
-                        "lineNumber": 24,
+                        "lineNumber": 25,
                         "name": "CanPerformNextCalc",
                         "returnType": "int"
                     },
@@ -773,7 +786,7 @@
                             }
                         ],
                         "index": 4,
-                        "lineNumber": 25,
+                        "lineNumber": 26,
                         "name": "SetQMLParseFlag",
                         "returnType": "void"
                     },
@@ -786,7 +799,7 @@
                             }
                         ],
                         "index": 5,
-                        "lineNumber": 26,
+                        "lineNumber": 27,
                         "name": "ReverseStack",
                         "returnType": "stack<string>"
                     },
@@ -799,7 +812,7 @@
                             }
                         ],
                         "index": 6,
-                        "lineNumber": 27,
+                        "lineNumber": 28,
                         "name": "Parse",
                         "returnType": "Element*"
                     },
@@ -812,7 +825,7 @@
                             }
                         ],
                         "index": 7,
-                        "lineNumber": 28,
+                        "lineNumber": 29,
                         "name": "SetParseFlag",
                         "returnType": "void"
                     },
@@ -825,7 +838,7 @@
                             }
                         ],
                         "index": 8,
-                        "lineNumber": 29,
+                        "lineNumber": 30,
                         "name": "GoThroughInput",
                         "returnType": "vector<string>"
                     },
@@ -838,14 +851,14 @@
                             }
                         ],
                         "index": 9,
-                        "lineNumber": 30,
+                        "lineNumber": 31,
                         "name": "IsAnOP",
                         "returnType": "bool"
                     },
                     {
                         "access": "public",
                         "index": 10,
-                        "lineNumber": 31,
+                        "lineNumber": 32,
                         "name": "Reset",
                         "returnType": "void"
                     },
@@ -862,7 +875,7 @@
                             }
                         ],
                         "index": 11,
-                        "lineNumber": 32,
+                        "lineNumber": 33,
                         "name": "CreateNoFlag",
                         "returnType": "Element*"
                     },
@@ -875,14 +888,14 @@
                             }
                         ],
                         "index": 12,
-                        "lineNumber": 33,
+                        "lineNumber": 34,
                         "name": "RunThroughNoParentheses",
                         "returnType": "Element*"
                     },
                     {
                         "access": "public",
                         "index": 13,
-                        "lineNumber": 34,
+                        "lineNumber": 35,
                         "name": "WhichOp",
                         "returnType": "string"
                     },
@@ -895,7 +908,7 @@
                             }
                         ],
                         "index": 14,
-                        "lineNumber": 35,
+                        "lineNumber": 36,
                         "name": "OperatorPriority",
                         "returnType": "int"
                     },
@@ -912,7 +925,7 @@
                             }
                         ],
                         "index": 15,
-                        "lineNumber": 36,
+                        "lineNumber": 37,
                         "name": "PerformNextCalculation",
                         "returnType": "Element*"
                     },
@@ -933,7 +946,7 @@
                             }
                         ],
                         "index": 16,
-                        "lineNumber": 37,
+                        "lineNumber": 38,
                         "name": "Remove",
                         "returnType": "vector<string>"
                     },
@@ -946,7 +959,7 @@
                             }
                         ],
                         "index": 17,
-                        "lineNumber": 38,
+                        "lineNumber": 39,
                         "name": "removeFromStack",
                         "returnType": "stack<string>"
                     },
@@ -959,7 +972,7 @@
                             }
                         ],
                         "index": 18,
-                        "lineNumber": 39,
+                        "lineNumber": 40,
                         "name": "numberofInstances",
                         "returnType": "int"
                     },
@@ -972,7 +985,7 @@
                             }
                         ],
                         "index": 19,
-                        "lineNumber": 41,
+                        "lineNumber": 42,
                         "name": "readThroughFile",
                         "returnType": "void"
                     },
@@ -985,7 +998,7 @@
                             }
                         ],
                         "index": 20,
-                        "lineNumber": 42,
+                        "lineNumber": 43,
                         "name": "GoParentheses",
                         "returnType": "Element*"
                     },
@@ -998,7 +1011,7 @@
                             }
                         ],
                         "index": 21,
-                        "lineNumber": 43,
+                        "lineNumber": 44,
                         "name": "FindFirstPare",
                         "returnType": "int"
                     },
@@ -1011,7 +1024,7 @@
                             }
                         ],
                         "index": 22,
-                        "lineNumber": 44,
+                        "lineNumber": 45,
                         "name": "FindSecondPare",
                         "returnType": "int"
                     },
@@ -1024,7 +1037,7 @@
                             }
                         ],
                         "index": 23,
-                        "lineNumber": 45,
+                        "lineNumber": 46,
                         "name": "NumbersInTemp",
                         "returnType": "int"
                     },
@@ -1037,7 +1050,7 @@
                             }
                         ],
                         "index": 24,
-                        "lineNumber": 46,
+                        "lineNumber": 47,
                         "name": "OpsInTemp",
                         "returnType": "int"
                     },
@@ -1050,7 +1063,7 @@
                             }
                         ],
                         "index": 25,
-                        "lineNumber": 47,
+                        "lineNumber": 48,
                         "name": "IsGoodInput",
                         "returnType": "int"
                     },
@@ -1063,7 +1076,7 @@
                             }
                         ],
                         "index": 26,
-                        "lineNumber": 49,
+                        "lineNumber": 50,
                         "name": "IsGoodNoFlag",
                         "returnType": "int"
                     },
@@ -1076,7 +1089,7 @@
                             }
                         ],
                         "index": 27,
-                        "lineNumber": 50,
+                        "lineNumber": 51,
                         "name": "ParseQML",
                         "returnType": "Element*"
                     },
@@ -1089,7 +1102,7 @@
                             }
                         ],
                         "index": 28,
-                        "lineNumber": 51,
+                        "lineNumber": 52,
                         "name": "ChangeString",
                         "returnType": "string"
                     },
@@ -1102,9 +1115,16 @@
                             }
                         ],
                         "index": 29,
-                        "lineNumber": 52,
+                        "lineNumber": 53,
                         "name": "HasInnerPare",
                         "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 30,
+                        "lineNumber": 54,
+                        "name": "getEquations",
+                        "returnType": "QString"
                     },
                     {
                         "access": "public",
@@ -1122,8 +1142,8 @@
                                 "type": "uint"
                             }
                         ],
-                        "index": 30,
-                        "lineNumber": 53,
+                        "index": 31,
+                        "lineNumber": 55,
                         "name": "CreateTemp",
                         "returnType": "vector<string>"
                     }

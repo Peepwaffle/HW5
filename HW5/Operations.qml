@@ -17,6 +17,7 @@ ApplicationWindow {
      property bool isEnabled: false;
 property bool messageUp : false;
 property int parCount : 0
+property int totalChars : 0
         property string possibleOps : "+-*/%";
 property int opCount: 0
     property color dark: "#262626"
@@ -27,10 +28,12 @@ property int opCount: 0
         textEmpty.visible = false;
         textBadInput.visible = false;
         textError.visible = false;
-        textTooManyOps.visible = false;
+        textBadOps.visible = false;
+        textNotAnElement.visible = false;
     }
-
+    
 }   
+
 
 
     GridLayout {
@@ -81,6 +84,20 @@ property int opCount: 0
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
                     text: ("No equation or number submitted, try again")
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.margins: 16
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    visible:false
+                    
+                }
+                 Label{
+                    id :textNotAnElement
+                    color: operationwindow.dark
+                    font.pixelSize: 80
+                    fontSizeMode: Text.Fit
+                    text: ("Error: Your input cannot be an element")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -145,11 +162,11 @@ property int opCount: 0
             
                 }
                  Label{
-                    id :textTooManyOps
+                    id :textBadOps
                     color: operationwindow.dark
                     font.pixelSize: 80
                     fontSizeMode: Text.Fit
-                    text: ("Too many operators (Be sure to add "*" if attempting to multiply)")
+                    text: ("Incorrect number of operators \n (Be sure to add * if attempting to multiply)")
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     Layout.margins: 16
@@ -211,35 +228,47 @@ property int opCount: 0
                 onClicked:{
                     
                     if(operationwindow.input.length < 1){
-                        textEmpty.visible = true
+                        textEmpty.visible = true;
+                          operationwindow.messageUp= true;
                     }
                     else if(operationwindow.opCount == 0){
+                        if(TElement.CanBeAnElement(operationwindow.input)=== 1){
+                            textNotAnElement.visible = true;
+                                  operationwindow.messageUp= true;
+
+                        }
+                        else{
                             const component = Qt.createComponent("OperationsResults.qml")
                  const windowResult = component.createObject();
                   windowResult.input= operationwindow.input;  
                   
                        windowResult.result =   operationwindow.input;
                      windowResult.show();
-                operationwindow.hide() 
+                operationwindow.hide(); 
+                }
                     }
                     else{        
                         if(operationwindow.input.startsWith("(")&& operationwindow.input.endsWith(")") && operationwindow.parCount === 2){
                             operationwindow.input = operationwindow.input.substring(2, operationwindow.input.length-2);
                         }
-                        
                           Par.SetQMLParseFlag("No flag");   
-                          var TestInput = Par.IsGoodInput(operationwindow.input);
+                          var TestInput = Par.IsGoodInput(operationwindow.input);           
                if (TestInput != 0) {
-                if(TestInput === 2){
-                    textTooManyOps.visible = true;
+           
+                if(TestInput == 2){
+                   
+                    textBadOps.visible = true;
+                    operationwindow.messageUp= true;
 
                 }
                 else{
                     textError.visible = true;
+                     operationwindow.messageUp= true;
                 }
                }
                else if(Par.IsGoodNoFlag(operationwindow.input) === 1){
                     textBadInput.visible = true;
+                      operationwindow.messageUp= true;
                }
                else{
                     const component = Qt.createComponent("OperationsResults.qml")
